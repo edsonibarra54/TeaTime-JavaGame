@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=Enemy
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Enemy\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=gifsarreglo
+comment1.target=Enemy(java.lang.String[])
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ movimiento()
+comment4.params=x\ y
+comment4.target=void\ evaluaGif(int,\ int)
+comment5.params=
+comment5.target=int\ persigue()
+comment6.params=espera
+comment6.target=void\ setEspera(int)
+comment7.params=x\ y
+comment7.target=void\ retrocede(int,\ int)
+comment8.params=ejex\ ejey
+comment8.target=void\ impactandoMuro(int,\ int)
+numComments=9
