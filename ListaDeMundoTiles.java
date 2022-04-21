@@ -8,6 +8,9 @@ public class ListaDeMundoTiles
 {
     // instance variables - replace the example below with your own
     private int x;
+    private static final String Gifs[] = {"enemigo1_enfrente.gif","enemigo1_espalda.gif","enemigo1_derecha.gif","enemigo1_izquierda.gif","enemigo1_persiguiendo_enfrente.gif","enemigo1_espalda.gif","enemigo1_persiguiendo_derecha.gif","enemigo1_persiguiendo_izquierda.gif"};
+    private static final String pirata[] = {"enemigo2_enfrente.gif","enemigo2_espalda.gif","enemigo2_derecha.gif","enemigo2_izquierda.gif","enemigo2_persiguiendo_enfrente.gif","enemigo2_espalda.gif","enemigo2_persiguiendo_derecha.gif","enemigo2_persiguiendo_izquierda.gif"};
+
     private static final String Tiles1[][] = {  {"M01","M01","M01","M01","M01","M01","M01","M01","M01","M01","M01","M01","M01","M01","M01","M01","M01","M01","M01","M01","M01","M01","M01","M01"},    
                                                 {"M01","g04","g02","g04","g04","g04","g04","g02","g04","g04","g04","g04","g01","g03","g04","g04","g04","g03","g02","g04","g04","g04","g04","M01"},    
                                                 {"M01","g04","g04","G01","G01","G01","G01","G01","G01","G01","G01","G01","G01","G01","G01","G01","G01","G01","G01","G01","G01","g01","g04","M01"},    
@@ -57,5 +60,13 @@ public class ListaDeMundoTiles
     public static String[][] TilesMundo2()
     {
         return Tiles2;
+    }
+    public static String[] Gifs()
+    {
+        return Gifs;
+    }
+    public static String[] pirata()
+    {
+        return pirata;
     }
 }

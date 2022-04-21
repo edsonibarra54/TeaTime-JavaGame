@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
+import java.util.List;
 /**
  * Write a description of class Heroe here.
  * 
@@ -28,6 +29,7 @@ public class Heroe extends Personaje
         // Add your action code here.
         movimiento();
         opacidad();
+        poder();
         setImage(myGif.getCurrentImage());
     }
 
@@ -88,5 +90,24 @@ public class Heroe extends Personaje
         }
         w.removeObject(copia);
         }*/
+    }
+    public void poder()
+    {
+        if(isTouching(Enemy.class))
+        {
+             List<Enemy> enemigos =getObjectsInRange(80,Enemy.class);
+            for(Enemy enemigo:enemigos)
+            {
+                enemigo.setEspera(100);
+                enemigo.retrocede(getX(),getY());
+            }   
+        }
+        
+    }
+    public int tocando(){
+        if(isTouching(HidingTile.class)){
+            return 1;
+        }else
+            return 0;
     }
 }
