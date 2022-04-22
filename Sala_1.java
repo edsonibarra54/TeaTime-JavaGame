@@ -14,14 +14,21 @@ public class Sala_1 extends TileWorld
      */
     public Sala_1()
     {
-        super(ListaDeMundoTiles.TilesMundo1(), 100, 300);    
+        super(ListaDeMundoTiles.TilesMundo1(), 100, 300,new Counter("Ingredientes:"));    
         salaDerecha = new PortalTile(1);
         addObject(salaDerecha,600,200);
     }
     
     public Sala_1(int spawnX, int spawnY)
     {
-        super(ListaDeMundoTiles.TilesMundo1(), spawnX, spawnY);    
+        super(ListaDeMundoTiles.TilesMundo1(), spawnX, spawnY,new Counter("Ingredientes:"));    
+        salaDerecha = new PortalTile(1);
+        addObject(salaDerecha,600,200);
+    }
+    
+    public Sala_1(int spawnX, int spawnY,Counter count)
+    {
+        super(ListaDeMundoTiles.TilesMundo1(), spawnX, spawnY,count);    
         salaDerecha = new PortalTile(1);
         addObject(salaDerecha,600,200);
     }
@@ -29,7 +36,7 @@ public class Sala_1 extends TileWorld
     
     public void act(){
         if(salaDerecha.isHeroOn()){
-            World world = new Sala_2(10,150);
+            World world = new Sala_2(10,150,super.getCounter());
             Greenfoot.setWorld(world);
         }
     }

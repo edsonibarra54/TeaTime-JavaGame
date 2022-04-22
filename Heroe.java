@@ -31,6 +31,7 @@ public class Heroe extends Personaje
         setImage(myGif.getCurrentImage());
     }
 
+
     public void opacidad(){
         if(isTouching(HidingTile.class)){
             this.getImage().setTransparency(150);
