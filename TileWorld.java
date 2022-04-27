@@ -18,17 +18,18 @@ public abstract class TileWorld extends World
     private int spawnY;
     PortalTile salaArriba, salaAbajo, salaIzquierda, salaDerecha;
     private  String[][] WORLD;
+    private Counter ingCount;
 
     /**
      * Constructor for objects of class TileWorld.
      * 
      */
-    public TileWorld(String tiles[][], int sX, int sY)
+    public TileWorld(String tiles[][], int sX, int sY,Counter ingCount)
     {    
         super(600, 400, 1, true);
         spawnX = sX;
         spawnY = sY;
-        
+        this.ingCount = ingCount;
         this.WORLD = tiles;
         createWorldFromTiles(); 
         setPaintOrder(ColliderTile.class);
@@ -146,9 +147,19 @@ public abstract class TileWorld extends World
                 //addObject(tallo,12+x*TWIDTH, 12+y*THEIGHT);
     }
     
+    protected Counter getCounter(){
+        return this.ingCount;
+    }
+    
     private void prepare() { 
-        hero = new Heroe(100,2,"principal_enfrente.gif");
+        hero = new Heroe(6,2,"principal_enfrente.gif");
         addObject(hero,spawnX,spawnY);  
+        hero = new Heroe(100,2,"principal_enfrente.gif");
+        Actor ingrediente = new Ingrediente("objeto.png");
+        addObject(hero,spawnX,spawnY);
+        addObject(ingrediente,300,250);
+        addObject(ingCount,100,40);
+
         //HaloTile haloTile = new HaloTile();
         //addObject(haloTile,spawnX - 8,spawnY + 5);
     }

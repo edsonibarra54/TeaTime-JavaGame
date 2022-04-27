@@ -22,6 +22,14 @@ public abstract class Personaje extends Actor
         this.imagen = imagen;
         cambiaImagen(this.imagen);
     }
+    public int getvida()
+    {
+        return vida;
+    }
+    public void setvida(int x)
+    {
+        this.vida=x;
+    }
     public void act()
     {
         
