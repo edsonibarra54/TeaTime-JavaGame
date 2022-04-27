@@ -10,18 +10,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
      * Act - do whatever the Pirate wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-public class Pirate extends Enemy
+/*public class Pirate extends Enemy
 {
-    /**
-     * Act - do whatever the Pirate wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+
     public Pirate()
     {
-        super(ListaDeMundoTiles.pirata());
+        //super(ListaDeMundoTiles.pirata());
     }
     public void act()
     {
         super.act();
     }
-}
+}*/

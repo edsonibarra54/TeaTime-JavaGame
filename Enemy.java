@@ -12,39 +12,99 @@ import java.util.ArrayList;
 public class Enemy extends Personaje
 {
     private int paso=Greenfoot.getRandomNumber(12),veces=Greenfoot.getRandomNumber(100);
-    /**
-     * Act - do whatever the Enemy wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     private ArrayList<GifImage> gifs = new ArrayList();
-    private int pos=0,esperaforzado=0,dx=0,dy=0,abs_x,abs_y,paso_y,paso_x,persigue=0,espera=0,tempo=0,radioBusqueda=80,heroe_x,heroe_y;
-    public Enemy(String[] gifsarreglo)
+    private int pathlength,pathcounter;
+    private int pos=0,esperaforzado=0,dx=0,dy=0,abs_x,abs_y,paso_y,paso_x,espera=0,tempo=0,radioBusqueda=80,heroe_x,heroe_y;
+    private int velocidadX,velocidadY,rX,rY;//Variables que permiten modificar la velocidad;
+    private int velocidadPersigueX,velocidadPersigueY;//Variables para modificar la velocidad con la que te perigue, util al cambiar dificultad
+    private boolean persigue=false;
+    private List<Heroe> heroInRange;
+    public Enemy(String[] gifsarreglo,int pathL,int speedX,int speedY)
     {
-        super(1,1,"principal_enfrente.gif");
-         GifImage gif=new GifImage(gifsarreglo[0]);
-        gifs.add(gif);
-        gif=new GifImage(gifsarreglo[1]);
-        gifs.add(gif);
-        gif=new GifImage(gifsarreglo[2]);
-        gifs.add(gif);
-        gif=new GifImage(gifsarreglo[3]);
-        gifs.add(gif);
-        gif=new GifImage(gifsarreglo[4]);
-        gifs.add(gif);
-        gif=new GifImage(gifsarreglo[5]);
-        gifs.add(gif);
-        gif=new GifImage(gifsarreglo[6]);
-        gifs.add(gif);
-        gif=new GifImage(gifsarreglo[7]);
-        gifs.add(gif);
+        super(1,speedX,speedY,gifsarreglo[0]);
+        this.pathlength=this.pathcounter=pathL;//Definimos el largo del camino que va a hacer
+        this.velocidadX=this.rX=speedX;
+        this.velocidadY=this.rY=speedY;
+        velocidadPersigueX = velocidadPersigueY = 1;
+        for(String nombreGif : gifsarreglo){//Este ciclo simplifica el agregar los gifs
+            GifImage gif=new GifImage(nombreGif);
+            gifs.add(gif);
+        }
     }
     public void act()
-    {    
+    {   
+        revisarRango();
+        cambiarVelocidad();
         movimiento();
-        setImage(gifs.get(pos).getCurrentImage());
+        cambiaImagen();
+        //setImage(gifs.get(pos).getCurrentImage());
+        
     }
+    
+    public void cambiaImagen(){
+        if(persigue){
+            if(this.velocidadX>0){
+                this.setImage(gifs.get(2).getCurrentImage());
+            }else{
+                this.setImage(gifs.get(3).getCurrentImage());
+            }
+            if(this.velocidadY>0){
+                this.setImage(gifs.get(0).getCurrentImage());
+            }else{
+                this.setImage(gifs.get(2).getCurrentImage());
+            }
+        }else{
+            if(this.velocidadX>0){
+                this.setImage(gifs.get(2).getCurrentImage());
+            }else{
+                this.setImage(gifs.get(3).getCurrentImage());
+            }
+            if(this.velocidadY>0){
+                this.setImage(gifs.get(0).getCurrentImage());
+            }else{
+                this.setImage(gifs.get(2).getCurrentImage());
+            }
+        }
+        
+    }
+    
+    public void revisarRango(){//Revisa si hay algun heroe en el rango
+        heroInRange =getObjectsInRange(radioBusqueda,Heroe.class);
+        persigue = heroInRange.isEmpty();
+    }
+    
+    public void cambiarVelocidad(){
+        if(persigue && pathlength != 0){
+            this.velocidadX = this.rX;
+            this.velocidadY = this.rY;
+            this.pathcounter--;
+            if(pathcounter == 0){//Si ya terminó de recorrer el camino, hacemos que se de la media vuelta
+                this.pathcounter = this.pathlength;
+                this.velocidadX = this.rX = -this.velocidadX;
+                this.velocidadY = this.rY = -this.velocidadY;
+            }
+        }else{
+            if(heroInRange.get(0).getX()>this.getX()){
+                this.velocidadX = this.velocidadPersigueX;
+            }else{
+                this.velocidadX = -this.velocidadPersigueX;
+            }
+            if(heroInRange.get(0).getY()>this.getY()){
+                this.velocidadY = this.velocidadPersigueY;
+            }else{
+                this.velocidadY = -this.velocidadPersigueY;
+            }
+        }
+    }
+    
     @Override 
-    public void movimiento()
+    public void movimiento(){
+        this.setLocation(this.getX()+velocidadX,this.getY()+velocidadY);
+        if(isTouching(ColliderTile.class)){
+            this.setLocation(this.getX()-velocidadX,this.getY()-velocidadY);
+        }
+    }
+    /*public void movimiento()
     {
         int veloz=(int)velocidad;
             if (isTouching(ColliderTile.class))
@@ -190,7 +250,7 @@ public class Enemy extends Personaje
                 }
             }
         }
-    }
+    }*/
     public void evaluaGif(int x,int y)
     {
         if(x>0 && y>0)
@@ -240,7 +300,7 @@ public class Enemy extends Personaje
             }
         }
     }
-    public int persigue()
+    /*public int persigue()
     {
         List<Heroe> heroe =getObjectsInRange(radioBusqueda,Heroe.class); 
         if(heroe.size()>0 && heroe.get(0).tocando()==0)
@@ -288,7 +348,7 @@ public class Enemy extends Personaje
         {
             impactandoMuro(posx/Math.abs(posx),posy/Math.abs(posy));
         }
-    }
+    }*/
     public void impactandoMuro(int ejex,int ejey)
     {
         int i;

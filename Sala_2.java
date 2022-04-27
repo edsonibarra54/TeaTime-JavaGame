@@ -28,4 +28,9 @@ public class Sala_2 extends TileWorld
             Greenfoot.setWorld(world);
         }
     }
+    
+    @Override
+    public void prepareIndividual(){
+        
+    }
 }

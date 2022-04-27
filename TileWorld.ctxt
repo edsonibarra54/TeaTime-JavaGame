@@ -12,4 +12,6 @@ comment4.params=
 comment4.target=Counter\ getCounter()
 comment5.params=
 comment5.target=void\ prepare()
-numComments=6
+comment6.params=
+comment6.target=void\ prepareIndividual()
+numComments=7

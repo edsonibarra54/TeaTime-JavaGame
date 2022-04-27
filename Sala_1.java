@@ -43,16 +43,13 @@ public class Sala_1 extends TileWorld
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
-    private void prepare()
+    @Override
+    public void prepareIndividual()
     {
-        Guardia guardia = new Guardia();
-        addObject(guardia,532,160);
-        Guardia guardia2 = new Guardia();
-        addObject(guardia2,534,235);
-        Pirate pirate = new Pirate();
-        addObject(pirate,469,266);
-        Pirate pirate2 = new Pirate();
-        addObject(pirate2,468,135);
+        Actor ingrediente = new Ingrediente("objeto.png");
+        addObject(ingrediente,300,250);
+        Actor enemigo1 = new Enemy(ListaDeSprites.enemigo1,200,1,0);
+        addObject(enemigo1,100,100);
     }
 }
 

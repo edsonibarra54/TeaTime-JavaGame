@@ -7,15 +7,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 import java.util.List;
-public class Guardia extends Enemy
+/*public class Guardia extends Enemy
 {
     /**
      * Act - do whatever the Guardia wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+     
     public Guardia()
     {
-        super(ListaDeMundoTiles.Gifs());
+        //super(ListaDeMundoTiles.Gifs());
     }
     public void act()
     {
@@ -26,4 +26,4 @@ public class Guardia extends Enemy
         }
         
     }
-}
+}*/

@@ -20,9 +20,9 @@ public class Heroe extends Personaje
      * Act - do whatever the Heroe wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Heroe(int vida,int velocidad,String nombre_imagen)
+    public Heroe(int vida,int velocidadX,int velocidadY,String nombre_imagen)
     {
-        super(vida,velocidad,nombre_imagen);
+        super(vida,velocidadX,velocidadY,nombre_imagen);
         HeartTile corazones;
         for(int i=0;i<(super.getvida()/2);i++)
         {
@@ -45,6 +45,7 @@ public class Heroe extends Personaje
             mundo.addObject(contenedor,0,0);            
         }
     }
+    @Override
     public void act()
     {
         // Add your action code here.
@@ -53,7 +54,7 @@ public class Heroe extends Personaje
             setcorazon();
             movimiento();
             opacidad();
-            poder();
+            //poder();
             setImage(myGif.getCurrentImage());
             if (Greenfoot.isKeyDown("e") && unica==1){
             super.setvida(super.getvida()+1);
@@ -142,22 +143,22 @@ public class Heroe extends Personaje
     @Override
     public void movimiento()
     {
-        int veloz=(int)velocidad;
+        //int veloz=(int)velocidad;
         int dx = 0, dy = 0;
         if (Greenfoot.isKeyDown("W")){
-            dy = -veloz;
+            dy = -this.velocidadY;
             myGif = gif_espalda;
         }
         if (Greenfoot.isKeyDown("A")){
-            dx = -veloz;
+            dx = -this.velocidadX;
             myGif = gif_izquierda;
         }
         if (Greenfoot.isKeyDown("S")){
-            dy = veloz;
+            dy = this.velocidadY;
             myGif = gif_enfrente;
         }
         if (Greenfoot.isKeyDown("D")){
-            dx = veloz;
+            dx = this.velocidadX;
             myGif = gif_derecha;
         }
         setLocation(getX()+dx, getY()+dy);
@@ -190,7 +191,7 @@ public class Heroe extends Personaje
         w.removeObject(copia);
         }*/
     }
-    public void poder()
+    /*public void poder()
     {
         if(isTouching(Enemy.class))
         {
@@ -205,7 +206,7 @@ public class Heroe extends Personaje
             setcorazon_seteado();
         }
 
-    }
+    }*/
     public int tocando(){
         if(isTouching(HidingTile.class)){
             return 1;

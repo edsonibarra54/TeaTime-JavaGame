@@ -152,15 +152,15 @@ public abstract class TileWorld extends World
     }
     
     private void prepare() { 
-        hero = new Heroe(6,2,"principal_enfrente.gif");
-        addObject(hero,spawnX,spawnY);  
-        hero = new Heroe(100,2,"principal_enfrente.gif");
-        Actor ingrediente = new Ingrediente("objeto.png");
-        addObject(hero,spawnX,spawnY);
-        addObject(ingrediente,300,250);
+        hero = new Heroe(6,2,2,"principal_enfrente.gif");
+        addObject(hero,spawnX,spawnY); 
         addObject(ingCount,100,40);
-
+        prepareIndividual();
         //HaloTile haloTile = new HaloTile();
         //addObject(haloTile,spawnX - 8,spawnY + 5);
     }
+    
+    public abstract void prepareIndividual();
+        
+    
 }
