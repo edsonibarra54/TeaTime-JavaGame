@@ -132,3 +132,84 @@ public class Heroe extends Personaje
         crea_contenedores=0;
     }
     }
+    public void opacidad(){
+        if(isTouching(HidingTile.class)){
+            this.getImage().setTransparency(150);
+        }else
+            this.getImage().setTransparency(255);
+    }
+
+    @Override
+    public void movimiento()
+    {
+        int veloz=(int)velocidad;
+        int dx = 0, dy = 0;
+        if (Greenfoot.isKeyDown("W")){
+            dy = -veloz;
+            myGif = gif_espalda;
+        }
+        if (Greenfoot.isKeyDown("A")){
+            dx = -veloz;
+            myGif = gif_izquierda;
+        }
+        if (Greenfoot.isKeyDown("S")){
+            dy = veloz;
+            myGif = gif_enfrente;
+        }
+        if (Greenfoot.isKeyDown("D")){
+            dx = veloz;
+            myGif = gif_derecha;
+        }
+        setLocation(getX()+dx, getY()+dy);
+        if (isTouching(ColliderTile.class))
+        {
+            setLocation(getX()-dx, getY()-dy);
+        }   
+        /*else
+        {
+        Heroe copia = new Heroe(vida,(int)velocidad,imagen);
+        World w = getWorld();
+        w.addObject(copia,getX(),getY());
+        copia.setLocation(getX(),getY());
+        if(Greenfoot.isKeyDown("left")){
+        copia.setLocation(getX()-veloz,getY());
+        }
+        if(Greenfoot.isKeyDown("right")){
+        copia.setLocation(getX()+veloz,getY());
+        }
+        if(Greenfoot.isKeyDown("up")){
+        copia.setLocation(getX(),getY()-veloz);
+        }
+        if(Greenfoot.isKeyDown("down")){
+        copia.setLocation(getX(),getY()+veloz);
+        }
+        if(copia.colisionando()==0)
+        {
+        setLocation(copia.getX(),copia.getY());
+        }
+        w.removeObject(copia);
+        }*/
+    }
+    public void poder()
+    {
+        if(isTouching(Enemy.class))
+        {
+             List<Enemy> enemigos =getObjectsInRange(80,Enemy.class);
+            for(Enemy enemigo:enemigos)
+            {
+                enemigo.setEspera(100);
+                enemigo.retrocede(getX(),getY());
+            }   
+            super.setvida(super.getvida()-1);
+            crea_contenedores=1;
+            setcorazon_seteado();
+        }
+
+    }
+    public int tocando(){
+        if(isTouching(HidingTile.class)){
+            return 1;
+        }else
+            return 0;
+    }
+}
