@@ -108,7 +108,7 @@ public abstract class TileWorld extends World
     }
     
     private void prepare() { 
-        hero = new Heroe(100,2,"principal_enfrente.gif");
+        hero = new Heroe(6,2,"principal_enfrente.gif");
         addObject(hero,spawnX,spawnY);  
         //HaloTile haloTile = new HaloTile();
         //addObject(haloTile,spawnX - 8,spawnY + 5);

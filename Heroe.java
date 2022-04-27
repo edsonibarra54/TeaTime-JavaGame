@@ -9,7 +9,8 @@ import java.util.List;
  */
 public class Heroe extends Personaje
 {
-    private int num_image,cambio=0,tempo=0;
+    private int num_image,cambio=0,tempo=0,crea_contenedores=1,unica=1;
+    private ArrayList<HeartTile> corazon = new ArrayList<>();
     private GifImage myGif = new GifImage("principal_enfrente.gif");
     private GifImage gif_enfrente = new GifImage("principal_enfrente.gif");
     private GifImage gif_espalda = new GifImage("principal_espalda.gif");
@@ -22,17 +23,115 @@ public class Heroe extends Personaje
     public Heroe(int vida,int velocidad,String nombre_imagen)
     {
         super(vida,velocidad,nombre_imagen);
+        HeartTile corazones;
+        for(int i=0;i<(super.getvida()/2);i++)
+        {
+            corazones = new HeartTile();
+            corazon.add(corazones);
+        }
+        if(super.getvida()%2!=0)
+        {
+            corazones = new HeartTile();
+            corazones.getImage().mirrorHorizontally();
+            corazon.add(corazones);
+        }
     }
-
+    public void addActorAtTileLocation(int i)
+    {
+        HeartTile contenedor = new HeartTile();
+        World mundo = getWorld();
+        if(contenedor!=null)
+        {
+            mundo.addObject(contenedor,0,0);            
+        }
+    }
     public void act()
     {
         // Add your action code here.
-        movimiento();
-        opacidad();
-        poder();
-        setImage(myGif.getCurrentImage());
+        if(super.getvida()>0)
+        {
+            setcorazon();
+            movimiento();
+            opacidad();
+            poder();
+            setImage(myGif.getCurrentImage());
+            if (Greenfoot.isKeyDown("e") && unica==1){
+            super.setvida(super.getvida()+1);
+            unica=0;
+            setcorazon_seteado();
+            }
+        }else
+        {
+            World mundo = getWorld();
+            mundo.removeObject(this);
+        }
     }
-
+    public void setcorazon()
+    {
+        int i,j=0;
+        if(crea_contenedores==1)
+        {
+        World mundo = getWorld();
+        for(i=0;i<(super.getvida()/2);i++){
+          
+            mundo.addObject(corazon.get(i),mundo.getWidth()-15*(i+1)-corazon.get(i).getImage().getWidth()*i,mundo.getHeight()-20);  
+          j=i+1;
+        }
+        if(super.getvida()%2!=0)
+        {
+            HeartTile medio_corazon = new HeartTile();
+            medio_corazon.setImage("Corazon_mitad_rojo.png");
+            medio_corazon.getImage().mirrorHorizontally();
+            corazon.add(medio_corazon);
+              mundo.addObject(corazon.get(j+1),mundo.getWidth()-15*(j+1)-corazon.get(j).getImage().getWidth()*j,mundo.getHeight()-20);  
+ 
+        }
+        if(((super.getvida()/2)+super.getvida()%2)<corazon.size()-1)
+        {
+            for(i=super.getvida()/2+super.getvida()%2+1;i<corazon.size();i++)
+            {
+                corazon.get(i).setImage("Corazon_negro.png");
+            }
+        }
+        crea_contenedores=0;
+    }
+    }
+    public void setcorazon_seteado()
+    {
+        int i,j=0;
+        if(crea_contenedores==1)
+        {
+        for(i=0;i<super.getvida()/2;i++)
+        {
+            corazon.get(i).setImage("Corazon_rojo.png");
+        }
+        if(super.getvida()==1)
+        {
+            corazon.get(0).setImage("Corazon_mitad_rojo.png");
+            //corazon.get(0).turn(180);
+        }
+        World mundo = getWorld();
+        for(i=0;i<(super.getvida()/2);i++){
+          corazon.get(i);  
+          j=i+1;
+        }
+        if(super.getvida()%2!=0)
+        {
+            HeartTile medio_corazon = new HeartTile();
+            corazon.get(super.getvida()%2+(super.getvida()/2)-1).setImage("Corazon_mitad_rojo.png");
+            corazon.get(super.getvida()%2+(super.getvida()/2)-1).getImage().mirrorHorizontally();
+            //corazon.get(super.getvida()%2+(super.getvida()/2)-1).turn(180);
+        }
+        if(((super.getvida()/2)+super.getvida()%2)<corazon.size())
+        {
+            for(i=super.getvida()/2+super.getvida()%2;i<corazon.size();i++)
+            {
+                corazon.get(i).setImage("Corazon_negro.png");
+            }
+        }
+        crea_contenedores=0;
+    }
+    }
     public void opacidad(){
         if(isTouching(HidingTile.class)){
             this.getImage().setTransparency(150);
@@ -101,8 +200,11 @@ public class Heroe extends Personaje
                 enemigo.setEspera(100);
                 enemigo.retrocede(getX(),getY());
             }   
+            super.setvida(super.getvida()-1);
+            crea_contenedores=1;
+            setcorazon_seteado();
         }
-        
+
     }
     public int tocando(){
         if(isTouching(HidingTile.class)){
