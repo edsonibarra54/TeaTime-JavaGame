@@ -34,7 +34,7 @@ public class Heroe extends Personaje
     }
 
     public void opacidad(){
-        if(isTouching(HidingTile.class)){
+        if(isTouching(TallGrass.class)){
             this.getImage().setTransparency(150);
         }else
             this.getImage().setTransparency(255);

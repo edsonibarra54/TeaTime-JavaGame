@@ -31,6 +31,7 @@ public abstract class TileWorld extends World
         
         this.WORLD = tiles;
         createWorldFromTiles(); 
+        setPaintOrder(ColliderTile.class);
         setPaintOrder(Tree.class);
         prepare();
     }
@@ -116,7 +117,25 @@ public abstract class TileWorld extends World
                 break;
             case "M01":
                 tile = new ColliderTile();
-                tile.setImage("Muro.png");      
+                tile.setImage("muro_1.png");      
+                break; 
+            case "M02":
+                tile.setImage("muro_1.png"); 
+                tile_2 = new ColliderTile();
+                tile_2.setImage("muro_2.png");
+                addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
+                break; 
+            case "M03":
+                tile.setImage("path_4.png"); 
+                tile_2 = new ColliderTile();
+                tile_2.setImage("muro_2.png"); 
+                addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
+                break; 
+            case "M04":
+                tile = new ColliderTile();
+                tile.setImage("muro_1.png"); 
+                tile_2.setImage("arbol_3.png"); 
+                addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
                 break; 
             case "G01" :
                 tile = new TallGrass();
