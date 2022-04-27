@@ -43,27 +43,34 @@ public class Enemy extends Personaje
     
     public void cambiaImagen(){
         if(persigue){
-            if(this.velocidadX>0){
+            if(this.velocidadY==0){
+                if(this.velocidadX>0){
                 this.setImage(gifs.get(2).getCurrentImage());
-            }else{
-                this.setImage(gifs.get(3).getCurrentImage());
+                }else{
+                    this.setImage(gifs.get(3).getCurrentImage());
+                }
             }
-            if(this.velocidadY>0){
+            if(this.velocidadX==0){
+                if(this.velocidadY>0){
                 this.setImage(gifs.get(0).getCurrentImage());
-            }else{
-                this.setImage(gifs.get(2).getCurrentImage());
+                }else{
+                    this.setImage(gifs.get(1).getCurrentImage());
+                }
             }
+
         }else{
-            if(this.velocidadX>0){
-                this.setImage(gifs.get(2).getCurrentImage());
-            }else{
-                this.setImage(gifs.get(3).getCurrentImage());
-            }
             if(this.velocidadY>0){
-                this.setImage(gifs.get(0).getCurrentImage());
+                this.setImage(gifs.get(4).getCurrentImage());
+            }else if(this.velocidadY<0){
+                this.setImage(gifs.get(5).getCurrentImage());
             }else{
-                this.setImage(gifs.get(2).getCurrentImage());
+                if(this.velocidadX>0){
+                this.setImage(gifs.get(6).getCurrentImage());
+                }else{
+                    this.setImage(gifs.get(7).getCurrentImage());
+                }
             }
+            
         }
         
     }
@@ -91,7 +98,9 @@ public class Enemy extends Personaje
             }
             if(heroInRange.get(0).getY()>this.getY()){
                 this.velocidadY = this.velocidadPersigueY;
-            }else{
+            }else if(heroInRange.get(0).getY()==this.getY()){
+                this.velocidadY = 0;
+            }else {
                 this.velocidadY = -this.velocidadPersigueY;
             }
         }
