@@ -31,7 +31,8 @@ public abstract class TileWorld extends World
         spawnY = sY;
         this.ingCount = ingCount;
         this.WORLD = tiles;
-        createWorldFromTiles();     
+        createWorldFromTiles(); 
+        setPaintOrder(Tree.class);
         prepare();
     }
     
@@ -45,6 +46,7 @@ public abstract class TileWorld extends World
     
     public void addActorAtTileLocation(String c, int x, int y){
         Actor tile = new NoColliderTile(); 
+        Actor tile_2 = new Tree();
         //Actor tallo = new MiniShadowTile();
         switch(c) { 
             case "p01":
@@ -95,12 +97,30 @@ public abstract class TileWorld extends World
             case "g04":
                 tile.setImage("grass_4.png");      
                 break; 
+            case "A01":
+                tile = new ColliderTile();
+                tile.setImage("arbol_1.png");      
+                break; 
+            case "A02":
+                tile = new ColliderTile();
+                tile.setImage("arbol_2.png");      
+                break; 
+            case "A03":
+                tile.setImage("grass_4.png");  
+                tile_2.setImage("arbol_3.png");
+                addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
+                break;
+            case "A04":
+                tile.setImage("path_4.png");  
+                tile_2.setImage("arbol_3.png");
+                addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
+                break;
             case "M01":
                 tile = new ColliderTile();
                 tile.setImage("Muro.png");      
                 break; 
             case "G01" :
-                tile = new HidingTile();
+                tile = new TallGrass();
                 tile.setImage("tall_grass.png");
             }    
             if( tile != null)  
