@@ -24,7 +24,6 @@ public class Ingrediente extends Actor
             TileWorld world = getWorldOfType(TileWorld.class);
             world.removeObject(this);
             world.getCounter().add();
-            world.getCounter().cambiaImagen();
         }
     }
     

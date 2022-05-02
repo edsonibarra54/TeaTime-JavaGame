@@ -94,6 +94,7 @@ public class Counter extends Actor
     public void add()
     {
         target ++;
+        cambiaImagen();
     }
 
     /**

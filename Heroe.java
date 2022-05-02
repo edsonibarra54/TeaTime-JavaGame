@@ -7,6 +7,7 @@ import java.util.List;
  * @author (your name) 
  * @version (a version number or a date)
  */
+//Edson
 public class Heroe extends Personaje
 {
     private int num_image,cambio=0,tempo=0,crea_contenedores=1,unica=1;
@@ -53,8 +54,8 @@ public class Heroe extends Personaje
         {
             setcorazon();
             movimiento();
-            opacidad();
-            //poder();
+            ocultar();
+            poder();
             setImage(myGif.getCurrentImage());
             if (Greenfoot.isKeyDown("e") && unica==1){
             super.setvida(super.getvida()+1);
@@ -133,11 +134,14 @@ public class Heroe extends Personaje
         crea_contenedores=0;
     }
     }
-    public void opacidad(){
+    public boolean ocultar(){
+        boolean flag = false;
         if(isTouching(TallGrass.class)){
             this.getImage().setTransparency(150);
+            flag = true;
         }else
             this.getImage().setTransparency(255);
+        return flag;
     }
 
     @Override
@@ -166,51 +170,25 @@ public class Heroe extends Personaje
         {
             setLocation(getX()-dx, getY()-dy);
         }   
-        /*else
-        {
-        Heroe copia = new Heroe(vida,(int)velocidad,imagen);
-        World w = getWorld();
-        w.addObject(copia,getX(),getY());
-        copia.setLocation(getX(),getY());
-        if(Greenfoot.isKeyDown("left")){
-        copia.setLocation(getX()-veloz,getY());
-        }
-        if(Greenfoot.isKeyDown("right")){
-        copia.setLocation(getX()+veloz,getY());
-        }
-        if(Greenfoot.isKeyDown("up")){
-        copia.setLocation(getX(),getY()-veloz);
-        }
-        if(Greenfoot.isKeyDown("down")){
-        copia.setLocation(getX(),getY()+veloz);
-        }
-        if(copia.colisionando()==0)
-        {
-        setLocation(copia.getX(),copia.getY());
-        }
-        w.removeObject(copia);
-        }*/
     }
-    /*public void poder()
+    public void poder()
     {
         if(isTouching(Enemy.class))
         {
-             List<Enemy> enemigos =getObjectsInRange(80,Enemy.class);
+            /* List<Enemy> enemigos =getObjectsInRange(80,Enemy.class);
             for(Enemy enemigo:enemigos)
             {
-                enemigo.setEspera(100);
-                enemigo.retrocede(getX(),getY());
-            }   
+                //enemigo.setEspera(100);
+                //enemigo.retrocede(getX(),getY());
+                
+            }*/
+            TileWorld world = this.getWorldOfType(TileWorld.class);
+            world.reset();
             super.setvida(super.getvida()-1);
             crea_contenedores=1;
             setcorazon_seteado();
         }
 
-    }*/
-    public int tocando(){
-        if(isTouching(HidingTile.class)){
-            return 1;
-        }else
-            return 0;
     }
+
 }

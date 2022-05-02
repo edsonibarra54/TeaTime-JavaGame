@@ -48,8 +48,8 @@ public class Sala_1 extends TileWorld
     {
         Actor ingrediente = new Ingrediente("objeto.png");
         addObject(ingrediente,300,250);
-        Actor enemigo1 = new Enemy(ListaDeSprites.enemigo1,200,1,0);
-        Actor enemigo2 = new Enemy(ListaDeSprites.pirata,200,0,1);
+        Actor enemigo1 = new Enemy(ListaDeSprites.enemigo1,200,1,0,100,100);
+        Actor enemigo2 = new Enemy(ListaDeSprites.pirata,200,0,1,500,100);
         addObject(enemigo1,100,100);
         addObject(enemigo2,500,100);
     }

@@ -151,6 +151,13 @@ public abstract class TileWorld extends World
         return this.ingCount;
     }
     
+    public void reset(){
+        this.hero.setLocation(spawnX,spawnY);
+        for(Enemy enemy : this.getObjects(Enemy.class)){
+            enemy.resetPosition();
+        }
+    }
+    
     private void prepare() { 
         hero = new Heroe(6,2,2,"principal_enfrente.gif");
         addObject(hero,spawnX,spawnY); 
