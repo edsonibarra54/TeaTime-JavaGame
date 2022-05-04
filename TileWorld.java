@@ -32,8 +32,7 @@ public abstract class TileWorld extends World
         this.ingCount = ingCount;
         this.WORLD = tiles;
         createWorldFromTiles(); 
-        setPaintOrder(ColliderTile.class);
-        setPaintOrder(Tree.class);
+        setPaintOrder(HeartTile.class,Tree.class,ColliderTile.class);
         prepare();
     }
     
@@ -113,6 +112,16 @@ public abstract class TileWorld extends World
                 break;
             case "A04":
                 tile.setImage("path_4.png");  
+                tile_2.setImage("arbol_3.png");
+                addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
+                break;
+            case "A05":
+                tile.setImage("path_11.png");  
+                tile_2.setImage("arbol_3.png");
+                addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
+                break;
+            case "A06":
+                tile.setImage("path_10.png");  
                 tile_2.setImage("arbol_3.png");
                 addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
                 break;
