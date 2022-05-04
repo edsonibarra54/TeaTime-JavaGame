@@ -13,9 +13,9 @@ public class Sala_2 extends TileWorld
      * Constructor for objects of class Sala_2.
      * 
      */
-    public Sala_2(int spawnX, int spawnY)
+    public Sala_2(int spawnX, int spawnY,Counter count)
     {
-        super(ListaDeMundoTiles.TilesMundo2(), spawnX, spawnY); 
+        super(ListaDeMundoTiles.TilesMundo2(), spawnX, spawnY,count); 
         halo = new HaloTile();
         addObject(halo,spawnX - 8,spawnY + 5);
         salaIzquierda = new PortalTile(1);
@@ -24,8 +24,13 @@ public class Sala_2 extends TileWorld
     
     public void act(){
         if(salaIzquierda.isHeroOn()){
-            World world = new Sala_1(575,200);
+            World world = new Sala_1(575,200,super.getCounter());
             Greenfoot.setWorld(world);
         }
+    }
+    
+    @Override
+    public void prepareIndividual(){
+        
     }
 }

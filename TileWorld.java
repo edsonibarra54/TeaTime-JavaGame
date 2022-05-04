@@ -18,19 +18,22 @@ public abstract class TileWorld extends World
     private int spawnY;
     PortalTile salaArriba, salaAbajo, salaIzquierda, salaDerecha;
     private  String[][] WORLD;
+    private Counter ingCount;
 
     /**
      * Constructor for objects of class TileWorld.
      * 
      */
-    public TileWorld(String tiles[][], int sX, int sY)
+    public TileWorld(String tiles[][], int sX, int sY,Counter ingCount)
     {    
         super(600, 400, 1, true);
         spawnX = sX;
         spawnY = sY;
-        
+        this.ingCount = ingCount;
         this.WORLD = tiles;
-        createWorldFromTiles();     
+        createWorldFromTiles(); 
+        setPaintOrder(ColliderTile.class);
+        setPaintOrder(Tree.class);
         prepare();
     }
     
@@ -44,6 +47,7 @@ public abstract class TileWorld extends World
     
     public void addActorAtTileLocation(String c, int x, int y){
         Actor tile = new NoColliderTile(); 
+        Actor tile_2 = new Tree();
         //Actor tallo = new MiniShadowTile();
         switch(c) { 
             case "p01":
@@ -94,12 +98,48 @@ public abstract class TileWorld extends World
             case "g04":
                 tile.setImage("grass_4.png");      
                 break; 
+            case "A01":
+                tile = new ColliderTile();
+                tile.setImage("arbol_1.png");      
+                break; 
+            case "A02":
+                tile = new ColliderTile();
+                tile.setImage("arbol_2.png");      
+                break; 
+            case "A03":
+                tile.setImage("grass_4.png");  
+                tile_2.setImage("arbol_3.png");
+                addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
+                break;
+            case "A04":
+                tile.setImage("path_4.png");  
+                tile_2.setImage("arbol_3.png");
+                addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
+                break;
             case "M01":
                 tile = new ColliderTile();
-                tile.setImage("Muro.png");      
+                tile.setImage("muro_1.png");      
+                break; 
+            case "M02":
+                tile.setImage("muro_1.png"); 
+                tile_2 = new ColliderTile();
+                tile_2.setImage("muro_2.png");
+                addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
+                break; 
+            case "M03":
+                tile.setImage("path_4.png"); 
+                tile_2 = new ColliderTile();
+                tile_2.setImage("muro_2.png"); 
+                addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
+                break; 
+            case "M04":
+                tile = new ColliderTile();
+                tile.setImage("muro_1.png"); 
+                tile_2.setImage("arbol_3.png"); 
+                addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
                 break; 
             case "G01" :
-                tile = new HidingTile();
+                tile = new TallGrass();
                 tile.setImage("tall_grass.png");
             }    
             if( tile != null)  
@@ -107,10 +147,27 @@ public abstract class TileWorld extends World
                 //addObject(tallo,12+x*TWIDTH, 12+y*THEIGHT);
     }
     
+    protected Counter getCounter(){
+        return this.ingCount;
+    }
+    
+    public void reset(){
+        this.hero.setLocation(spawnX,spawnY);
+        for(Enemy enemy : this.getObjects(Enemy.class)){
+            enemy.resetPosition();
+        }
+    }
+    
     private void prepare() { 
-        hero = new Heroe(100,2,"principal_enfrente.gif");
-        addObject(hero,spawnX,spawnY);  
+        hero = new Heroe(6,2,2,"principal_enfrente.gif");
+        addObject(hero,spawnX,spawnY); 
+        addObject(ingCount,100,40);
+        prepareIndividual();
         //HaloTile haloTile = new HaloTile();
         //addObject(haloTile,spawnX - 8,spawnY + 5);
     }
+    
+    public abstract void prepareIndividual();
+        
+    
 }

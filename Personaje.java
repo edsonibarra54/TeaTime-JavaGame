@@ -9,23 +9,30 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public abstract class Personaje extends Actor
 {
     protected int vida;
-    protected float velocidad;
+    protected int velocidadX,velocidadY;
     protected String imagen;
-    protected int colisionando=0;
     /**
      * Act - do whatever the Personaje wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Personaje(int vida,float velocidad,String imagen){
+    public Personaje(int vida,int velocidadX,int velocidadY,String imagen){
         this.vida = vida;
-        this.velocidad = velocidad;
+        this.velocidadX = velocidadX;
+        this.velocidadY = velocidadY;
         this.imagen = imagen;
         cambiaImagen(this.imagen);
     }
-    public void act()
+    public int getvida()
     {
-        
+        return vida;
     }
+    public void setvida(int x)
+    {
+        this.vida=x;
+    }
+    public abstract void act();
+        
+    
     protected void cambiaImagen(String imagen)
     {
         this.imagen=imagen;
@@ -46,5 +53,5 @@ public abstract class Personaje extends Actor
         }
         return colision;
     }*/
-    abstract void movimiento();
+    public abstract void movimiento();
 }
