@@ -12,15 +12,9 @@ public class Sala_1 extends TileWorld
      * Constructor for objects of class Sala_1.
      * 
      */
-    public Sala_1()
+    public Sala_1(int d)
     {
-        super(ListaDeMundoTiles.TilesMundo1(), 100, 300,new Counter("Ingredientes:"));    
-        salaDerecha = new PortalTile(1);
-        addObject(salaDerecha,600,200);
-    }
-    public Sala_1(int spawnX, int spawnY)
-    {
-        super(ListaDeMundoTiles.TilesMundo1(), spawnX, spawnY,new Counter("Ingredientes:"));    
+        super(ListaDeMundoTiles.TilesMundo1(), 100, 300,new Counter("Ingredientes:"),d);    
         salaDerecha = new PortalTile(1);
         addObject(salaDerecha,600,200);
     }

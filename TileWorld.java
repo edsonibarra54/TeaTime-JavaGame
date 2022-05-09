@@ -9,6 +9,7 @@ import java.util.List;
 public abstract class TileWorld extends World
 {
     static Actor hero;
+    private int difficulty;
     private int xOffset = 0;  
     private int SWIDTH = 600;//Ancho de pantalla 
     private int SHEIGHT = 400;//Alto de pantalla
@@ -20,10 +21,19 @@ public abstract class TileWorld extends World
     private  String[][] WORLD;
     private Counter ingCount;
 
-    /**
-     * Constructor for objects of class TileWorld.
-     * 
-     */
+    public TileWorld(String tiles[][], int sX, int sY,Counter ingCount, int d)
+    {    
+        super(600, 400, 1, true);
+        spawnX = sX;
+        spawnY = sY;
+        difficulty = d;
+        this.ingCount = ingCount;
+        this.WORLD = tiles;
+        createWorldFromTiles(); 
+        setPaintOrder(HeartTile.class,Tree.class,ColliderTile.class);
+        prepare();
+    }
+    
     public TileWorld(String tiles[][], int sX, int sY,Counter ingCount)
     {    
         super(600, 400, 1, true);
