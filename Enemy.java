@@ -13,12 +13,15 @@ public class Enemy extends Personaje
 {
     
     private ArrayList<GifImage> gifs = new ArrayList();
+    private LineOfSight los;
     private int spawnX,spawnY;
     private int pathlength,pathcounter;
     private int radioBusqueda = 80;
     private int velocidadX,velocidadY,rX,rY,vxabs,vyabs;//Variables que permiten modificar la velocidad;
     private int velocidadPersigueX,velocidadPersigueY;//Variables para modificar la velocidad con la que te perigue, util al cambiar dificultad
-    private boolean persigue=false,offPath=false;
+    private boolean persigue=false,offPath=false,losActive=true;
+    /*Si persigue = true, entonces no esta en rango el heroe, si offPath = true, quiere decir que el enemigo persigió al heroe y se 
+       salió de su ruta, si losActive = true, entonces el enemigo usa la vista linear en vez de radial*/
     private List<Heroe> heroInRange;
     public Enemy(String[] gifsarreglo,int pathL,int speedX,int speedY,int spawnX,int spawnY)
     {
@@ -34,6 +37,11 @@ public class Enemy extends Personaje
             gifs.add(gif);
         }
     }
+    
+    protected void addedToWorld(World w){
+        this.los = new LineOfSight(this);
+    }
+    
     public void act()
     {   
         revisarRango();
@@ -46,29 +54,37 @@ public class Enemy extends Personaje
         if(persigue){
             if(this.velocidadY==0){
                 if(this.velocidadX>0){
-                this.setImage(gifs.get(2).getCurrentImage());
+                    this.setImage(gifs.get(2).getCurrentImage());
+                    this.los.setOrientation(2);
                 }else{
                     this.setImage(gifs.get(3).getCurrentImage());
+                    this.los.setOrientation(3);
                 }
             }
             if(this.velocidadX==0){
                 if(this.velocidadY>0){
-                this.setImage(gifs.get(0).getCurrentImage());
+                    this.setImage(gifs.get(0).getCurrentImage());
+                    this.los.setOrientation(0);
                 }else{
                     this.setImage(gifs.get(1).getCurrentImage());
+                    this.los.setOrientation(1);
                 }
             }
 
         }else{
             if(this.velocidadY>0){
                 this.setImage(gifs.get(4).getCurrentImage());
+                this.los.setOrientation(0);
             }else if(this.velocidadY<0){
                 this.setImage(gifs.get(5).getCurrentImage());
+                this.los.setOrientation(1);
             }else{
                 if(this.velocidadX>0){
-                this.setImage(gifs.get(6).getCurrentImage());
+                    this.setImage(gifs.get(6).getCurrentImage());
+                    this.los.setOrientation(2);
                 }else{
                     this.setImage(gifs.get(7).getCurrentImage());
+                    this.los.setOrientation(3);
                 }
             }
             
@@ -77,12 +93,26 @@ public class Enemy extends Personaje
     }
     
     public void revisarRango(){//Revisa si hay algun heroe en el rango
-        heroInRange =getObjectsInRange(radioBusqueda,Heroe.class);
-        if(heroInRange.isEmpty()){
-            persigue = heroInRange.isEmpty();
+        if(losActive){
+            heroInRange = this.los.losClear();
+            if(heroInRange.isEmpty()){
+                persigue = heroInRange.isEmpty();
+            }else{
+                persigue = heroInRange.get(0).ocultar();
+                if(persigue == false){
+                    losActive = false;
+                }
+            }
+            
         }else{
-            persigue = heroInRange.get(0).ocultar();
+            heroInRange =getObjectsInRange(radioBusqueda,Heroe.class);
+            if(heroInRange.isEmpty()){
+                persigue = heroInRange.isEmpty();
+            }else{
+                persigue = heroInRange.get(0).ocultar();
+            }
         }
+
     }
     
     public void regresarASpawn(){
@@ -102,6 +132,7 @@ public class Enemy extends Personaje
             }
             if(this.spawnX==this.getX()&&this.spawnY==this.getY()){
                 this.offPath=false;
+                this.losActive=true;
                 this.resetPosition();
             }
     }
@@ -151,6 +182,22 @@ public class Enemy extends Personaje
         this.pathcounter=this.pathlength;
         this.rX=this.vxabs;
         this.rY=this.vyabs;
+    }
+    
+    public int getVelX(){
+        return rX;
+    }
+    
+    public int getVelY(){
+        return rY;
+    }
+    
+    public int getRadioB(){
+        return this.radioBusqueda;
+    }
+    
+    public int getPathCounter(){
+        return this.pathcounter;
     }
 }
 
