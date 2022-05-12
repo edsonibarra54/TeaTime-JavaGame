@@ -57,11 +57,12 @@ public class Heroe extends Personaje
         Actor Sonido = getOneIntersectingObject(TileActor.class);
         checa=Sonido.getImage().toString();
         imagen=checa;
-        World mundo = getWorld();
-        mundo.showText(imagen,300,300);
+        //World mundo = getWorld();
+        //mundo.showText(imagen,300,300);
         if(sonido.isPlaying()==false && tiempo!=0)
         {
             sonido=new GreenfootSound("pasto.mp3");
+            sonido.setVolume(50);
             sonido.play();
         }
         if(getX()==antX && getY()==antY && tiempo!=0)
@@ -226,9 +227,13 @@ public class Heroe extends Personaje
                 //enemigo.retrocede(getX(),getY());
                 
             }*/
+            GreenfootSound sonido = new GreenfootSound("Golpe.mp3");
+            sonido.setVolume(60);
+            sonido.play();
             TileWorld world = this.getWorldOfType(TileWorld.class);
             world.reset();
             super.setvida(super.getvida()-1);
+            Dificultad.vidaHeroe=super.getvida();
             crea_contenedores=1;
             setcorazon_seteado();
         }

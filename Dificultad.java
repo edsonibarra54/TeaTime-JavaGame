@@ -8,6 +8,8 @@ public class Dificultad
 {
     // instance variables - replace the example below with your own
     private int x;
+    public static int vidaHeroe=6;
+    public static int nivelDificultad=0;
     public static int RadioBusqueda=80;
     public static int velocidadX,velocidadY;
     /**

@@ -22,8 +22,12 @@ public class Ingrediente extends Actor
     public void Recoger(){
         if(isTouching(Heroe.class)){
             TileWorld world = getWorldOfType(TileWorld.class);
+            GreenfootSound recogido = new GreenfootSound("Ingrediente.mp3");
+            recogido.setVolume(45);
+            recogido.play();
             world.removeObject(this);
             world.getCounter().add();
+            
         }
     }
     

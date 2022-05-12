@@ -13,6 +13,7 @@ public class Play extends Button
      * Act - do whatever the Play wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    private int tiempo=100;
     public Play(){
         super("circulo_naranja.png","anillo_azul.png");
         intro.playLoop();
@@ -21,8 +22,24 @@ public class Play extends Button
     {
         intro.stop();
     }
+    public void act()
+    {
+        super.act();
+        if(tiempo<100)
+        {
+            tiempo++;
+            if(tiempo==100)
+            {
+            World mundo = getWorld();
+            mundo.showText("",300,350);
+            tiempo=0;                
+            }
+        }
+    }
     @Override
     public void clickedAction(){
+        if(Dificultad.nivelDificultad!=0)
+        {
         ListaDeMundoTiles.DesactivaLamusicaActual=true;
         World world= getWorld();
         stop();
@@ -31,5 +48,13 @@ public class Play extends Button
         world.stopped();
         world = new Sala_1(1);
         Greenfoot.setWorld(world);
+        }else
+        {
+            World mundo = getWorld();
+            mundo.showText("Debes elegir una dificultad!",300,350);
+            tiempo=0;
+intro=new GreenfootSound("Efecto de sonido audiencia sorprendida (128 kbps).mp3");
+        intro.play();
+        }
     }
 }

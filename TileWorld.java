@@ -178,7 +178,7 @@ public abstract class TileWorld extends World
     }
     
     private void prepare() { 
-        hero = new Heroe(6,2,2,"principal_enfrente.gif");
+        hero = new Heroe(Dificultad.vidaHeroe,2,2,"principal_enfrente.gif");
         addObject(hero,spawnX,spawnY); 
         addObject(ingCount,100,40);
         prepareIndividual();
