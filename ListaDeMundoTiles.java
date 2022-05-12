@@ -8,6 +8,7 @@ public class ListaDeMundoTiles
 {
     // instance variables - replace the example below with your own
     private int x;
+    public static boolean DesactivaLamusicaActual=false;
     private static final String Tiles1[][] = {  {"A02","A01","A01","A01","A01","A01","A01","A01","A01","A01","A01","A01","A01","A01","A01","A01","A01","A01","A01","A01","A01","A01","A01","A02"},    
                                                 {"A02","g04","g02","g04","g04","g04","g04","g02","g04","g04","g04","g04","g01","g03","g04","g04","g04","g03","g02","g04","g04","g04","g04","A02"},    
                                                 {"A02","g04","g04","G01","G01","G01","G01","G01","G01","G01","G01","G01","G01","G01","G01","G01","G01","G01","G01","G01","G01","g01","g04","A02"},    

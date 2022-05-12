@@ -15,7 +15,7 @@ public class Enemy extends Personaje
     private ArrayList<GifImage> gifs = new ArrayList();
     private int spawnX,spawnY;
     private int pathlength,pathcounter;
-    private int radioBusqueda = 80;
+    private int radioBusqueda = Dificultad.RadioBusqueda;
     private int velocidadX,velocidadY,rX,rY,vxabs,vyabs;//Variables que permiten modificar la velocidad;
     private int velocidadPersigueX,velocidadPersigueY;//Variables para modificar la velocidad con la que te perigue, util al cambiar dificultad
     private boolean persigue=false,offPath=false;
@@ -28,7 +28,8 @@ public class Enemy extends Personaje
         this.velocidadY=this.rY=this.vyabs=speedY;
         this.spawnX=spawnX;
         this.spawnY=spawnY;
-        velocidadPersigueX = velocidadPersigueY = 1;
+        velocidadPersigueX =  Dificultad.velocidadX;
+        velocidadPersigueY = Dificultad.velocidadY;
         for(String nombreGif : gifsarreglo){//Este ciclo simplifica el agregar los gifs
             GifImage gif=new GifImage(nombreGif);
             gifs.add(gif);

@@ -17,6 +17,10 @@ public class Heroe extends Personaje
     private GifImage gif_espalda = new GifImage("principal_espalda.gif");
     private GifImage gif_derecha = new GifImage("principal_derecha.gif");
     private GifImage gif_izquierda = new GifImage("principal_izquierda.gif");
+    private GreenfootSound sonido=new GreenfootSound("pasto.mp3");
+    private String checa;
+    private int antX,antY;
+    private int tiempo=50;
     /**
      * Act - do whatever the Heroe wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -36,6 +40,7 @@ public class Heroe extends Personaje
             corazones.getImage().mirrorHorizontally();
             corazon.add(corazones);
         }
+        antX=antY=300;
     }
     public void addActorAtTileLocation(int i)
     {
@@ -45,6 +50,43 @@ public class Heroe extends Personaje
         {
             mundo.addObject(contenedor,0,0);            
         }
+    }
+    public void reproduceSonido()
+    {
+        String imagen;
+        Actor Sonido = getOneIntersectingObject(TileActor.class);
+        checa=Sonido.getImage().toString();
+        imagen=checa;
+        World mundo = getWorld();
+        mundo.showText(imagen,300,300);
+        if(sonido.isPlaying()==false && tiempo!=0)
+        {
+            sonido=new GreenfootSound("pasto.mp3");
+            sonido.play();
+        }
+        if(getX()==antX && getY()==antY && tiempo!=0)
+        {
+            tiempo--;
+        }else
+        {
+            if(tiempo==0)
+            {
+                sonido.stop();
+            }
+            if(getX()!=antX || getY()!=antY)
+            {
+                tiempo=25;
+            }
+            
+        }
+        /*if(imagen=="grass_1.png" || imagen=="grass_2.png" || imagen=="grass_3.png" || imagen=="grass_4.png")
+        {
+            
+            sonido=new GreenfootSound("pasto.mp3");
+            sonido.play();
+        }*/
+        antX=getX();
+        antY=getY();
     }
     @Override
     public void act()
@@ -57,10 +99,12 @@ public class Heroe extends Personaje
             ocultar();
             poder();
             setImage(myGif.getCurrentImage());
+            reproduceSonido();
             if (Greenfoot.isKeyDown("e") && unica==1){
             super.setvida(super.getvida()+1);
             unica=0;
             setcorazon_seteado();
+            
             }
         }else
         {
