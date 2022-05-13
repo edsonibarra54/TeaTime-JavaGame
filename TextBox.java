@@ -8,6 +8,10 @@ public class TextBox extends Actor {
      private Color foreground;
      private Color background;
     
+     public TextBox(){
+         
+     }
+     
      public TextBox(String s, int fs /*boolean b, Color fg, Color bg*/) {
          super();
          fontSize = fs;

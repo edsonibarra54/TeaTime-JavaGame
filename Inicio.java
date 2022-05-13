@@ -18,8 +18,6 @@ public class Inicio extends World
         setBackground("title_screen.png");
         Title title = new Title();
         addObject(title,298,0);
-        TextBox instruction = new TextBox("Presiona SPACE para continuar",20);
-        addObject(instruction,298,350);
         Nube2 nube_2 = new Nube2("nube_2.gif");
         addObject(nube_2,300,140);
         Nube1 nube_3 = new Nube1("nube_3.gif");
