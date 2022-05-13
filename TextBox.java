@@ -1,5 +1,5 @@
 import greenfoot.*;
-import java.awt.Color;
+//import java.awt.Color;
 
 public class TextBox extends Actor {
      private GreenfootImage img;
@@ -8,13 +8,13 @@ public class TextBox extends Actor {
      private Color foreground;
      private Color background;
     
-     public TextBox(String s, int fs, boolean b, Color fg, java.awt.Color bg) {
+     public TextBox(String s, int fs /*boolean b, Color fg, Color bg*/) {
          super();
          fontSize = fs;
-         foreground = fg;
-         background = bg;
-         img = new GreenfootImage(s, fontSize, foreground, background);
-         border = b;
+         //foreground = fg;
+         //background = bg;
+         img = new GreenfootImage(s, fontSize, null, null);
+         //border = b;
          display();
      }
     
