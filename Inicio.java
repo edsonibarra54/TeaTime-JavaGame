@@ -5,6 +5,7 @@ public class Inicio extends World
     public Inicio()
     {   
         super(600, 400, 1); 
+        setPaintOrder(Nube2.class, Title.class, Nube1.class);
         prepare();
     }
     
@@ -15,10 +16,11 @@ public class Inicio extends World
     private void prepare()
     {
         setBackground("title_screen.png");
-        Button button = new Play();
-        addObject(button,291,271);
-        button.setLocation(301,301);
         Title title = new Title();
         addObject(title,298,0);
+        Nube2 nube_2 = new Nube2("nube_2.gif");
+        addObject(nube_2,300,140);
+        Nube1 nube_3 = new Nube1("nube_3.gif");
+        addObject(nube_3,300,30);
     }
 }

@@ -19,7 +19,16 @@ public class Title extends Actor
     {
         tempo++;
         if(tempo<70){
-            setLocation(getX(), getY()+dy);
+            setLocation(getX(), getY() + dy);
+        }
+        else{
+            if (Greenfoot.isKeyDown("SPACE")){
+                Inicio world = getWorldOfType(Inicio.class);
+                world.removeObject(this);
+                Button button = new Play();
+                world.addObject(button,291,271);
+                button.setLocation(301,301);
+            }
         }
     }
 }
