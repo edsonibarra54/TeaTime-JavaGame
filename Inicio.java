@@ -5,7 +5,7 @@ public class Inicio extends World
     public Inicio()
     {   
         super(600, 400, 1); 
-        setPaintOrder(Nube2.class, Title.class, Nube1.class);
+        setPaintOrder(TextBox.class, Button.class, Nube2.class, Title.class, Nube1.class);
         prepare();
     }
     
