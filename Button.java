@@ -1,14 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public abstract class Button extends Actor
+public class Button extends Actor
 {
-    protected String first;
-    protected String second;
+    private String image;
+    private int difficulty;
     
-    public Button(String f, String s){
-        first = f;
-        second = s;
-        setImage(f);
+    public Button(String s, int d){
+        image = s;
+        difficulty = d;
+        setImage(s);
     }
     
     public void act()
@@ -18,13 +18,12 @@ public abstract class Button extends Actor
     
     private void handleMouseClicks(){
         if(Greenfoot.mousePressed(this)){
-            setImage(second);
-        }
-        else if(Greenfoot.mouseClicked(this)){
-            setImage(first);
             clickedAction();
         }
     }
     
-    public abstract void clickedAction();
+    public void clickedAction(){
+        World world = new Sala_1(1);
+        Greenfoot.setWorld(world);
+    }
 }
