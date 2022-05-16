@@ -6,6 +6,7 @@ public class Inicio extends World
     {   
         super(600, 400, 1); 
         prepare();
+        Dificultad.nivelDificultad=0;
         //intro.stop();
         //intro.playLoop();
     }
