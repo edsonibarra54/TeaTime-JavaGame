@@ -20,11 +20,17 @@ public class Sala_2 extends TileWorld
         addObject(halo,spawnX - 8,spawnY + 5);
         salaIzquierda = new PortalTile(1);
         addObject(salaIzquierda,1,150);
+        salaDerecha = new PortalTile(1);
+        addObject(salaDerecha,600,200);
     }
     
     public void act(){
         if(salaIzquierda.isHeroOn()){
             World world = new Sala_1(575,200,super.getCounter());
+            Greenfoot.setWorld(world);
+        }
+        if(salaDerecha.isHeroOn()){
+            World world = new sala_5(10,150,super.getCounter());
             Greenfoot.setWorld(world);
         }
     }

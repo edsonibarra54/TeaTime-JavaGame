@@ -218,7 +218,7 @@ public class Heroe extends Personaje
     }
     public void poder()
     {
-        if(isTouching(Enemy.class))
+        if(isTouching(Enemy.class) || isTouching(Projectile.class))
         {
             /* List<Enemy> enemigos =getObjectsInRange(80,Enemy.class);
             for(Enemy enemigo:enemigos)

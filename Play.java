@@ -53,8 +53,8 @@ public class Play extends Button
             World mundo = getWorld();
             mundo.showText("Debes elegir una dificultad!",300,350);
             tiempo=0;
-intro=new GreenfootSound("Efecto de sonido audiencia sorprendida (128 kbps).mp3");
-        intro.play();
+            GreenfootSound intra=new GreenfootSound("Efecto de sonido audiencia sorprendida (128 kbps).mp3");
+            intra.play();
         }
     }
 }

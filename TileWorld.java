@@ -10,6 +10,7 @@ public abstract class TileWorld extends World
 {
     static Actor hero;
     private int difficulty;
+    protected boolean shadow=false;
     private int xOffset = 0;  
     private int SWIDTH = 600;//Ancho de pantalla 
     private int SHEIGHT = 400;//Alto de pantalla
@@ -30,7 +31,9 @@ public abstract class TileWorld extends World
         this.ingCount = ingCount;
         this.WORLD = tiles;
         createWorldFromTiles(); 
-        setPaintOrder(HeartTile.class,Tree.class,ColliderTile.class);
+        
+        setPaintOrder(HeartTile.class,Counter.class,ShadowTile.class,Tree.class,ColliderTile.class,Projectile.class,TrapTile.class,Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
+        //setPaintOrder();
         prepare();
     }
     
@@ -42,10 +45,21 @@ public abstract class TileWorld extends World
         this.ingCount = ingCount;
         this.WORLD = tiles;
         createWorldFromTiles(); 
-        setPaintOrder(HeartTile.class,Tree.class,ColliderTile.class);
+        setPaintOrder(Counter.class,HeartTile.class,ShadowTile.class,Heroe.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
         prepare();
     }
-    
+    public TileWorld(String tiles[][], int sX, int sY,Counter ingCount,boolean boleano)
+    {    
+        super(600, 400, 1, true);
+        shadow=boleano;
+        spawnX = sX;
+        spawnY = sY;
+        this.ingCount = ingCount;
+        this.WORLD = tiles;
+        createWorldFromTiles(); 
+        setPaintOrder(Counter.class,HeartTile.class,ShadowTile.class,Heroe.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
+        prepare();
+    }
     private void createWorldFromTiles() {    
         for( int i=0; i < WORLD.length; i++ ) {      
             for( int j=0; j < SWIDTH/TWIDTH; j++ ) {        
@@ -160,11 +174,31 @@ public abstract class TileWorld extends World
             case "G01" :
                 tile = new TallGrass();
                 tile.setImage("tall_grass.png");
+                break;
+                case "G02":
+                tile = new TallGrass();
+                
+                tile.setImage("tall_grass.png");                
+                tile.getImage().scale(35,25);
+                break;
+            case "J00" :
+                tile.setImage("grass_4.png");
+                tile_2 = new Rock();
+                addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
+                break;
+                default : tile = new TallGrass();
+                
+                
             }    
+            if(shadow==true)
+            {
+                ShadowTile sombra = new ShadowTile();
+                addObject(sombra, 12+x*TWIDTH, 12+y*THEIGHT);
+            }
             if( tile != null)  
                 addObject(tile, 12+x*TWIDTH, 12+y*THEIGHT);  
                 //addObject(tallo,12+x*TWIDTH, 12+y*THEIGHT);
-    }
+            }
     
     protected Counter getCounter(){
         return this.ingCount;
