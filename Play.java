@@ -15,7 +15,7 @@ public class Play extends Button
      */
     private int tiempo=100;
     public Play(){
-        super("circulo_naranja.png","anillo_azul.png");
+        super("circulo_naranja.png",1/*"anillo_azul.png"*/);
         intro.playLoop();
     }
     public void stop()

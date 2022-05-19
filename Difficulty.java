@@ -5,7 +5,7 @@ public class Difficulty extends Button
     private int diff;
     
     public Difficulty(int d){
-        super("circulo_naranja.png","anillo_azul.png");
+        super("circulo_naranja.png",1/*"anillo_azul.png"*/);
         diff = d;
 
     }
@@ -39,4 +39,5 @@ public class Difficulty extends Button
             Dificultad.nivelDificultad=3;
         }
     }
+    
 }
