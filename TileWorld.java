@@ -21,7 +21,11 @@ public abstract class TileWorld extends World
     PortalTile salaArriba, salaAbajo, salaIzquierda, salaDerecha;
     private  String[][] WORLD;
     private Counter ingCount;
-
+    
+    public TileWorld()
+    {
+        super(600, 400, 1, true);
+    }
     public TileWorld(String tiles[][], int sX, int sY,Counter ingCount, int d)
     {    
         super(600, 400, 1, true);
