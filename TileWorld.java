@@ -36,7 +36,7 @@ public abstract class TileWorld extends World
         this.WORLD = tiles;
         createWorldFromTiles(); 
         
-        setPaintOrder(HeartTile.class,Counter.class,ShadowTile.class,Tree.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
+        setPaintOrder(LineOfSight.class,HeartTile.class,Counter.class,ShadowTile.class,Tree.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
         //setPaintOrder();
         prepare();
     }

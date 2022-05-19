@@ -30,30 +30,7 @@ public class Button extends Actor
     
     public void clickedAction()
     {
-        if(difficulty==1)
-        {
-            Dificultad.RadioBusqueda=80;
-            Dificultad.velocidadX=1;
-            Dificultad.velocidadY=1;
-            Dificultad.vidaHeroe=10;
-            Dificultad.nivelDificultad=1;
-        }
-        if(difficulty==2)
-        {
-            Dificultad.RadioBusqueda=100;
-            Dificultad.velocidadX=2;
-            Dificultad.velocidadY=1;
-            Dificultad.vidaHeroe=6;
-            Dificultad.nivelDificultad=2;
-        }
-        if(difficulty==3)
-        {
-            Dificultad.RadioBusqueda=130;
-            Dificultad.velocidadX=1;
-            Dificultad.velocidadY=2;
-            Dificultad.vidaHeroe=2;
-            Dificultad.nivelDificultad=3;
-        }
+        Dificultad.changeDifficulty(this.difficulty);
         World world = new Sala_1(1);
         Greenfoot.setWorld(world);
     }
