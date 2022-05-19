@@ -16,7 +16,7 @@ public abstract class Personaje extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public Personaje(int vida,int velocidadX,int velocidadY,String imagen){
-        this.vida = vida;
+        this.vida = Dificultad.vidaHeroe;
         this.velocidadX = velocidadX;
         this.velocidadY = velocidadY;
         this.imagen = imagen;

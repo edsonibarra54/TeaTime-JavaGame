@@ -8,21 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Sala_1 extends TileWorld
 {
+    //private Actor halo;
     /**
      * Constructor for objects of class Sala_1.
      * 
      */
-    public Sala_1()
+    public Sala_1(int d)
     {
-        super(ListaDeMundoTiles.TilesMundo1(), 100, 300,new Counter("Ingredientes:"));    
+        super(ListaDeMundoTiles.TilesMundo1(), 100, 300,new Counter("Ingredientes:"),d);    
         salaDerecha = new PortalTile(1);
         addObject(salaDerecha,600,200);
-    }
-    public Sala_1(int spawnX, int spawnY)
-    {
-        super(ListaDeMundoTiles.TilesMundo1(), spawnX, spawnY,new Counter("Ingredientes:"));    
-        salaDerecha = new PortalTile(1);
-        addObject(salaDerecha,600,200);
+        salaIzquierda = new PortalTile(1);
+        addObject(salaIzquierda,1,150);
     }
     
     public Sala_1(int spawnX, int spawnY,Counter count)
@@ -35,6 +32,10 @@ public class Sala_1 extends TileWorld
     public void act(){
         if(salaDerecha.isHeroOn()){
             World world = new Sala_2(10,150,super.getCounter());
+            Greenfoot.setWorld(world);
+        }
+        if(salaIzquierda.isHeroOn()){
+            World world = new sala_5(575,200,super.getCounter());
             Greenfoot.setWorld(world);
         }
     }

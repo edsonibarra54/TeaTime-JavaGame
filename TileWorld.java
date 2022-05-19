@@ -9,6 +9,8 @@ import java.util.List;
 public abstract class TileWorld extends World
 {
     static Actor hero;
+    private int difficulty;
+    protected boolean shadow=false;
     private int xOffset = 0;  
     private int SWIDTH = 600;//Ancho de pantalla 
     private int SHEIGHT = 400;//Alto de pantalla
@@ -19,11 +21,26 @@ public abstract class TileWorld extends World
     PortalTile salaArriba, salaAbajo, salaIzquierda, salaDerecha;
     private  String[][] WORLD;
     private Counter ingCount;
-
-    /**
-     * Constructor for objects of class TileWorld.
-     * 
-     */
+    
+    public TileWorld()
+    {
+        super(600, 400, 1, true);
+    }
+    public TileWorld(String tiles[][], int sX, int sY,Counter ingCount, int d)
+    {    
+        super(600, 400, 1, true);
+        spawnX = sX;
+        spawnY = sY;
+        difficulty = d;
+        this.ingCount = ingCount;
+        this.WORLD = tiles;
+        createWorldFromTiles(); 
+        
+        setPaintOrder(LineOfSight.class,HeartTile.class,Counter.class,ShadowTile.class,Tree.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
+        //setPaintOrder();
+        prepare();
+    }
+    
     public TileWorld(String tiles[][], int sX, int sY,Counter ingCount)
     {    
         super(600, 400, 1, true);
@@ -32,11 +49,21 @@ public abstract class TileWorld extends World
         this.ingCount = ingCount;
         this.WORLD = tiles;
         createWorldFromTiles(); 
-        setPaintOrder(ColliderTile.class);
-        setPaintOrder(Tree.class);
+        setPaintOrder(Counter.class,HeartTile.class,ShadowTile.class,Heroe.class/*,TrapTile.class*/,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
         prepare();
     }
-    
+    public TileWorld(String tiles[][], int sX, int sY,Counter ingCount,boolean boleano)
+    {    
+        super(600, 400, 1, true);
+        shadow=boleano;
+        spawnX = sX;
+        spawnY = sY;
+        this.ingCount = ingCount;
+        this.WORLD = tiles;
+        createWorldFromTiles(); 
+        setPaintOrder(Counter.class,HeartTile.class,ShadowTile.class,Heroe.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
+        prepare();
+    }
     private void createWorldFromTiles() {    
         for( int i=0; i < WORLD.length; i++ ) {      
             for( int j=0; j < SWIDTH/TWIDTH; j++ ) {        
@@ -116,6 +143,16 @@ public abstract class TileWorld extends World
                 tile_2.setImage("arbol_3.png");
                 addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
                 break;
+            case "A05":
+                tile.setImage("path_11.png");  
+                tile_2.setImage("arbol_3.png");
+                addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
+                break;
+            case "A06":
+                tile.setImage("path_10.png");  
+                tile_2.setImage("arbol_3.png");
+                addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
+                break;
             case "M01":
                 tile = new ColliderTile();
                 tile.setImage("muro_1.png");      
@@ -141,11 +178,31 @@ public abstract class TileWorld extends World
             case "G01" :
                 tile = new TallGrass();
                 tile.setImage("tall_grass.png");
+                break;
+                case "G02":
+                tile = new TallGrass();
+                
+                tile.setImage("tall_grass.png");                
+                tile.getImage().scale(35,25);
+                break;
+            case "J00" :
+                tile.setImage("grass_4.png");
+                tile_2 = new TallGrass();
+                addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
+                break;
+                default : tile = new TallGrass();
+                
+                
             }    
+            if(shadow==true)
+            {
+                ShadowTile sombra = new ShadowTile();
+                addObject(sombra, 12+x*TWIDTH, 12+y*THEIGHT);
+            }
             if( tile != null)  
                 addObject(tile, 12+x*TWIDTH, 12+y*THEIGHT);  
                 //addObject(tallo,12+x*TWIDTH, 12+y*THEIGHT);
-    }
+            }
     
     protected Counter getCounter(){
         return this.ingCount;
@@ -159,7 +216,7 @@ public abstract class TileWorld extends World
     }
     
     private void prepare() { 
-        hero = new Heroe(6,2,2,"principal_enfrente.gif");
+        hero = new Heroe(Dificultad.vidaHeroe,2,2,"principal_enfrente.gif");
         addObject(hero,spawnX,spawnY); 
         addObject(ingCount,100,40);
         prepareIndividual();
