@@ -15,6 +15,7 @@ public class Projectile extends Actor
     private int destinoX,destinoY,transparency=30;
     public Projectile(int destinoX,int destinoY)
     {
+        setImage("muro_1.png");
         this.getImage().setTransparency(30);
         this.destinoX=destinoX;
         this.destinoY=destinoY;

@@ -54,6 +54,11 @@ public class Button extends Actor
             Dificultad.vidaHeroe=2;
             Dificultad.nivelDificultad=3;
         }
+        if(getObjectsInRange(1000,JukeBox.class).size()>0)
+        {
+            getObjectsInRange(1000,JukeBox.class).get(0).silencio();
+        }
+        ListaDeMundoTiles.DesactivaLamusica=true;
         World world = new Sala_1(1);
         Greenfoot.setWorld(world);
     }

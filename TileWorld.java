@@ -49,7 +49,7 @@ public abstract class TileWorld extends World
         this.ingCount = ingCount;
         this.WORLD = tiles;
         createWorldFromTiles(); 
-        setPaintOrder(Counter.class,HeartTile.class,ShadowTile.class,Heroe.class/*,TrapTile.class*/,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
+        setPaintOrder(Counter.class,HeartTile.class,ShadowTile.class,Heroe.class,TrapTile.class/*,TrapTile.class*/,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
         prepare();
     }
     public TileWorld(String tiles[][], int sX, int sY,Counter ingCount,boolean boleano)
@@ -61,7 +61,7 @@ public abstract class TileWorld extends World
         this.ingCount = ingCount;
         this.WORLD = tiles;
         createWorldFromTiles(); 
-        setPaintOrder(Counter.class,HeartTile.class,ShadowTile.class,Heroe.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
+        setPaintOrder(Counter.class,HeartTile.class,ShadowTile.class,Heroe.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
         prepare();
     }
     private void createWorldFromTiles() {    
@@ -73,7 +73,7 @@ public abstract class TileWorld extends World
     }
     
     public void addActorAtTileLocation(String c, int x, int y){
-        Actor tile = new NoColliderTile(); 
+         Actor tile = new NoColliderTile(); 
         Actor tile_2 = new Tree();
         //Actor tallo = new MiniShadowTile();
         switch(c) { 
@@ -187,7 +187,12 @@ public abstract class TileWorld extends World
                 break;
             case "J00" :
                 tile.setImage("grass_4.png");
-                tile_2 = new TallGrass();
+                tile_2 = new Rock();
+                addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
+                break;
+            case "J01" :
+                tile.setImage("grass_4.png");
+                tile_2 = new ArrowDispenserTile(1);
                 addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
                 break;
                 default : tile = new TallGrass();
@@ -202,7 +207,7 @@ public abstract class TileWorld extends World
             if( tile != null)  
                 addObject(tile, 12+x*TWIDTH, 12+y*THEIGHT);  
                 //addObject(tallo,12+x*TWIDTH, 12+y*THEIGHT);
-            }
+    }
     
     protected Counter getCounter(){
         return this.ingCount;
