@@ -31,7 +31,10 @@ public class Button extends Actor
     public void clickedAction()
     {
         Dificultad.changeDifficulty(this.difficulty);
-        World world = new Sala_1(1);
-        Greenfoot.setWorld(world);
+        World  w = this.getWorld();
+        //w.getObjects(JukeBox.class).get(0).stop();
+        World world = new Sala_1(1,w.getObjects(JukeBox.class).get(0));
+        //w.removeObject(w.getObjects(JukeBox.class).get(0));
+        Greenfoot.setWorld(world); 
     }
 }

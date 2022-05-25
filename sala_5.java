@@ -13,9 +13,9 @@ private Actor halo;
      * Constructor for objects of class sala_5.
      * 
      */
-    public sala_5(int spawnX, int spawnY,Counter count)
+    public sala_5(int spawnX, int spawnY,Counter count,JukeBox jb)
     {
-        super(ListaDeMundoTiles.TilesMundo3(), spawnX, spawnY,count); 
+        super(ListaDeMundoTiles.TilesMundo3(), spawnX, spawnY,count,jb); 
         halo = new HaloTile();
         addObject(halo,spawnX - 8,spawnY + 5);
         salaIzquierda = new PortalTile(1);

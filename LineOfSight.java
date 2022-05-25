@@ -19,8 +19,8 @@ public class LineOfSight extends Actor
         this.large = this.owner.getRadioB();
         this.image = new GreenfootImage(large,width);
         this.setImage(this.image);
-        /*this.image.setColor(Color.RED);//Codigo para hacerla visible
-        this.image.fill();*/
+        this.image.setColor(Color.RED);//Codigo para hacerla visible
+        this.image.fill();
         this.addToWorld();
     }
     

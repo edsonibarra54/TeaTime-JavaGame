@@ -13,29 +13,29 @@ public class Sala_1 extends TileWorld
      * Constructor for objects of class Sala_1.
      * 
      */
-    public Sala_1(int d)
+    public Sala_1(int d, JukeBox jb)
     {
-        super(ListaDeMundoTiles.TilesMundo1(), 100, 300,new Counter("Ingredientes:"),d);    
+        super(ListaDeMundoTiles.TilesMundo1(), 100, 300,new Counter("Ingredientes:"),d,jb);    
         salaDerecha = new PortalTile(1);
         addObject(salaDerecha,600,200);
         salaIzquierda = new PortalTile(1);
         addObject(salaIzquierda,1,150);
     }
     
-    public Sala_1(int spawnX, int spawnY,Counter count)
+    public Sala_1(int spawnX, int spawnY,Counter count,JukeBox jb)
     {
-        super(ListaDeMundoTiles.TilesMundo1(), spawnX, spawnY,count);    
+        super(ListaDeMundoTiles.TilesMundo1(), spawnX, spawnY,count,jb);    
         salaDerecha = new PortalTile(1);
         addObject(salaDerecha,600,200);
     }
 
     public void act(){
         if(salaDerecha.isHeroOn()){
-            World world = new Sala_2(10,150,super.getCounter());
+            World world = new Sala_2(10,150,getCounter(),getJB());
             Greenfoot.setWorld(world);
         }
         if(salaIzquierda.isHeroOn()){
-            World world = new sala_5(575,200,super.getCounter());
+            World world = new sala_5(575,200,getCounter(),getJB());
             Greenfoot.setWorld(world);
         }
     }
@@ -47,6 +47,7 @@ public class Sala_1 extends TileWorld
     @Override
     public void prepareIndividual()
     {
+        this.jukebox.changeSong("Take some rest.mp3");
         Actor ingrediente = new Ingrediente("objeto.png");
         addObject(ingrediente,300,250);
         Actor enemigo1 = new Enemy(ListaDeSprites.enemigo1,200,1,0,100,100);

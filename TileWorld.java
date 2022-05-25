@@ -9,6 +9,7 @@ import java.util.List;
 public abstract class TileWorld extends World
 {
     static Actor hero;
+    protected JukeBox jukebox;
     private int difficulty;
     protected boolean shadow=false;
     private int xOffset = 0;  
@@ -26,12 +27,13 @@ public abstract class TileWorld extends World
     {
         super(600, 400, 1, true);
     }
-    public TileWorld(String tiles[][], int sX, int sY,Counter ingCount, int d)
+    public TileWorld(String tiles[][], int sX, int sY,Counter ingCount, int d, JukeBox jb)
     {    
         super(600, 400, 1, true);
         spawnX = sX;
         spawnY = sY;
         difficulty = d;
+        this.jukebox = jb;
         this.ingCount = ingCount;
         this.WORLD = tiles;
         createWorldFromTiles(); 
@@ -41,7 +43,7 @@ public abstract class TileWorld extends World
         prepare();
     }
     
-    public TileWorld(String tiles[][], int sX, int sY,Counter ingCount)
+    public TileWorld(String tiles[][], int sX, int sY,Counter ingCount,JukeBox jb)
     {    
         super(600, 400, 1, true);
         spawnX = sX;
@@ -206,6 +208,10 @@ public abstract class TileWorld extends World
     
     protected Counter getCounter(){
         return this.ingCount;
+    }
+    
+    protected JukeBox getJB(){
+        return this.jukebox;
     }
     
     public void reset(){
