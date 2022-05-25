@@ -19,7 +19,7 @@ public class JukeBox extends Actor
         song.playLoop();
     }
     
-    public void changeSong(String newSong){
+    public void changeSong(String newSong){ 
         song.stop();
         song = new GreenfootSound(newSong);
         song.playLoop();

@@ -13,9 +13,9 @@ public class Sala_1 extends TileWorld
      * Constructor for objects of class Sala_1.
      * 
      */
-    public Sala_1(int d, JukeBox jb)
+    public Sala_1(int d)
     {
-        super(ListaDeMundoTiles.TilesMundo1(), 100, 300,new Counter("Ingredientes:"),d,jb);    
+        super(ListaDeMundoTiles.TilesMundo1(), 100, 300,new Counter("Ingredientes:"),d,new JukeBox("Take some rest.mp3"));    
         salaDerecha = new PortalTile(1);
         addObject(salaDerecha,600,200);
         salaIzquierda = new PortalTile(1);
@@ -31,11 +31,11 @@ public class Sala_1 extends TileWorld
 
     public void act(){
         if(salaDerecha.isHeroOn()){
-            World world = new Sala_2(10,150,getCounter(),getJB());
+            World world = new Sala_2(10,150,super.getCounter(),super.getJB());
             Greenfoot.setWorld(world);
-        }
-        if(salaIzquierda.isHeroOn()){
-            World world = new sala_5(575,200,getCounter(),getJB());
+        } 
+        if(salaIzquierda.isHeroOn()){    
+            World world = new sala_5(575,200,super.getCounter(),super.getJB());
             Greenfoot.setWorld(world);
         }
     }
@@ -45,9 +45,8 @@ public class Sala_1 extends TileWorld
      * That is: create the initial objects and add them to the world.
      */
     @Override
-    public void prepareIndividual()
-    {
-        this.jukebox.changeSong("Take some rest.mp3");
+    public void prepareIndividual() 
+    { 
         Actor ingrediente = new Ingrediente("objeto.png");
         addObject(ingrediente,300,250);
         Actor enemigo1 = new Enemy(ListaDeSprites.enemigo1,200,1,0,100,100);

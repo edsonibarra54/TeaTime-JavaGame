@@ -28,7 +28,7 @@ public class Inicio extends World
         Nube1 nube_3 = new Nube1("nube_3.gif");
         addObject(nube_3,300,30);
         JukeBox musica_inicial = new JukeBox("Title Theme.mp3");
-        addObject(musica_inicial,0,0);
+        addObject(musica_inicial,0,0); 
     }
 
 }

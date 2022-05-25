@@ -206,11 +206,11 @@ public abstract class TileWorld extends World
                 //addObject(tallo,12+x*TWIDTH, 12+y*THEIGHT);
             }
     
-    protected Counter getCounter(){
+    public Counter getCounter(){
         return this.ingCount;
     }
     
-    protected JukeBox getJB(){
+    public JukeBox getJB(){
         return this.jukebox;
     }
     
