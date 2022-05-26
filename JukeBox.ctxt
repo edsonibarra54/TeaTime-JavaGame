@@ -1,15 +1,13 @@
 #BlueJ class context
 comment0.target=JukeBox
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ JukeBox\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=cancion
-comment1.target=JukeBox(java.lang.String)
+comment1.params=newSong
+comment1.target=void\ changeSong(java.lang.String)
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ JukeBox\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-comment2.params=newSong
-comment2.target=void\ changeSong(java.lang.String)
+comment2.params=
+comment2.target=void\ stop()
 comment3.params=
-comment3.target=void\ stop()
+comment3.target=void\ act()
 comment4.params=
-comment4.target=void\ act()
-comment5.params=
-comment5.target=void\ silencio()
-numComments=6
+comment4.target=void\ silencio()
+numComments=5

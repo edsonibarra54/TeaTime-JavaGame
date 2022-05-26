@@ -9,7 +9,6 @@ import java.util.List;
 public abstract class TileWorld extends World
 {
     static Actor hero;
-    protected JukeBox jukebox;
     private int difficulty;
     protected boolean shadow=false;
     private int xOffset = 0;  
@@ -27,23 +26,22 @@ public abstract class TileWorld extends World
     {
         super(600, 400, 1, true);
     }
-    public TileWorld(String tiles[][], int sX, int sY,Counter ingCount, int d, JukeBox jb)
+    public TileWorld(String tiles[][], int sX, int sY,Counter ingCount, int d)
     {    
         super(600, 400, 1, true);
         spawnX = sX;
         spawnY = sY;
         difficulty = d;
-        this.jukebox = jb;
         this.ingCount = ingCount;
         this.WORLD = tiles;
         createWorldFromTiles(); 
         
-        setPaintOrder(LineOfSight.class,HeartTile.class,Counter.class,ShadowTile.class,Tree.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
+        setPaintOrder(Heroe.class,LineOfSight.class,HeartTile.class,Counter.class,ShadowTile.class,Tree.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
         //setPaintOrder();
         prepare();
     }
     
-    public TileWorld(String tiles[][], int sX, int sY,Counter ingCount,JukeBox jb)
+    public TileWorld(String tiles[][], int sX, int sY,Counter ingCount)
     {    
         super(600, 400, 1, true);
         spawnX = sX;
@@ -51,7 +49,7 @@ public abstract class TileWorld extends World
         this.ingCount = ingCount;
         this.WORLD = tiles;
         createWorldFromTiles(); 
-        setPaintOrder(Counter.class,HeartTile.class,ShadowTile.class,Heroe.class/*,TrapTile.class*/,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
+        setPaintOrder(Heroe.class,Counter.class,HeartTile.class,ShadowTile.class,Heroe.class/*,TrapTile.class*/,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
         prepare();
     }
     public TileWorld(String tiles[][], int sX, int sY,Counter ingCount,boolean boleano)
@@ -63,7 +61,7 @@ public abstract class TileWorld extends World
         this.ingCount = ingCount;
         this.WORLD = tiles;
         createWorldFromTiles(); 
-        setPaintOrder(Counter.class,HeartTile.class,ShadowTile.class,Heroe.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
+        setPaintOrder(Heroe.class,Counter.class,HeartTile.class,ShadowTile.class,Heroe.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
         prepare();
     }
     private void createWorldFromTiles() {    
@@ -210,9 +208,9 @@ public abstract class TileWorld extends World
         return this.ingCount;
     }
     
-    public JukeBox getJB(){
+    /*public JukeBox getJB(){
         return this.jukebox;
-    }
+    }*/
     
     public void reset(){
         this.hero.setLocation(spawnX,spawnY);

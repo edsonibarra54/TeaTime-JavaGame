@@ -15,29 +15,32 @@ public class Sala_1 extends TileWorld
      */
     public Sala_1(int d)
     {
-        super(ListaDeMundoTiles.TilesMundo1(), 100, 300,new Counter("Ingredientes:"),d,new JukeBox("Take some rest.mp3"));    
+        super(ListaDeMundoTiles.TilesMundo1(), 100, 300,new Counter("Ingredientes:"),d);    
         salaDerecha = new PortalTile(1);
         addObject(salaDerecha,600,200);
         salaIzquierda = new PortalTile(1);
         addObject(salaIzquierda,1,150);
     }
     
-    public Sala_1(int spawnX, int spawnY,Counter count,JukeBox jb)
+    public Sala_1(int spawnX, int spawnY,Counter count)
     {
-        super(ListaDeMundoTiles.TilesMundo1(), spawnX, spawnY,count,jb);    
+        super(ListaDeMundoTiles.TilesMundo1(), spawnX, spawnY,count);    
         salaDerecha = new PortalTile(1);
         addObject(salaDerecha,600,200);
     }
 
     public void act(){
-        if(salaDerecha.isHeroOn()){
-            World world = new Sala_2(10,150,super.getCounter(),super.getJB());
-            Greenfoot.setWorld(world);
-        } 
-        if(salaIzquierda.isHeroOn()){    
-            World world = new sala_5(575,200,super.getCounter(),super.getJB());
-            Greenfoot.setWorld(world);
+        if(this.getObjects(Heroe.class).isEmpty()!=true){
+            if(salaDerecha.isHeroOn()){
+                World world = new Sala_2(10,150,super.getCounter());
+                Greenfoot.setWorld(world);
+            } 
+            if(salaIzquierda.isHeroOn()){       
+                World world = new sala_5(570,200,super.getCounter());
+                Greenfoot.setWorld(world);
+            }
         }
+        
     }
     
     /**

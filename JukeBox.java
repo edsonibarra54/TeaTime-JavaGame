@@ -6,21 +6,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class JukeBox extends Actor
+public class JukeBox 
 {
-    private GreenfootSound song;    /**
+    private static GreenfootSound song = new GreenfootSound("Title Theme.mp3");    /**
      * Act - do whatever the JukeBox wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public JukeBox(String cancion)
-    {
-        song = new GreenfootSound(cancion);
-        getImage().setTransparency(1);
-        song.playLoop();
-    }
     
-    public void changeSong(String newSong){ 
-        song.stop();
+    public static void changeSong(String newSong){ 
+        if(song.isPlaying()){
+            song.stop();
+        }
         song = new GreenfootSound(newSong);
         song.playLoop();
     }

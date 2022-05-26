@@ -12,10 +12,10 @@ private Actor halo;
     /**
      * Constructor for objects of class sala_5.
      * 
-     */
-    public sala_5(int spawnX, int spawnY,Counter count,JukeBox jb)
+     */ 
+    public sala_5(int spawnX, int spawnY,Counter count)
     {
-        super(ListaDeMundoTiles.TilesMundo3(), spawnX, spawnY,count,jb); 
+        super(ListaDeMundoTiles.TilesMundo3(), spawnX, spawnY,count); 
         halo = new HaloTile();
         addObject(halo,spawnX - 8,spawnY + 5);
         salaIzquierda = new PortalTile(1);
@@ -33,7 +33,7 @@ private Actor halo;
             Greenfoot.setWorld(world);
         }
         if(salaDerecha.isHeroOn()){
-            World world = new Sala_1(10,150,super.getCounter(),super.getJB());
+            World world = new Sala_1(10,150,super.getCounter()); 
             GreenfootSound sonido= new GreenfootSound("Golpe.mp3");
             Greenfoot.setWorld(world);
         }

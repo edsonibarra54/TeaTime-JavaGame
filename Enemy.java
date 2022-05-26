@@ -52,10 +52,10 @@ public class Enemy extends Personaje
         cambiaImagen();
     }
     
-    public void changeSong(String song){
+    /*public void changeSong(String song){
         TileWorld w = this.getWorldOfType(TileWorld.class);
         w.getJB().changeSong(song);
-    }
+    }*/
     
     public void cambiaImagen(){
         if(persigue){
@@ -109,7 +109,7 @@ public class Enemy extends Personaje
                 persigue = heroInRange.get(0).ocultar();
                 if(persigue == false){
                     losActive = false;
-                    changeSong("Battle.mp3"); 
+                    JukeBox.changeSong("Battle.mp3"); 
                 }
             }
             
@@ -189,7 +189,7 @@ public class Enemy extends Personaje
     }
     
     public void resetPosition(){//Regresa al enemigo a su spawn
-        changeSong("Take some rest.mp3"); 
+        JukeBox.changeSong("Take some rest.mp3"); 
         this.setLocation(spawnX,spawnY);
         this.pathcounter=this.pathlength;
         this.rX=this.vxabs;
