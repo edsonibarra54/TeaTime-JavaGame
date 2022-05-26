@@ -27,6 +27,8 @@ public class Sala_1 extends TileWorld
         super(ListaDeMundoTiles.TilesMundo1(), spawnX, spawnY,count);    
         salaDerecha = new PortalTile(1);
         addObject(salaDerecha,600,200);
+        salaIzquierda = new PortalTile(1);
+        addObject(salaIzquierda,1,150);
     }
 
     public void act(){
