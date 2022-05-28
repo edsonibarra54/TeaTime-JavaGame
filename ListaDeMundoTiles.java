@@ -76,7 +76,7 @@ public class ListaDeMundoTiles
                                                 {"M01","g04","g01","p12","g01","M02","p12","p12","p12","p12","p12","M02","p12","p12","p12","p12","p12","p12","p12","p12","p12","p12","p12","M02"},    
                                                 {"M01","g04","g02","g01","g02","M02","p12","p12","p12","p12","p12","M02","p12","p12","p12","p12","p12","p12","p12","p12","p12","p12","p12","M02"},    
                                                 {"M01","M04","M04","M04","M04","M04","M04","M04","M04","M04","M04","M01","M01","M01","M01","M01","M01","M01","M01","M01","M01","M01","M01","M01"}};
-   
+        private static final String Tiles5[][]
                                                 /**
      * Constructor for objects of class ListaDeMundoTiles
      */
