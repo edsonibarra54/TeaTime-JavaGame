@@ -27,17 +27,22 @@ public class Sala_1 extends TileWorld
         super(ListaDeMundoTiles.TilesMundo1(), spawnX, spawnY,count);    
         salaDerecha = new PortalTile(1);
         addObject(salaDerecha,600,200);
+        salaIzquierda = new PortalTile(1);
+        addObject(salaIzquierda,1,150);
     }
 
     public void act(){
-        if(salaDerecha.isHeroOn()){
-            World world = new Sala_2(10,150,super.getCounter());
-            Greenfoot.setWorld(world);
+        if(this.getObjects(Heroe.class).isEmpty()!=true){
+            if(salaDerecha.isHeroOn()){
+                World world = new Sala_2(10,150,super.getCounter());
+                Greenfoot.setWorld(world);
+            } 
+            if(salaIzquierda.isHeroOn()){       
+                World world = new sala_5(570,200,super.getCounter());
+                Greenfoot.setWorld(world);
+            }
         }
-        if(salaIzquierda.isHeroOn()){
-            World world = new sala_5(575,200,super.getCounter());
-            Greenfoot.setWorld(world);
-        }
+        
     }
     
     /**
@@ -45,8 +50,8 @@ public class Sala_1 extends TileWorld
      * That is: create the initial objects and add them to the world.
      */
     @Override
-    public void prepareIndividual()
-    {
+    public void prepareIndividual() 
+    { 
         Actor ingrediente = new Ingrediente("objeto.png");
         addObject(ingrediente,300,250);
         Actor enemigo1 = new Enemy(ListaDeSprites.enemigo1,200,1,0,100,100);

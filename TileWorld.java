@@ -36,7 +36,7 @@ public abstract class TileWorld extends World
         this.WORLD = tiles;
         createWorldFromTiles(); 
         
-        setPaintOrder(LineOfSight.class,HeartTile.class,Counter.class,ShadowTile.class,Tree.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
+        setPaintOrder(Heroe.class,LineOfSight.class,HeartTile.class,Counter.class,ShadowTile.class,Tree.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
         //setPaintOrder();
         prepare();
     }
@@ -49,7 +49,7 @@ public abstract class TileWorld extends World
         this.ingCount = ingCount;
         this.WORLD = tiles;
         createWorldFromTiles(); 
-        setPaintOrder(Counter.class,HeartTile.class,ShadowTile.class,Heroe.class/*,TrapTile.class*/,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
+        setPaintOrder(Heroe.class,Counter.class,HeartTile.class,ShadowTile.class,Heroe.class/*,TrapTile.class*/,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
         prepare();
     }
     public TileWorld(String tiles[][], int sX, int sY,Counter ingCount,boolean boleano)
@@ -61,7 +61,7 @@ public abstract class TileWorld extends World
         this.ingCount = ingCount;
         this.WORLD = tiles;
         createWorldFromTiles(); 
-        setPaintOrder(Counter.class,HeartTile.class,ShadowTile.class,Heroe.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
+        setPaintOrder(Heroe.class,Counter.class,HeartTile.class,ShadowTile.class,Heroe.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
         prepare();
     }
     private void createWorldFromTiles() {    
@@ -204,9 +204,13 @@ public abstract class TileWorld extends World
                 //addObject(tallo,12+x*TWIDTH, 12+y*THEIGHT);
             }
     
-    protected Counter getCounter(){
+    public Counter getCounter(){
         return this.ingCount;
     }
+    
+    /*public JukeBox getJB(){
+        return this.jukebox;
+    }*/
     
     public void reset(){
         this.hero.setLocation(spawnX,spawnY);

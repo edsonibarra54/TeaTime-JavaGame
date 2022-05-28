@@ -8,12 +8,13 @@ import java.util.ArrayList;
  * 
  * @author (your name) 
  * @version (a version number or a date)
- */
+ */ 
 public class Enemy extends Personaje
 {
     
     private ArrayList<GifImage> gifs = new ArrayList();
     private LineOfSight los;
+    private int songFlag = 0;
     private int spawnX,spawnY;
     private int pathlength,pathcounter;
     private int radioBusqueda = Dificultad.RadioBusqueda;
@@ -41,7 +42,7 @@ public class Enemy extends Personaje
     
     protected void addedToWorld(World w){
         this.los = new LineOfSight(this);
-    }
+    } 
     
     public void act()
     {   
@@ -50,6 +51,11 @@ public class Enemy extends Personaje
         movimiento();
         cambiaImagen();
     }
+    
+    /*public void changeSong(String song){
+        TileWorld w = this.getWorldOfType(TileWorld.class);
+        w.getJB().changeSong(song);
+    }*/
     
     public void cambiaImagen(){
         if(persigue){
@@ -98,21 +104,25 @@ public class Enemy extends Personaje
             heroInRange = this.los.losClear();
             if(heroInRange.isEmpty()){
                 persigue = heroInRange.isEmpty();
+                
             }else{
                 persigue = heroInRange.get(0).ocultar();
                 if(persigue == false){
                     losActive = false;
+                    JukeBox.changeSong("Battle.mp3"); 
                 }
             }
             
         }else{
-            heroInRange =getObjectsInRange(radioBusqueda,Heroe.class);
+            heroInRange = getObjectsInRange(radioBusqueda,Heroe.class);
             if(heroInRange.isEmpty()){
                 persigue = heroInRange.isEmpty();
             }else{
-                persigue = heroInRange.get(0).ocultar();
+                persigue = heroInRange.get(0).ocultar(); 
             }
+    
         }
+
 
     }
     
@@ -131,7 +141,7 @@ public class Enemy extends Personaje
             }else {
                 this.velocidadY = -this.velocidadPersigueY;
             }
-            if(this.spawnX==this.getX()&&this.spawnY==this.getY()){
+            if(Math.abs(this.spawnX-this.getX())<=5&&Math.abs(this.spawnY-this.getY())<=5){
                 this.offPath=false;
                 this.losActive=true;
                 this.resetPosition();
@@ -149,9 +159,9 @@ public class Enemy extends Personaje
                     this.velocidadX = this.rX = -this.velocidadX;
                     this.velocidadY = this.rY = -this.velocidadY;
                 }
-            }else{
+            }else{   
                 regresarASpawn();
-            }
+            } 
             
         }else{
             if(heroInRange.get(0).getX()>this.getX()){
@@ -179,6 +189,7 @@ public class Enemy extends Personaje
     }
     
     public void resetPosition(){//Regresa al enemigo a su spawn
+        JukeBox.changeSong("Take some rest.mp3"); 
         this.setLocation(spawnX,spawnY);
         this.pathcounter=this.pathlength;
         this.rX=this.vxabs;

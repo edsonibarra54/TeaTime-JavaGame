@@ -14,7 +14,7 @@ public class Button extends Actor
     {
         handleMouseClicks();
     }
-    
+     
     private void handleMouseClicks(){
         if(Greenfoot.mousePressed(this)){
             clickedAction();
@@ -28,10 +28,12 @@ public class Button extends Actor
         }*/
     }
     
-    public void clickedAction()
+    public void clickedAction() 
     {
         Dificultad.changeDifficulty(this.difficulty);
-        World world = new Sala_1(1);
-        Greenfoot.setWorld(world);
+        World  w = this.getWorld();
+        JukeBox.changeSong("Take some rest.mp3");
+        World world = new Sala_1(1); 
+        Greenfoot.setWorld(world); 
     }
 }
