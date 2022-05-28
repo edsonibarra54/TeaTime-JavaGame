@@ -225,17 +225,69 @@ dependency66.type=UsesDependency
 dependency67.from=Enemy
 dependency67.to=Heroe
 dependency67.type=UsesDependency
+<<<<<<< HEAD
 dependency68.from=Enemy
 dependency68.to=Dificultad
 dependency68.type=UsesDependency
 dependency69.from=Enemy
 dependency69.to=ColliderTile
+=======
+<<<<<<< HEAD
+dependency68.from=Nube1
+dependency68.to=GifImage
+dependency68.type=UsesDependency
+dependency69.from=Nube2
+dependency69.to=GifImage
+=======
+dependency68.from=Ghost
+dependency68.to=GifImage
+dependency68.type=UsesDependency
+dependency69.from=Ghost
+dependency69.to=Heroe
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 dependency69.type=UsesDependency
 dependency7.from=Inicio
 dependency7.to=Button
 dependency7.type=UsesDependency
+<<<<<<< HEAD
 dependency70.from=Heroe
 dependency70.to=HeartTile
+=======
+<<<<<<< HEAD
+dependency70.from=Nube2
+dependency70.to=Inicio
+dependency70.type=UsesDependency
+dependency71.from=Nube2
+dependency71.to=Nube1
+dependency71.type=UsesDependency
+dependency72.from=Ingrediente
+dependency72.to=TileWorld
+dependency72.type=UsesDependency
+dependency73.from=Ingrediente
+dependency73.to=Heroe
+dependency73.type=UsesDependency
+dependency74.from=Button
+dependency74.to=Sala_1
+dependency74.type=UsesDependency
+dependency75.from=Title
+dependency75.to=Inicio
+dependency75.type=UsesDependency
+dependency76.from=Title
+dependency76.to=Text
+dependency76.type=UsesDependency
+dependency77.from=Title
+dependency77.to=TextBox
+dependency77.type=UsesDependency
+dependency78.from=Title
+dependency78.to=Button
+dependency78.type=UsesDependency
+dependency79.from=LineOfSight
+dependency79.to=Enemy
+=======
+dependency70.from=Ghost
+dependency70.to=Dificultad
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 dependency70.type=UsesDependency
 dependency71.from=Heroe
 dependency71.to=GifImage
@@ -261,14 +313,46 @@ dependency77.type=UsesDependency
 dependency78.from=Heroe
 dependency78.to=Dificultad
 dependency78.type=UsesDependency
+<<<<<<< HEAD
 dependency79.from=Ghost
 dependency79.to=GifImage
+=======
+dependency79.from=Button
+dependency79.to=Dificultad
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 dependency79.type=UsesDependency
 dependency8.from=Inicio
 dependency8.to=Dificultad
 dependency8.type=UsesDependency
+<<<<<<< HEAD
 dependency80.from=Ghost
 dependency80.to=Heroe
+=======
+<<<<<<< HEAD
+dependency80.from=LineOfSight
+dependency80.to=TileWorld
+dependency80.type=UsesDependency
+dependency81.from=LineOfSight
+dependency81.to=Heroe
+dependency81.type=UsesDependency
+dependency82.from=LineOfSight
+dependency82.to=ColliderTile
+dependency82.type=UsesDependency
+dependency9.from=TileWorld
+dependency9.to=Counter
+dependency9.type=UsesDependency
+editor.fx.0.height=744
+editor.fx.0.width=1382
+editor.fx.0.x=-8
+editor.fx.0.y=-8
+height=744
+package.numDependencies=82
+package.numTargets=36
+=======
+dependency80.from=Difficulty
+dependency80.to=Dificultad
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 dependency80.type=UsesDependency
 dependency81.from=Ghost
 dependency81.to=Dificultad
@@ -335,8 +419,14 @@ editor.fx.0.width=816
 editor.fx.0.x=275
 editor.fx.0.y=-4
 height=744
+<<<<<<< HEAD
 package.numDependencies=107
 package.numTargets=44
+=======
+package.numDependencies=91
+package.numTargets=40
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -359,70 +449,150 @@ target1.width=120
 target1.x=0
 target1.y=0
 target10.height=70
+<<<<<<< HEAD
 target10.name=HaloTile
+=======
+<<<<<<< HEAD
+target10.name=TextBox
+=======
+target10.name=Personaje
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target10.showInterface=false
 target10.type=ClassTarget
 target10.width=120
 target10.x=0
 target10.y=0
 target11.height=70
+<<<<<<< HEAD
 target11.name=TileActor
+=======
+<<<<<<< HEAD
+target11.name=Nube
+=======
+target11.name=TextBox
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target11.showInterface=false
 target11.type=AbstractTarget
 target11.width=120
 target11.x=0
 target11.y=0
 target12.height=70
+<<<<<<< HEAD
 target12.name=Personaje
+=======
+<<<<<<< HEAD
+target12.name=HeartTile
+=======
+target12.name=Nube
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target12.showInterface=false
 target12.type=AbstractTarget
 target12.width=120
 target12.x=0
 target12.y=0
 target13.height=70
+<<<<<<< HEAD
 target13.name=TextBox
+=======
+<<<<<<< HEAD
+target13.name=Ingrediente
+=======
+target13.name=HeartTile
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target13.showInterface=false
 target13.type=ClassTarget
 target13.width=120
 target13.x=0
 target13.y=0
 target14.height=70
+<<<<<<< HEAD
 target14.name=Nube
+=======
+<<<<<<< HEAD
+target14.name=Counter
+=======
+target14.name=Ingrediente
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target14.showInterface=false
 target14.type=AbstractTarget
 target14.width=120
 target14.x=0
 target14.y=0
 target15.height=70
+<<<<<<< HEAD
 target15.name=HeartTile
+=======
+<<<<<<< HEAD
+target15.name=Inicio
+=======
+target15.name=Counter
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target15.showInterface=false
 target15.type=ClassTarget
 target15.width=120
 target15.x=0
 target15.y=0
 target16.height=70
+<<<<<<< HEAD
 target16.name=Ingrediente
+=======
+<<<<<<< HEAD
+target16.name=MiniHalo
+=======
+target16.name=Inicio
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target16.showInterface=false
 target16.type=ClassTarget
 target16.width=120
 target16.x=0
 target16.y=0
 target17.height=70
+<<<<<<< HEAD
 target17.name=Counter
+=======
+<<<<<<< HEAD
+target17.name=Button
+=======
+target17.name=MiniHalo
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target17.showInterface=false
 target17.type=ClassTarget
 target17.width=120
 target17.x=0
 target17.y=0
 target18.height=70
+<<<<<<< HEAD
 target18.name=Inicio
+=======
+<<<<<<< HEAD
+target18.name=Enemy
+=======
+target18.name=Button
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target18.showInterface=false
 target18.type=ClassTarget
 target18.width=120
 target18.x=0
 target18.y=0
 target19.height=70
+<<<<<<< HEAD
 target19.name=MiniHalo
+=======
+<<<<<<< HEAD
+target19.name=Tree
+=======
+target19.name=Enemy
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target19.showInterface=false
 target19.type=ClassTarget
 target19.width=120
@@ -436,70 +606,150 @@ target2.width=120
 target2.x=0
 target2.y=0
 target20.height=70
+<<<<<<< HEAD
 target20.name=Button
+=======
+<<<<<<< HEAD
+target20.name=Title
+=======
+target20.name=Tree
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target20.showInterface=false
 target20.type=ClassTarget
 target20.width=120
 target20.x=0
 target20.y=0
 target21.height=70
+<<<<<<< HEAD
 target21.name=Enemy
+=======
+<<<<<<< HEAD
+target21.name=Text
+=======
+target21.name=Rock
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target21.showInterface=false
 target21.type=ClassTarget
 target21.width=120
 target21.x=0
 target21.y=0
 target22.height=70
+<<<<<<< HEAD
 target22.name=Tree
+=======
+<<<<<<< HEAD
+target22.name=TileWorld
+=======
+target22.name=Title
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target22.showInterface=false
-target22.type=ClassTarget
+target22.type=AbstractTarget
 target22.width=120
 target22.x=0
 target22.y=0
 target23.height=70
+<<<<<<< HEAD
 target23.name=TrapTile
+=======
+<<<<<<< HEAD
+target23.name=Heroe
+=======
+target23.name=Text
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target23.showInterface=false
 target23.type=AbstractTarget
 target23.width=120
 target23.x=0
 target23.y=0
 target24.height=70
+<<<<<<< HEAD
 target24.name=Arrow
+=======
+<<<<<<< HEAD
+target24.name=Projectile
+=======
+target24.name=TileWorld
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target24.showInterface=false
 target24.type=ClassTarget
 target24.width=120
 target24.x=0
 target24.y=0
 target25.height=70
+<<<<<<< HEAD
 target25.name=Rock
+=======
+<<<<<<< HEAD
+target25.name=GifImage
+=======
+target25.name=Heroe
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target25.showInterface=false
 target25.type=ClassTarget
 target25.width=120
 target25.x=0
 target25.y=0
 target26.height=70
+<<<<<<< HEAD
 target26.name=Title
+=======
+<<<<<<< HEAD
+target26.name=Sala_6
+=======
+target26.name=Projectile
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target26.showInterface=false
 target26.type=ClassTarget
 target26.width=120
 target26.x=0
 target26.y=0
 target27.height=70
+<<<<<<< HEAD
 target27.name=Text
+=======
+<<<<<<< HEAD
+target27.name=LineOfSight
+=======
+target27.name=GifImage
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target27.showInterface=false
 target27.type=ClassTarget
 target27.width=120
 target27.x=0
 target27.y=0
 target28.height=70
+<<<<<<< HEAD
 target28.name=TileWorld
+=======
+<<<<<<< HEAD
+target28.name=ShadowTile
+=======
+target28.name=Play
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target28.showInterface=false
 target28.type=AbstractTarget
 target28.width=120
 target28.x=0
 target28.y=0
 target29.height=70
+<<<<<<< HEAD
 target29.name=Heroe
+=======
+<<<<<<< HEAD
+target29.name=ListaDeMundoTiles
+=======
+target29.name=Sala_6
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target29.showInterface=false
 target29.type=ClassTarget
 target29.width=120
@@ -513,54 +763,114 @@ target3.width=120
 target3.x=0
 target3.y=0
 target30.height=70
+<<<<<<< HEAD
 target30.name=Projectile
+=======
+<<<<<<< HEAD
+target30.name=NoColliderTile
+=======
+target30.name=LineOfSight
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target30.showInterface=false
 target30.type=ClassTarget
 target30.width=120
 target30.x=0
 target30.y=0
 target31.height=70
+<<<<<<< HEAD
 target31.name=GifImage
+=======
+<<<<<<< HEAD
+target31.name=ColliderTile
+=======
+target31.name=ShadowTile
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target31.showInterface=false
 target31.type=ClassTarget
 target31.width=120
 target31.x=0
 target31.y=0
 target32.height=70
+<<<<<<< HEAD
 target32.name=Play
+=======
+<<<<<<< HEAD
+target32.name=TallGrass
+=======
+target32.name=ListaDeMundoTiles
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target32.showInterface=false
 target32.type=ClassTarget
 target32.width=120
 target32.x=0
 target32.y=0
 target33.height=70
+<<<<<<< HEAD
 target33.name=Sala_6
+=======
+<<<<<<< HEAD
+target33.name=ListaDeSprites
+=======
+target33.name=NoColliderTile
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target33.showInterface=false
 target33.type=ClassTarget
 target33.width=120
 target33.x=0
 target33.y=0
 target34.height=70
+<<<<<<< HEAD
 target34.name=LineOfSight
+=======
+<<<<<<< HEAD
+target34.name=Sala_2
+=======
+target34.name=ColliderTile
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target34.showInterface=false
 target34.type=ClassTarget
 target34.width=120
 target34.x=0
 target34.y=0
 target35.height=70
+<<<<<<< HEAD
 target35.name=ShadowTile
+=======
+<<<<<<< HEAD
+target35.name=Sala_1
+=======
+target35.name=Ghost
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target35.showInterface=false
 target35.type=ClassTarget
 target35.width=120
 target35.x=0
 target35.y=0
 target36.height=70
+<<<<<<< HEAD
 target36.name=ListaDeMundoTiles
+=======
+<<<<<<< HEAD
+target36.name=sala_5
+=======
+target36.name=TallGrass
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target36.showInterface=false
 target36.type=ClassTarget
 target36.width=120
 target36.x=0
 target36.y=0
+<<<<<<< HEAD
+target4.height=70
+target4.name=HidingTile
+=======
 target37.height=70
 target37.name=NoColliderTile
 target37.showInterface=false
@@ -583,7 +893,12 @@ target39.width=120
 target39.x=0
 target39.y=0
 target4.height=70
+<<<<<<< HEAD
 target4.name=Nube1
+=======
+target4.name=Dificultad
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target4.showInterface=false
 target4.type=ClassTarget
 target4.width=120
@@ -625,35 +940,75 @@ target44.width=120
 target44.x=0
 target44.y=0
 target5.height=70
+<<<<<<< HEAD
 target5.name=ArrowDispenserTile
+=======
+<<<<<<< HEAD
+target5.name=Label
+=======
+target5.name=HidingTile
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target5.showInterface=false
 target5.type=ClassTarget
 target5.width=130
 target5.x=0
 target5.y=0
 target6.height=70
+<<<<<<< HEAD
 target6.name=Dificultad
+=======
+<<<<<<< HEAD
+target6.name=Nube2
+=======
+target6.name=Label
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target6.showInterface=false
 target6.type=ClassTarget
 target6.width=120
 target6.x=0
 target6.y=0
 target7.height=70
+<<<<<<< HEAD
 target7.name=HidingTile
+=======
+<<<<<<< HEAD
+target7.name=HaloTile
+=======
+target7.name=Nube2
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target7.showInterface=false
 target7.type=ClassTarget
 target7.width=120
 target7.x=0
 target7.y=0
 target8.height=70
+<<<<<<< HEAD
 target8.name=Label
+=======
+<<<<<<< HEAD
+target8.name=TileActor
+=======
+target8.name=HaloTile
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target8.showInterface=false
 target8.type=ClassTarget
 target8.width=120
 target8.x=0
 target8.y=0
 target9.height=70
+<<<<<<< HEAD
 target9.name=Nube2
+=======
+<<<<<<< HEAD
+target9.name=Personaje
+=======
+target9.name=TileActor
+>>>>>>> 7fdaa3d93b3dd06c993c6e5879f624a1383e4429
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
 target9.showInterface=false
 target9.type=ClassTarget
 target9.width=120

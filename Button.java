@@ -30,6 +30,7 @@ public class Button extends Actor
     
     public void clickedAction()
     {
+<<<<<<< HEAD
         if(difficulty==1)
         {
             Dificultad.RadioBusqueda=80;
@@ -59,6 +60,9 @@ public class Button extends Actor
             getObjectsInRange(1000,JukeBox.class).get(0).silencio();
         }
         ListaDeMundoTiles.DesactivaLamusica=true;
+=======
+        Dificultad.changeDifficulty(this.difficulty);
+>>>>>>> 1469ec2139375c74aae6b1155fd1a284152cf942
         World world = new Sala_1(1);
         Greenfoot.setWorld(world);
     }
