@@ -15,7 +15,9 @@ public class Sala_1 extends TileWorld
      */
     public Sala_1(int d)
     {
-        super(ListaDeMundoTiles.TilesMundo1(), 100, 300,new Counter("Ingredientes:"),d);    
+        super(ListaDeMundoTiles.TilesMundo1(), 100, 300,new Counter("Ingredientes:"),d);   
+        salaArriba = new PortalTile(0);
+        addObject(salaArriba,300,1);
         salaDerecha = new PortalTile(1);
         addObject(salaDerecha,600,200);
         salaIzquierda = new PortalTile(1);
@@ -24,7 +26,9 @@ public class Sala_1 extends TileWorld
     
     public Sala_1(int spawnX, int spawnY,Counter count)
     {
-        super(ListaDeMundoTiles.TilesMundo1(), spawnX, spawnY,count);    
+        super(ListaDeMundoTiles.TilesMundo1(), spawnX, spawnY,count);   
+        salaArriba = new PortalTile(0);
+        addObject(salaArriba,300,1);
         salaDerecha = new PortalTile(1);
         addObject(salaDerecha,600,200);
         salaIzquierda = new PortalTile(1);
@@ -33,6 +37,10 @@ public class Sala_1 extends TileWorld
 
     public void act(){
         if(this.getObjects(Heroe.class).isEmpty()!=true){
+            if(salaArriba.isHeroOn()){
+                World world = new Sala_0(300,390,super.getCounter());
+                Greenfoot.setWorld(world);
+            } 
             if(salaDerecha.isHeroOn()){
                 World world = new Sala_2(10,150,super.getCounter());
                 Greenfoot.setWorld(world);
@@ -45,10 +53,6 @@ public class Sala_1 extends TileWorld
         
     }
     
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
     @Override
     public void prepareIndividual() 
     { 

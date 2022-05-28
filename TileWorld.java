@@ -9,6 +9,8 @@ import java.util.List;
 public abstract class TileWorld extends World
 {
     static Actor hero;
+    static Actor hero_animation;
+    private int mode;
     private int difficulty;
     protected boolean shadow=false;
     private int xOffset = 0;  
@@ -26,6 +28,22 @@ public abstract class TileWorld extends World
     {
         super(600, 400, 1, true);
     }
+    
+    public TileWorld(String tiles[][], int sX, int sY, int d, int m)
+    {    
+        super(600, 400, 1, true);
+        spawnX = sX;
+        spawnY = sY;
+        difficulty = d;
+        this.ingCount = ingCount;
+        this.WORLD = tiles;
+        createWorldFromTiles(); 
+        
+        setPaintOrder(Heroe.class,LineOfSight.class,HeartTile.class,Counter.class,ShadowTile.class,Tree.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
+        //setPaintOrder();
+        prepare();
+    }
+    
     public TileWorld(String tiles[][], int sX, int sY,Counter ingCount, int d)
     {    
         super(600, 400, 1, true);
@@ -52,6 +70,7 @@ public abstract class TileWorld extends World
         setPaintOrder(Heroe.class,Counter.class,HeartTile.class,ShadowTile.class,Heroe.class/*,TrapTile.class*/,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
         prepare();
     }
+    
     public TileWorld(String tiles[][], int sX, int sY,Counter ingCount,boolean boleano)
     {    
         super(600, 400, 1, true);
@@ -64,6 +83,7 @@ public abstract class TileWorld extends World
         setPaintOrder(Heroe.class,Counter.class,HeartTile.class,ShadowTile.class,Heroe.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
         prepare();
     }
+    
     private void createWorldFromTiles() {    
         for( int i=0; i < WORLD.length; i++ ) {      
             for( int j=0; j < SWIDTH/TWIDTH; j++ ) {        
@@ -153,6 +173,10 @@ public abstract class TileWorld extends World
                 tile_2.setImage("arbol_3.png");
                 addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
                 break;
+            case "M00":
+                tile = new ColliderTile(); 
+                tile.setImage("muro_vacio.png");
+                break;     
             case "M01":
                 tile = new ColliderTile();
                 tile.setImage("muro_1.png");      
@@ -208,10 +232,6 @@ public abstract class TileWorld extends World
         return this.ingCount;
     }
     
-    /*public JukeBox getJB(){
-        return this.jukebox;
-    }*/
-    
     public void reset(){
         this.hero.setLocation(spawnX,spawnY);
         for(Enemy enemy : this.getObjects(Enemy.class)){
@@ -220,14 +240,27 @@ public abstract class TileWorld extends World
     }
     
     private void prepare() { 
+        if(mode == 1){
+            hero_animation = new Heroe_animacion("principal_enfrente.gif");
+            addObject(hero,spawnX,spawnY);
+        }
+        else
+        {
+            hero = new Heroe(Dificultad.vidaHeroe,2,2,"principal_enfrente.gif");
+            addObject(hero,spawnX,spawnY); 
+            addObject(ingCount,100,40);
+        }
+        prepareIndividual();
+    }
+    
+    /*
+    private void prepare() { 
         hero = new Heroe(Dificultad.vidaHeroe,2,2,"principal_enfrente.gif");
         addObject(hero,spawnX,spawnY); 
         addObject(ingCount,100,40);
         prepareIndividual();
-        //HaloTile haloTile = new HaloTile();
-        //addObject(haloTile,spawnX - 8,spawnY + 5);
     }
-    
+    */
     public abstract void prepareIndividual();
         
     

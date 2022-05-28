@@ -22,6 +22,9 @@ public abstract class Personaje extends Actor
         this.imagen = imagen;
         cambiaImagen(this.imagen);
     }
+    public Personaje(String imagen){
+        cambiaImagen(this.imagen);
+    }
     public int getvida()
     {
         return vida;
@@ -30,8 +33,8 @@ public abstract class Personaje extends Actor
     {
         this.vida=x;
     }
-    public abstract void act();
-        
+    
+    public abstract void act();   
     
     protected void cambiaImagen(String imagen)
     {
@@ -39,19 +42,5 @@ public abstract class Personaje extends Actor
         GifImage nueva = new GifImage(this.imagen);
         setImage(nueva.getCurrentImage());
     }
-    /*protected int colisionando()
-    {
-        Actor a;
-        int colision=0;
-        a=getOneObjectAtOffset(0,0,TileActor.class);
-        if(a!=null)
-        {
-            if(a instanceof WallTile)
-            {
-                colision=1;   
-            }
-        }
-        return colision;
-    }*/
     public abstract void movimiento();
 }
