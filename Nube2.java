@@ -16,10 +16,10 @@ public class Nube2 extends Nube
     }
     
     public void act(){
-        setImage(myGif.getCurrentImage());
+        setImage(myGif.getCurrentImage()); //Se encarga que el gif vaya cambiando de frame
         tempo++;
         
-        if(tempo == 500){
+        if(tempo == 500){ //Aqui se instancia un nuevo objeto nube_1 para evitar que todas las nubes salgan al mismo tiempo (Solo es estetico)
             Inicio world = getWorldOfType(Inicio.class);
             Nube1 nube_1 = new Nube1("nube_1.gif");
             world.addObject(nube_1,300,80);

@@ -15,9 +15,9 @@ public class Heroe_animacion extends Personaje
     private GifImage gif_derecha = new GifImage("principal_derecha.gif");
     private GifImage gif_izquierda = new GifImage("principal_izquierda.gif");
     private GreenfootSound sonido=new GreenfootSound("pasto.mp3");
-    private int numeroAnimacion,momentoAnimacion = 0;
+    private int numeroAnimacion,momentoAnimacion = 0; //numeroAnimacion indica que animacion es la que realizara, momentoAnimacion indica en que momento de la animacion se encuentra 
     private int tempo = 0;
-    private int dx = 0,dy = 0;
+    private int dx = 0,dy = 0; //Velocidad actual del personaje
     
     public Heroe_animacion(int vida,int velocidadX,int velocidadY,String nombre_imagen,int n)
     {
@@ -26,7 +26,7 @@ public class Heroe_animacion extends Personaje
     }
     
     @Override
-    public void movimiento()
+    public void movimiento() //Con este metodo logramos que el personaje se mueva 
     {
        this.setLocation(this.getX()+dx,this.getY()+dy);
     }
@@ -39,7 +39,7 @@ public class Heroe_animacion extends Personaje
         if(getWorld() == null) return;
     }
     
-    public void cambiaImagen(){
+    public void cambiaImagen(){ //Este metodo cambia el gid del personaje dependiendo de hacia donde se este moviendo
         if(this.dy == 0){
             if(this.dx > 0){
                 myGif = gif_derecha;
@@ -58,8 +58,8 @@ public class Heroe_animacion extends Personaje
         
     }
     
-    private void camino(int t, int n){
-        if(n == 1){
+    private void camino(int t, int n){ //Este metodo es el que indica hacia donde moverse dependiendo del tiempo
+        if(n == 1){ //Indica que esta rezlizando la animacion numero 1
             if(t < 40 && momentoAnimacion == 0){
                 myGif = gif_espalda;
             }
@@ -97,7 +97,7 @@ public class Heroe_animacion extends Personaje
                 sound.setVolume(100);
                 sound.play();
             }
-            if(Greenfoot.isKeyDown("SPACE") && t > 220 && momentoAnimacion == 0){
+            if(Greenfoot.isKeyDown("SPACE") && t > 220 && momentoAnimacion == 0){ //Aqui es donde termina la primera parte de la primer animacion del personaje reiniciando tambien el tiempo
                 sound.setVolume(100);
                 sound.play();
                 World w = this.getWorld();
@@ -125,19 +125,22 @@ public class Heroe_animacion extends Personaje
                 dy = velocidadY;
                 cambiaImagen();
             }
-            if(t == 78 && momentoAnimacion == 1){
+            if(t == 78 && momentoAnimacion == 1){ //Crea al heroe para que podamos movernos y elimina al heroe que realiza la animacion
                 dx = dy = 0;
                 World w = this.getWorld();
-                Heroe hero = new Heroe(Dificultad.vidaHeroe,2,2,"principal_enfrente.gif");
+                Heroe hero = new Heroe(Dificultad.vidaHeroe,2,2,"principal_enfrente.gif"); 
                 w.addObject(hero,this.getX(),this.getY());
                 w.removeObject(this);
-                if(getWorld() == null) return;
+                if(getWorld() == null){ //Verifica si ya no existe el personaje, si es asi termina el metodo camino para evitar que el metodo movimiento cree algun error
+                    return; 
+                }
             }
             movimiento();
         }
     }
     
-    void setTempo(int t){
+    
+    void setTempo(int t){ //Este metodo tiene la finalidad de reiniciar el tiempo al que nosotros deseemos
         this.tempo = t;
     }
 }

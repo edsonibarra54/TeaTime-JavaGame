@@ -15,6 +15,6 @@ public class Nube1 extends Nube
     }
     
     public void act(){
-        setImage(myGif.getCurrentImage());
+        setImage(myGif.getCurrentImage()); //Se encarga que el gif vaya cambiando de frame
     }
 }

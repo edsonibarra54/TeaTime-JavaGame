@@ -9,7 +9,7 @@ public class Casa extends Actor
         setImage(image);
     }
     
-    public void cambiaCasa(){
+    public void cambiaCasa(){ //Este metodo cambia el sprite de la casa a cuando ya no tiene carta
         setImage("casa_2.png");
     }
 }
