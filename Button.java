@@ -26,7 +26,7 @@ public class Button extends Actor
         Dificultad.changeDifficulty(this.difficulty);
         World  w = this.getWorld();
         JukeBox.changeSong("Take some rest.mp3");
-        World world = new Sala_0(true); 
+        World world = new Sala_0(); 
         Greenfoot.setWorld(world); 
         /*
         World world = new Sala_1(1); 

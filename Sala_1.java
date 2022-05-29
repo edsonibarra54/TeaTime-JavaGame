@@ -37,10 +37,6 @@ public class Sala_1 extends TileWorld
 
     public void act(){
         if(this.getObjects(Heroe.class).isEmpty()!=true){
-            if(salaArriba.isHeroOn()){
-                World world = new Sala_0(300,390,super.getCounter(),false);
-                Greenfoot.setWorld(world);
-            } 
             if(salaDerecha.isHeroOn()){
                 World world = new Sala_2(10,150,super.getCounter());
                 Greenfoot.setWorld(world);
