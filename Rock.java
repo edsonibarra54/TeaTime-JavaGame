@@ -15,6 +15,7 @@ public class Rock extends TrapTile
     public Rock()
     {
         super(100);
+        setImage("circulo_naranja.png");
         getImage().scale(25,25);
     }
     @Override
@@ -30,7 +31,7 @@ public class Rock extends TrapTile
             World mundo = getWorld();
             mundo.addObject(roca,getX(),getY()-50);
             super.usada=true;
-            GreenfootSound sondo= new GreenfootSound("Golpe.mp3");
+            GreenfootSound sondo= new GreenfootSound("roca.mp3");
             sondo.play();
         }
     }

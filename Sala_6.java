@@ -28,6 +28,15 @@ public class Sala_6 extends TileWorld
         addObject(salaDerecha,600,200);
         MiniHalo luz = new MiniHalo();
         addObject(luz,87,337);
+        salaDerecha = new PortalTile(0);
+        addObject(salaDerecha,600,200);
+        if(ListaDeMundoTiles.ingrediente[1]==0)
+        {
+            Ingrediente ingrediente = new Ingrediente("teprueba.png");
+            addObject(ingrediente,87,330);
+            ingrediente.getImage().scale(30,30);
+            ingrediente.setCorrespondiente(1);
+        }    
     }
     @Override
     public void prepareIndividual(){

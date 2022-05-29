@@ -16,7 +16,7 @@ public class PortalTile extends TileActor
         if(x == 1){
             getImage().scale(5,50);
         }
-        if(x == 0){
+        if(x == 0){ 
             getImage().scale(50,5);
         }
     }

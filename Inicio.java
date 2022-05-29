@@ -5,8 +5,9 @@ public class Inicio extends World
     public Inicio()
     {   
         super(600, 400, 1); 
+        setPaintOrder(TextBox.class, Button.class, Nube2.class, Title.class, Nube1.class);
         prepare();
-        Dificultad.nivelDificultad=0;
+        Dificultad.nivelDificultad=0; 
         //intro.stop();
         //intro.playLoop();
     }
@@ -20,16 +21,15 @@ public class Inicio extends World
         ListaDeMundoTiles.DesactivaLamusicaActual=false;
 
         setBackground("title_screen.png");
-        Button button = new Play();
-        addObject(button,291,271);
-        button.setLocation(301,301);
-
-        Difficulty difficulty = new Difficulty(1);
-        addObject(difficulty,87,208);
-        Difficulty difficulty2 = new Difficulty(2);
-        addObject(difficulty2,308,209);
-        Difficulty difficulty3 = new Difficulty(3);
-        addObject(difficulty3,499,202);
+        Title title = new Title();
+        addObject(title,298,0);
+        Nube2 nube_2 = new Nube2("nube_2.gif");
+        addObject(nube_2,300,140);
+        Nube1 nube_3 = new Nube1("nube_3.gif");
+        addObject(nube_3,300,30);
+        //JukeBox musica_inicial = new JukeBox("Title Theme.mp3");
+        //addObject(musica_inicial,0,0);
+        JukeBox.changeSong("Title Theme.mp3");
     }
 
 }

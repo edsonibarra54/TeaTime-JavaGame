@@ -12,24 +12,31 @@ public class Dificultad
     public static int nivelDificultad=0;
     public static int RadioBusqueda=80;
     public static int velocidadX,velocidadY;
-    /**
-     * Constructor for objects of class Dificultad
-     */
     
-    public Dificultad()
-    {
-        
+    public static void changeDifficulty(int difficulty){
+        switch(difficulty){
+            case 1:
+                Dificultad.RadioBusqueda=80;
+                Dificultad.velocidadX=1;
+                Dificultad.velocidadY=1;
+                Dificultad.vidaHeroe=10;
+                Dificultad.nivelDificultad=1;
+            break;
+            case 2:
+                Dificultad.RadioBusqueda=100;
+                Dificultad.velocidadX=2;
+                Dificultad.velocidadY=1;
+                Dificultad.vidaHeroe=6;
+                Dificultad.nivelDificultad=2;
+            break;
+            case 3:
+                Dificultad.RadioBusqueda=130;
+                Dificultad.velocidadX=1;
+                Dificultad.velocidadY=2;
+                Dificultad.vidaHeroe=2;
+                Dificultad.nivelDificultad=3;
+            break;
+        }
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
 }

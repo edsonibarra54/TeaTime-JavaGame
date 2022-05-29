@@ -21,6 +21,7 @@ abstract class TrapTile extends TileActor
     }
     public void act()
     {
+        getImage().setTransparency(255);
         if(usada==false)
         {
             actua();
