@@ -7,7 +7,6 @@ public class Title extends Actor
     public Title(){
         dx=dy = 2;
         tempo = 0;
-        //intro.playLoop();
     }
     
     public void act()

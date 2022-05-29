@@ -3,7 +3,6 @@ comment0.target=Personaje
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Personaje\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=vida\ velocidadX\ velocidadY\ imagen
 comment1.target=Personaje(int,\ int,\ int,\ java.lang.String)
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Personaje\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
 comment2.target=int\ getvida()
 comment3.params=x
@@ -14,5 +13,4 @@ comment5.params=imagen
 comment5.target=void\ cambiaImagen(java.lang.String)
 comment6.params=
 comment6.target=void\ movimiento()
-comment6.text=protected\ int\ colisionando()\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ Actor\ a;\r\n\ \ \ \ \ \ \ \ int\ colision\=0;\r\n\ \ \ \ \ \ \ \ a\=getOneObjectAtOffset(0,0,TileActor.class);\r\n\ \ \ \ \ \ \ \ if(a\!\=null)\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ if(a\ instanceof\ WallTile)\r\n\ \ \ \ \ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colision\=1;\ \ \ \r\n\ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ return\ colision;\r\n}
 numComments=7

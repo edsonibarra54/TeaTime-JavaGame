@@ -7,9 +7,7 @@ public class Inicio extends World
         super(600, 400, 1); 
         setPaintOrder(TextBox.class, Button.class, Nube2.class, Title.class, Nube1.class);
         prepare();
-        Dificultad.nivelDificultad=0; 
-        //intro.stop();
-        //intro.playLoop();
+        Dificultad.nivelDificultad=0;
     }
     
     /**
@@ -27,8 +25,6 @@ public class Inicio extends World
         addObject(nube_2,300,140);
         Nube1 nube_3 = new Nube1("nube_3.gif");
         addObject(nube_3,300,30);
-        //JukeBox musica_inicial = new JukeBox("Title Theme.mp3");
-        //addObject(musica_inicial,0,0);
         JukeBox.changeSong("Title Theme.mp3");
     }
 
