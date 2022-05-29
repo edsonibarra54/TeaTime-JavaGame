@@ -17,7 +17,7 @@ public class Jugar_button extends Button
      */
     public void act()
     {
-        handleMouseClicks();        // Add your action code here.
+        handleMouseClicks();        // Add your action code here. 
     } 
     
     @Override

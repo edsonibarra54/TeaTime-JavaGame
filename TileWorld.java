@@ -10,7 +10,7 @@ public abstract class TileWorld extends World
 {
     static Actor hero;
     static Actor hero_animation;
-    private int mode;
+    private int mode; 
     private int animationNumber;
     private int difficulty; 
     protected boolean shadow=false;

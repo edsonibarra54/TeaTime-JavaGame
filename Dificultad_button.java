@@ -19,9 +19,10 @@ public class Dificultad_button extends Button
     { 
         if(Dificultad.nivelDificultad == this.dificultad){
             this.getImage().setTransparency(255);
+            addDescription();
         }else{
             this.getImage().setTransparency(150);
-        }
+        } 
         super.act();
         // Add your action code here.
     }
@@ -29,8 +30,16 @@ public class Dificultad_button extends Button
     @Override
     public void clickedAction(){
         Dificultad.changeDifficulty(this.dificultad);
-        TextBox mensaje = new TextBox(this.mensaje,20);
+        addDescription();
+    }
+    
+    private void addDescription(){
         World w = this.getWorld();
-        w.addObject(mensaje, 300, 300); 
+        if(w.getObjectsAt(300, 270, Text.class).isEmpty() == false){
+            w.removeObject(w.getObjectsAt(300, 270, Text.class).get(0)); 
+        }
+        Text mensaje = new Text(this.mensaje);
+        w.addObject(mensaje, 300, 270); 
+
     }
 }

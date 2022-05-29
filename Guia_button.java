@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Guia_button extends Button
 {
+    int index = 0;
     public Guia_button(String s){
         super(s);
     }
@@ -23,6 +24,10 @@ public class Guia_button extends Button
     
     @Override
     public void clickedAction(){
-        
+         Guia guia = new Guia();
+         World w = getWorld();
+         w.addObject(guia, 300, 200);
+         //guia.cambiaImagen(0);
+         
     }
 }

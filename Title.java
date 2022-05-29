@@ -15,7 +15,7 @@ public class Title extends Actor
         if(tempo < 70 && flag == 0){
             setLocation(getX(), getY() + dy);
         }
-        else if(tempo >= 70 && flag == 0){
+        else if(tempo >= 70 && flag == 0){ 
             Inicio world = getWorldOfType(Inicio.class);
             Text instruction = new Text("press.png");
             world.addObject(instruction,300,350);
@@ -32,16 +32,18 @@ public class Title extends Actor
         if(this.getImage().getTransparency() == 0){
             Inicio world = getWorldOfType(Inicio.class);
             world.removeObject(this);
-            TextBox difficulty = new TextBox("Escoge una dificultad",20); 
-            world.addObject(difficulty,300,140); 
-            Button button_e = new Dificultad_button("boton_e.png","Vidas más que suficientes y los enemigos son casi ciegos, ¡diviertete!",1);
+            Text difficulty = new Text("dificultad.png"); 
+            world.addObject(difficulty,300,100); 
+            Button button_e = new Dificultad_button("boton_e.png","Texto_d1.png",1);
             world.addObject(button_e,160,200);
-            Button button_n = new Dificultad_button("boton_n.png","Tendras que cuidar tus vidas, los enemigos son más competentes",2);
+            Button button_n = new Dificultad_button("boton_n.png","Texto_d2.png",2);
             world.addObject(button_n,300,200);
-            Button button_h = new Dificultad_button("boton_h.png","No hay espacio para errores, los enemigos comieron zanahoria", 3);
+            Button button_h = new Dificultad_button("boton_h.png","Texto_d3.png", 3);
             world.addObject(button_h,440,200); 
-            Button button_p = new Jugar_button("circulo_naranja.png");
-            world.addObject(button_p,300,400);
+            Button button_g = new Guia_button("boton_g.png");
+            world.addObject(button_g,220,350); 
+            Button button_p = new Jugar_button("boton_j.png");  
+            world.addObject(button_p,380,350); 
         }
     }
 }
