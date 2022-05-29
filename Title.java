@@ -32,14 +32,16 @@ public class Title extends Actor
         if(this.getImage().getTransparency() == 0){
             Inicio world = getWorldOfType(Inicio.class);
             world.removeObject(this);
-            TextBox difficulty = new TextBox("Escoge una dificultad",20);
-            world.addObject(difficulty,300,140);
-            Button button_e = new Button("boton_e.png",1);
-            world.addObject(button_e,300,200);
-            Button button_n = new Button("boton_n.png",2);
-            world.addObject(button_n,300,275);
-            Button button_h = new Button("boton_h.png",3);
-            world.addObject(button_h,300,350);
+            TextBox difficulty = new TextBox("Escoge una dificultad",20); 
+            world.addObject(difficulty,300,140); 
+            Button button_e = new Dificultad_button("boton_e.png","Vidas más que suficientes y los enemigos son casi ciegos, ¡diviertete!",1);
+            world.addObject(button_e,160,200);
+            Button button_n = new Dificultad_button("boton_n.png","Tendras que cuidar tus vidas, los enemigos son más competentes",2);
+            world.addObject(button_n,300,200);
+            Button button_h = new Dificultad_button("boton_h.png","No hay espacio para errores, los enemigos comieron zanahoria", 3);
+            world.addObject(button_h,440,200); 
+            Button button_p = new Jugar_button("circulo_naranja.png");
+            world.addObject(button_p,300,400);
         }
     }
 }

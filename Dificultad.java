@@ -13,14 +13,14 @@ public class Dificultad
     public static int RadioBusqueda=80;
     public static int velocidadX,velocidadY;
     
-    public static void changeDifficulty(int difficulty){
+    public static void changeDifficulty(int difficulty){ 
         switch(difficulty){
             case 1:
                 Dificultad.RadioBusqueda=80;
                 Dificultad.velocidadX=1;
                 Dificultad.velocidadY=1;
                 Dificultad.vidaHeroe=10;
-                Dificultad.nivelDificultad=1;
+                Dificultad.nivelDificultad=1; 
             break;
             case 2:
                 Dificultad.RadioBusqueda=100;
@@ -37,6 +37,6 @@ public class Dificultad
                 Dificultad.nivelDificultad=3;
             break;
         }
-    }
+    } 
 
 }

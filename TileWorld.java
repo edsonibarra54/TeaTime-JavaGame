@@ -12,7 +12,7 @@ public abstract class TileWorld extends World
     static Actor hero_animation;
     private int mode;
     private int animationNumber;
-    private int difficulty;
+    private int difficulty; 
     protected boolean shadow=false;
     private int xOffset = 0;  
     private int SWIDTH = 600;//Ancho de pantalla 
