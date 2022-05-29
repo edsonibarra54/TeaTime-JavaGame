@@ -11,10 +11,7 @@ public abstract class Personaje extends Actor
     protected int vida;
     protected int velocidadX,velocidadY;
     protected String imagen;
-    /**
-     * Act - do whatever the Personaje wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    
     public Personaje(int vida,int velocidadX,int velocidadY,String imagen){
         this.vida = Dificultad.vidaHeroe;
         this.velocidadX = velocidadX;
@@ -22,13 +19,12 @@ public abstract class Personaje extends Actor
         this.imagen = imagen;
         cambiaImagen(this.imagen);
     }
-    public Personaje(String imagen){
-        cambiaImagen(this.imagen);
-    }
+    
     public int getvida()
     {
         return vida;
-    }
+    } 
+    
     public void setvida(int x)
     {
         this.vida=x;
@@ -38,9 +34,10 @@ public abstract class Personaje extends Actor
     
     protected void cambiaImagen(String imagen)
     {
-        this.imagen=imagen;
+        this.imagen = imagen;
         GifImage nueva = new GifImage(this.imagen);
         setImage(nueva.getCurrentImage());
     }
+    
     public abstract void movimiento();
 }

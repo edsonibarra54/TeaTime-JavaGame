@@ -11,6 +11,7 @@ public abstract class TileWorld extends World
     static Actor hero;
     static Actor hero_animation;
     private int mode;
+    private int animationNumber;
     private int difficulty;
     protected boolean shadow=false;
     private int xOffset = 0;  
@@ -29,33 +30,29 @@ public abstract class TileWorld extends World
         super(600, 400, 1, true);
     }
     
-    public TileWorld(String tiles[][], int sX, int sY, int d, int m)
+    public TileWorld(String tiles[][], int sX, int sY, int m, int n)
     {    
         super(600, 400, 1, true);
         spawnX = sX;
         spawnY = sY;
-        difficulty = d;
-        this.ingCount = ingCount;
+        animationNumber = n;
         this.WORLD = tiles;
         createWorldFromTiles(); 
-        
-        setPaintOrder(Heroe.class,LineOfSight.class,HeartTile.class,Counter.class,ShadowTile.class,Tree.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
-        //setPaintOrder();
+        mode = m;
+        setPaintOrder(Heroe_animacion.class,Heroe.class,LineOfSight.class,HeartTile.class,Counter.class,ShadowTile.class,Tree.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
         prepare();
     }
     
-    public TileWorld(String tiles[][], int sX, int sY,Counter ingCount, int d)
+    public TileWorld(String tiles[][], int sX, int sY,Counter ingCount, int m)
     {    
         super(600, 400, 1, true);
         spawnX = sX;
         spawnY = sY;
-        difficulty = d;
+        mode = m;
         this.ingCount = ingCount;
         this.WORLD = tiles;
         createWorldFromTiles(); 
-        
         setPaintOrder(Heroe.class,LineOfSight.class,HeartTile.class,Counter.class,ShadowTile.class,Tree.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
-        //setPaintOrder();
         prepare();
     }
     
@@ -232,6 +229,14 @@ public abstract class TileWorld extends World
         return this.ingCount;
     }
     
+    public int getMode(){
+        return this.mode;
+    }
+    
+    public void setMode(int m){
+        this.mode = m;
+    }
+    
     public void reset(){
         this.hero.setLocation(spawnX,spawnY);
         for(Enemy enemy : this.getObjects(Enemy.class)){
@@ -240,27 +245,18 @@ public abstract class TileWorld extends World
     }
     
     private void prepare() { 
-        if(mode == 1){
-            hero_animation = new Heroe_animacion("principal_enfrente.gif");
-            addObject(hero,spawnX,spawnY);
-        }
-        else
-        {
+        if(mode != 1){
             hero = new Heroe(Dificultad.vidaHeroe,2,2,"principal_enfrente.gif");
             addObject(hero,spawnX,spawnY); 
             addObject(ingCount,100,40);
         }
+        else{
+            hero_animation = new Heroe_animacion(Dificultad.vidaHeroe,1,1,"principal_enfrente.gif",animationNumber);
+            addObject(hero_animation,spawnX,spawnY);
+        }
         prepareIndividual();
     }
     
-    /*
-    private void prepare() { 
-        hero = new Heroe(Dificultad.vidaHeroe,2,2,"principal_enfrente.gif");
-        addObject(hero,spawnX,spawnY); 
-        addObject(ingCount,100,40);
-        prepareIndividual();
-    }
-    */
     public abstract void prepareIndividual();
         
     

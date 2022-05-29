@@ -26,7 +26,7 @@ public class Sala_1 extends TileWorld
     
     public Sala_1(int spawnX, int spawnY,Counter count)
     {
-        super(ListaDeMundoTiles.TilesMundo1(), spawnX, spawnY,count);   
+        super(ListaDeMundoTiles.TilesMundo1(), spawnX, spawnY,count,0);   
         salaArriba = new PortalTile(0);
         addObject(salaArriba,300,1);
         salaDerecha = new PortalTile(1);
@@ -38,7 +38,7 @@ public class Sala_1 extends TileWorld
     public void act(){
         if(this.getObjects(Heroe.class).isEmpty()!=true){
             if(salaArriba.isHeroOn()){
-                World world = new Sala_0(300,390,super.getCounter());
+                World world = new Sala_0(300,390,super.getCounter(),false);
                 Greenfoot.setWorld(world);
             } 
             if(salaDerecha.isHeroOn()){

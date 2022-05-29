@@ -19,6 +19,7 @@ public class JukeBox
         }
         song = new GreenfootSound(newSong);
         song.playLoop();
+        song.setVolume(18);
     }
     public void stop(){
         song.stop();
