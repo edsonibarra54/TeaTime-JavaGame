@@ -252,6 +252,10 @@ public abstract class TileWorld extends World
     }
     
     private void prepare() { 
+        if(JukeBox.isPlaying() == false){
+            JukeBoxEnemy.stop();
+            JukeBox.play();
+        }
         if(mode != 1){
             hero = new Heroe(Dificultad.vidaHeroe,2,2,"principal_enfrente.gif");
             addObject(hero,spawnX,spawnY); 

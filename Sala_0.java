@@ -13,7 +13,7 @@ public class Sala_0 extends TileWorld
         this.transicionInicialIniciada = false;
         this.transicionFinalIniciada = false;
         salaAbajo = new PortalTile(0);
-        addObject(salaAbajo,300,400);
+        addObject(salaAbajo,300,400); 
         c = new Casa("casa.png"); //Aqui el sprite de la casa aun tiene la carta en el buzon
         addObject(c,300,125);
         ct = new Casa("techo.png");
@@ -32,8 +32,9 @@ public class Sala_0 extends TileWorld
                 if(tf.getWorld() != null){
                     if(tf.animacionFinalizada() == true){
                         World world = new Sala_1(300,15,new Counter());
+                        JukeBox.changeSong("Take some rest.mp3");
                         Greenfoot.setWorld(world);
-                    }
+                    } 
                 }
             } 
         }
