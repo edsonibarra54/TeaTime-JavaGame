@@ -24,8 +24,6 @@ public class Sala_6 extends TileWorld
         addObject(act,500,100);*/
         salaIzquierda = new PortalTile(1);
         addObject(salaIzquierda,1,150);
-        salaIzquierda = new PortalTile(1);
-        addObject(salaIzquierda,1,150);
         salaDerecha = new PortalTile(0);
         addObject(salaDerecha,600,200);
         MiniHalo luz = new MiniHalo();

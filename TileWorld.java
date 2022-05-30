@@ -35,11 +35,11 @@ public abstract class TileWorld extends World
         super(600, 400, 1, true);
         spawnX = sX;
         spawnY = sY;
-        animationNumber = n;
+        animationNumber = n; 
         this.WORLD = tiles;
         createWorldFromTiles(); 
         mode = m;
-        setPaintOrder(Heroe_animacion.class,Heroe.class,LineOfSight.class,HeartTile.class,Counter.class,ShadowTile.class,Tree.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
+        setPaintOrder(Derrota.class,Transicion.class,Heroe_animacion.class,Heroe.class,LineOfSight.class,HeartTile.class,Counter.class,ShadowTile.class,Tree.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
         prepare();
     }
     
@@ -51,8 +51,8 @@ public abstract class TileWorld extends World
         mode = m;
         this.ingCount = ingCount;
         this.WORLD = tiles;
-        createWorldFromTiles(); 
-        setPaintOrder(Heroe.class,LineOfSight.class,HeartTile.class,Counter.class,ShadowTile.class,Tree.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
+        createWorldFromTiles();
+        setPaintOrder(Derrota.class,Transicion.class,HeartTile.class,Tree.class,Heroe.class,LineOfSight.class,Counter.class,ShadowTile.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
         prepare();
     }
     
@@ -228,7 +228,7 @@ public abstract class TileWorld extends World
             if( tile != null)  
                 addObject(tile, 12+x*TWIDTH, 12+y*THEIGHT);  
                 //addObject(tallo,12+x*TWIDTH, 12+y*THEIGHT);
-            }
+    }
     
     public Counter getCounter(){
         return this.ingCount;
@@ -253,7 +253,7 @@ public abstract class TileWorld extends World
         if(mode != 1){
             hero = new Heroe(Dificultad.vidaHeroe,2,2,"principal_enfrente.gif");
             addObject(hero,spawnX,spawnY); 
-            addObject(ingCount,100,40);
+            ingCount.addToWorld(this); 
         }
         else{
             hero_animation = new Heroe_animacion(Dificultad.vidaHeroe,1,1,"principal_enfrente.gif",animationNumber);

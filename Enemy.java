@@ -52,11 +52,6 @@ public class Enemy extends Personaje
         cambiaImagen();
     }
     
-    /*public void changeSong(String song){
-        TileWorld w = this.getWorldOfType(TileWorld.class);
-        w.getJB().changeSong(song);
-    }*/
-    
     public void cambiaImagen(){
         if(persigue){
             if(this.velocidadY==0){
@@ -99,7 +94,7 @@ public class Enemy extends Personaje
         
     }
     
-    public void revisarRango(){//Revisa si hay algun heroe en el rango
+    public void revisarRango(){ //Revisa si hay algun heroe en el rango
         if(losActive){
             heroInRange = this.los.losClear();
             if(heroInRange.isEmpty()){

@@ -26,9 +26,14 @@ public class PortalTile extends TileActor
         return isActive && getOneIntersectingObject(Heroe.class) != null; 
     }
     
+    public boolean isHeroAnimationOn()
+    {
+        return isActive && getOneIntersectingObject(Heroe_animacion.class) != null; 
+    }
+    
     public void act()
     {
         //Si el portal aun no esta activado y el heroe toca el portal este metodo cambiara su estado a activo
-        if (!isActive && getOneIntersectingObject(Heroe.class) == null) isActive = true;
+        if ((!isActive && getOneIntersectingObject(Heroe.class) == null) || (!isActive && getOneIntersectingObject(Heroe_animacion.class) == null)) isActive = true;
     }
 }
