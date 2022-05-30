@@ -25,7 +25,9 @@ public class Ingredientes_list
         return sprites1[index];
     }
     
-    
-
-
+    public static void resetIngredients(){
+        ing_checklist[0] = 0;
+        ing_checklist[1] = 0;
+        ing_checklist[2] = 0;
+    }
 }

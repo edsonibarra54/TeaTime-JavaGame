@@ -11,10 +11,7 @@ public class Sala_7 extends TileWorld
     private Casa c,ct;
     private boolean transicionInicialIniciada, transicionFinalIniciada; 
     private Transicion ti,tf;
-    /**
-     * Constructor for objects of class Sala_7.
-     * 
-     */
+    
     public Sala_7(int spawnX, int spawnY,Counter count)
     {
         super(ListaDeMundoTiles.TilesMundo5(), spawnX, spawnY,count,0);
@@ -37,13 +34,14 @@ public class Sala_7 extends TileWorld
         techo = new Casa("techo.png");
         addObject(casa,516,100);
         addObject(techo,516,0);
+        
         salaIzquierda = new PortalTile(1);
         addObject(salaIzquierda,1,150);
         salaDerecha = new PortalTile(0);
         addObject(salaDerecha,600,200);
     }
-    public void act() 
-    {
+    
+    public void act(){
         if(ti.animacionFinalizada() == true){
             getObjects(Heroe.class).get(0).setCancelaMovimiento(false);
         }
@@ -63,20 +61,14 @@ public class Sala_7 extends TileWorld
                 }
             }
         }
-        if(salaIzquierda.isHeroOn()){
-            World world = new Sala_6(575,200,super.getCounter());
-            GreenfootSound sonido= new GreenfootSound("Golpe.mp3");
-            Greenfoot.setWorld(world);
-        }
-        if(salaDerecha.isHeroOn()){
-            World world = new Sala_1(10,150,super.getCounter()); 
-            GreenfootSound sonido= new GreenfootSound("Golpe.mp3");
-            Greenfoot.setWorld(world);
-        }
 
     }
     @Override
     public void prepareIndividual(){
-        
+        if(transicionInicialIniciada == false){
+            transicionInicialIniciada = true;
+            ti = new Transicion(0);
+            addObject(ti,300,200);
+        }
     }
 }

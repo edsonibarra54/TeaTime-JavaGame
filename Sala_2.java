@@ -21,15 +21,34 @@ public class Sala_2 extends TileWorld
             getObjects(Heroe.class).get(0).setCancelaMovimiento(false);
         }
         
-        if(salaIzquierda.isHeroOn()){
-            World world = new Sala_7(570,270,super.getCounter());
-            Greenfoot.setWorld(world);
+        if(this.getObjects(Heroe.class).isEmpty()!=true){
+            if(salaDerecha.isHeroOn()){
+                if(transicionFinalIniciada == false){
+                    transicionFinalIniciada = true;
+                    tf = new Transicion(1); 
+                    addObject(tf,300,200);
+                }
+                if(tf.getWorld() != null){
+                    if(tf.animacionFinalizada() == true){
+                        World world = new sala_5(25,150,super.getCounter());
+                        Greenfoot.setWorld(world);
+                    }
+                }
+            } 
+            if(salaIzquierda.isHeroOn()){ 
+                if(transicionFinalIniciada == false){
+                    transicionFinalIniciada = true;
+                    tf = new Transicion(1); 
+                    addObject(tf,300,200);
+                }
+                if(tf.getWorld() != null){
+                    if(tf.animacionFinalizada() == true){
+                        World world = new Sala_7(570,270,super.getCounter());
+                        Greenfoot.setWorld(world);
+                    }
+                }
+            }
         }
-        
-        if(salaDerecha.isHeroOn()){
-            World world = new sala_5(25,150,super.getCounter());
-            Greenfoot.setWorld(world);
-        } 
     }
     
     @Override
