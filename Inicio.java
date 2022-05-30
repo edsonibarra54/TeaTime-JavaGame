@@ -7,7 +7,8 @@ public class Inicio extends World
         super(600, 400, 1); 
         setPaintOrder(TextBox.class, Button.class, Nube2.class, Title.class, Nube1.class);
         prepare();
-        Dificultad.nivelDificultad=0;
+        Dificultad.nivelDificultad=2;
+        setPaintOrder(Guia.class);
     }
     
     /**

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Guia_sheets
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Guia_sheets\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Guia_sheets()
+comment2.params=index
+comment2.target=java.lang.String\ returnText(int)
+comment3.params=
+comment3.target=int\ returnSheetslength()
+numComments=4
