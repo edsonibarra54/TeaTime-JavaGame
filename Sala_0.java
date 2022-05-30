@@ -49,7 +49,7 @@ public class Sala_0 extends TileWorld
         }
         if(this.getObjects(Heroe.class).isEmpty()!=true){
             if(salaAbajo.isHeroOn() && f == true){ //Si es la primera vez que se ha instancido esta sala y nos movemos a la sala 1 esta recibira un nuevo contador
-                World world = new Sala_1(300,1,new Counter("Ingredientes:"));
+                World world = new Sala_1(300,1,new Counter());
                 Greenfoot.setWorld(world);
             } 
         }

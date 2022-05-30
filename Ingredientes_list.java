@@ -4,27 +4,28 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Ingredientes_list  
+public class Ingredientes_list   
 {
-    // instance variables - replace the example below with your own
-    private int x; 
+    private static int ing_checklist[] = {0,0,0};
+    private static String sprites1[] = {"azucar.png","planta.png","taza.png"};
 
-    /**
-     * Constructor for objects of class Ingredientes_list
-     */
     public Ingredientes_list()
     {
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    
+    public static int checkIngredient(int index){
+        return ing_checklist[index];
     }
+    
+    public static void recolectIngredient(int index){
+        ing_checklist[index] = 1;
+    }
+    
+    public static String getSprite(int index){
+        return sprites1[index];
+    }
+    
+    
+
+
 }

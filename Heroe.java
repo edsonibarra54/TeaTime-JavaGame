@@ -9,14 +9,14 @@ import java.util.List;
  */
 //Edson
 public class Heroe extends Personaje
-{
+{ 
     private int num_image,cambio=0,tempo=0,crea_contenedores=1,unica=1;
     private ArrayList<HeartTile> corazon = new ArrayList<>();
     private GifImage myGif = new GifImage("principal_enfrente.gif");
     private GifImage gif_enfrente = new GifImage("principal_enfrente.gif");
     private GifImage gif_espalda = new GifImage("principal_espalda.gif");
     private GifImage gif_derecha = new GifImage("principal_derecha.gif");
-    private GifImage gif_izquierda = new GifImage("principal_izquierda.gif");
+    private GifImage gif_izquierda = new GifImage("principal_izquierda.gif"); 
     private GreenfootSound sonido=new GreenfootSound("pasto.mp3");
     private String checa;
     private int antX,antY;

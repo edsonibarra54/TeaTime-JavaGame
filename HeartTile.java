@@ -17,7 +17,7 @@ public class HeartTile extends TileActor
         setImage("Corazon_rojo.png");
         getImage().mirrorHorizontally();
     }
-    public void act()
+    public void act() 
     {
         World mundo = getWorld();
         List<Heroe> heroe = (List<Heroe>)mundo.getObjects(Heroe.class); 

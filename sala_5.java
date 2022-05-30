@@ -41,6 +41,9 @@ private Actor halo;
     }
     @Override
     public void prepareIndividual(){
-        
+        if(Ingredientes_list.checkIngredient(1)==0){
+            Ingrediente te = new Ingrediente("planta.png",1);
+            addObject(te,400,200);
+        }
     }
 }
