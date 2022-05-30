@@ -22,6 +22,7 @@ public class Title extends Actor
             instruction.act();
             if (Greenfoot.isKeyDown("SPACE")){
                 world.removeObjects(world.getObjects(Text.class));
+                Dificultad.resetDificulty();
                 flag = 1;
                 tempo = 0;
             }

@@ -33,7 +33,7 @@ public class Sala_6 extends TileWorld
         if(IngredienteTiles.ingrediente[1]==0)
         {
             Ingrediente ingrediente = new Ingrediente("teprueba.png",1);
-            addObject(ingrediente,87,330);
+            addObject(ingrediente,87,330); 
             ingrediente.getImage().scale(30,30);
             ingrediente.setCorrespondiente(1);
         }    

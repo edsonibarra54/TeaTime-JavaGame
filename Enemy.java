@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Enemy extends Personaje
 {
     
-    private ArrayList<GifImage> gifs = new ArrayList();
+    private ArrayList<GifImage> gifs = new ArrayList(); 
     private LineOfSight los;
     private int songFlag = 0;
     private int spawnX,spawnY;

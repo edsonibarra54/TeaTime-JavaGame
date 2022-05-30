@@ -6,11 +6,7 @@ public class Counter extends Actor
     private static final Color transparent = new Color(0,0,0,0);
     private int target;
     private ArrayList<IngredientTile> ingredients = new ArrayList<>();    
-//private String prefix;
-    private GreenfootImage score0 = new GreenfootImage("ping0.png");
-    private GreenfootImage score1 = new GreenfootImage("ping1.png");
-    private GreenfootImage score2 = new GreenfootImage("ping2.png");
-    private GreenfootImage score3 = new GreenfootImage("ping3.png");
+
     
     public Counter()
     {
@@ -20,7 +16,6 @@ public class Counter extends Actor
         ingredients.add(azucar);
         ingredients.add(te);
         ingredients.add(taza);
-        setImage("ping0.png");
     }
     
     public void addToWorld(World w){
