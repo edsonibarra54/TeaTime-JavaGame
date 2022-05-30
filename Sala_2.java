@@ -37,6 +37,10 @@ public class Sala_2 extends TileWorld
     
     @Override
     public void prepareIndividual(){
+        if(Ingredientes_list.checkIngredient(2)==0){
+            Ingrediente taza = new Ingrediente("taza.png",2);
+            addObject(taza,300,100);
+        }
         if(transicionInicialIniciada == false){
             transicionInicialIniciada = true;
             ti = new Transicion(0);

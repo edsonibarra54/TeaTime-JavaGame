@@ -1,39 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.ArrayList;
 
-/**
- * A Counter class that allows you to display a numerical value on screen.
- * 
- * The Counter is an actor, so you will need to create it, and then add it to
- * the world in Greenfoot.  If you keep a reference to the Counter then you
- * can adjust its value.  Here's an example of a world class that
- * displays a counter with the number of act cycles that have occurred:
- * 
- * <pre>
- * class CountingWorld
- * {
- *     private Counter actCounter;
- *     
- *     public CountingWorld()
- *     {
- *         super(600, 400, 1);
- *         actCounter = new Counter("Act Cycles: ");
- *         addObject(actCounter, 100, 100);
- *     }
- *     
- *     public void act()
- *     {
- *         actCounter.setValue(actCounter.getValue() + 1);
- *     }
- * }
- * </pre>
- * 
- * @author Neil Brown and Michael Kölling 
- * @version 1.0
- */
 public class Counter extends Actor
 {
     private static final Color transparent = new Color(0,0,0,0);
     private int target;
+    private ArrayList<IngredientTile> ingredients = new ArrayList<>();
     //private String prefix;
     private GreenfootImage score0 = new GreenfootImage("ping0.png");
     private GreenfootImage score1 = new GreenfootImage("ping1.png");
@@ -42,50 +14,56 @@ public class Counter extends Actor
     
     public Counter()
     {
-        this(new String());
-    }
-
-    /**
-     * Create a new counter, initialised to 0.
-     */
-    public Counter(String prefix)
-    {
-        target = 0;
-        //this.prefix = prefix;
-        this.setImage(score0);
-    }
-    
-    /**
-     * Animate the display to count up (or down) to the current target value.
-     */
-    public void act() 
-    {
-        //this.setImage(new GreenfootImage(prefix+target+"/4",24,Color.BLACK,transparent));
-        /*if (value < target) {
-            value++;
-            updateImage();
-        }
-        else if (value > target) {
-            value--;
-            updateImage();
-        }*/
-    }
-    
+        IngredientTile azucar = new IngredientTile("azucar_silueta.png");
+        IngredientTile te = new IngredientTile("planta_silueta.png");
+        IngredientTile taza = new IngredientTile("taza_silueta.png");
+        ingredients.add(azucar);
+        ingredients.add(te);
+        ingredients.add(taza);
         
-    public void cambiaImagen(){
-        switch(this.target){
-            case 1:
-                this.setImage(score1);
-            break;
-            case 2:
-                this.setImage(score2);
-            break;
-            case 3:
-                this.setImage(score3);
-            break;
-                
+    }
+    
+    public void addToWorld(World w){
+        w.addObject(ingredients.get(2), 585, 350);
+        w.addObject(ingredients.get(1), 545, 350);
+        w.addObject(ingredients.get(0), 505, 350); 
+    }
+    
+    /*public void addToWorld(World w){
+        int i=0;
+        for(IngredientTile t: ingredients){
+            w.addObject(t,w.getWidth()-15*(i+1)-t.getImage().getWidth()*i,w.getHeight()-50); 
+            i++; 
+        }
+    }*/
+    
+    public void cambiaSilueta(){
+        if(Ingredientes_list.checkIngredient(0)==1){
+            ingredients.get(0).setImage("azucar.png");
+        }
+        if(Ingredientes_list.checkIngredient(1)==1){
+            ingredients.get(1).setImage("planta.png");
+        }
+        if(Ingredientes_list.checkIngredient(2)==1){
+            ingredients.get(2).setImage("taza.png"); 
         }
     }
+    
+    
+    /*
+    public void cambiaSilueta(){
+        for(int i = 0;i < ingredients.size();i++){
+            if(Ingredientes_list.checkIngredient(i)==1){
+                ingredients.get(i).setImage(Ingredientes_list.getSprite(i));
+            }
+        }
+    }*/
+    
+    public void act()  
+    {
+
+    }
+    
 
     /**
      * Add a new score to the current counter value.  This will animate
@@ -93,8 +71,7 @@ public class Counter extends Actor
      */
     public void add()
     {
-        target ++;
-        cambiaImagen();
+        cambiaSilueta();
     }
 
     /**

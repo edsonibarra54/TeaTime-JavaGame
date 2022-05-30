@@ -17,9 +17,9 @@ public class JukeBox
         if(song.isPlaying()){
             song.stop();
         }
-        song = new GreenfootSound(newSong);
+        song = new GreenfootSound(newSong); 
         song.playLoop();
-        song.setVolume(18);
+        song.setVolume(20);
     }
     public void stop(){
         song.stop();
@@ -29,7 +29,7 @@ public class JukeBox
         
         
     }
-    public void silencio()
+    public void silencio() 
     {
             
     }

@@ -18,7 +18,7 @@ public class Sala_1 extends TileWorld
         this.transicionFinalIniciada = false;
         salaArriba = new PortalTile(0);
         addObject(salaArriba,300,1);
-        salaDerecha = new PortalTile(1);
+        salaDerecha = new PortalTile(1); 
         addObject(salaDerecha,600,200);
         salaIzquierda = new PortalTile(1);
         addObject(salaIzquierda,1,150);
@@ -63,8 +63,11 @@ public class Sala_1 extends TileWorld
     @Override
     public void prepareIndividual() 
     { 
-        Actor ingrediente = new Ingrediente("objeto.png");
-        addObject(ingrediente,300,250);
+        
+        if(Ingredientes_list.checkIngredient(0) == 0){
+            Ingrediente azucar = new Ingrediente("azucar.png",0);
+            addObject(azucar,300,250);
+        }        
         Actor enemigo1 = new Enemy(ListaDeSprites.enemigo1,200,1,0,100,100);
         Actor enemigo2 = new Enemy(ListaDeSprites.pirata,200,0,1,500,100);
         addObject(enemigo1,100,100);
