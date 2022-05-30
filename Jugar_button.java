@@ -24,7 +24,7 @@ public class Jugar_button extends Button
     public void clickedAction(){
         World  w = this.getWorld();
         JukeBox.changeSong("Take some rest.mp3");
-        World world = new Sala_0(true); 
+        World world = new Sala_0(); 
         Greenfoot.setWorld(world);
     }
 }

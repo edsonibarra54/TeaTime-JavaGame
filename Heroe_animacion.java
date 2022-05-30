@@ -120,20 +120,13 @@ public class Heroe_animacion extends Personaje
                 dy = 0;
                 cambiaImagen();
             }
-            if(t >= 59 && t < 78 && momentoAnimacion == 1){
+            if(t >= 59 && t < 260 && momentoAnimacion == 1){
                 dx = 0;
                 dy = velocidadY;
                 cambiaImagen();
             }
-            if(t == 78 && momentoAnimacion == 1){ //Crea al heroe para que podamos movernos y elimina al heroe que realiza la animacion
+            if(t == 260 && momentoAnimacion == 1){ //Crea al heroe para que podamos movernos y elimina al heroe que realiza la animacion
                 dx = dy = 0;
-                World w = this.getWorld();
-                Heroe hero = new Heroe(Dificultad.vidaHeroe,2,2,"principal_enfrente.gif"); 
-                w.addObject(hero,this.getX(),this.getY());
-                w.removeObject(this);
-                if(getWorld() == null){ //Verifica si ya no existe el personaje, si es asi termina el metodo camino para evitar que el metodo movimiento cree algun error
-                    return; 
-                }
             }
             movimiento();
         }
