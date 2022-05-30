@@ -197,6 +197,10 @@ public abstract class TileWorld extends World
                 tile.setImage("muro_1.png"); 
                 tile_2.setImage("arbol_3.png"); 
                 addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
+                break;
+            case "M05":
+                tile = new ColliderTile();
+                tile.setImage("muro_3.png"); 
                 break; 
             case "G01" :
                 tile = new TallGrass();
