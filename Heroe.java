@@ -16,17 +16,21 @@ public class Heroe extends Personaje
     private GifImage gif_enfrente = new GifImage("principal_enfrente.gif");
     private GifImage gif_espalda = new GifImage("principal_espalda.gif");
     private GifImage gif_derecha = new GifImage("principal_derecha.gif");
-    private GifImage gif_izquierda = new GifImage("principal_izquierda.gif"); 
-    private GreenfootSound sonido=new GreenfootSound("pasto.mp3");
+    private GifImage gif_izquierda = new GifImage("principal_izquierda.gif");
+    private GifImage gif_tumbado = new GifImage("principal_tumbado.gif");
+    private GreenfootSound sonido = new GreenfootSound("pasto.mp3");
     private String checa;
     private int antX,antY;
     private int tiempo=50;
     private boolean cancelaMovimiento; //Indica si el jugador podra mover al heroe 
+    private boolean transicionIniciada;
+    private Transicion t;
     
     public Heroe(int vida,int velocidadX,int velocidadY,String nombre_imagen)
     {
         super(vida,velocidadX,velocidadY,nombre_imagen);
         cancelaMovimiento = true;
+        transicionIniciada = false;
         HeartTile corazones;
         for(int i=0;i<(super.getvida()/2);i++)
         {
@@ -41,6 +45,7 @@ public class Heroe extends Personaje
         }
         antX=antY=300;
     }
+    
     public void addActorAtTileLocation(int i)
     {
         HeartTile contenedor = new HeartTile();
@@ -50,6 +55,7 @@ public class Heroe extends Personaje
             mundo.addObject(contenedor,0,0);            
         }
     }
+    
     public void reproduceSonido()
     {
         String imagen;
@@ -73,11 +79,11 @@ public class Heroe extends Personaje
             {
                 sonido.stop();
             }
+            
             if(getX()!=antX || getY()!=antY)
             {
                 tiempo=25;
             }
-            
         }
         /*if(imagen=="grass_1.png" || imagen=="grass_2.png" || imagen=="grass_3.png" || imagen=="grass_4.png")
         {
@@ -91,27 +97,33 @@ public class Heroe extends Personaje
     @Override
     public void act()
     {
-        // Add your action code here.
+        setImage(myGif.getCurrentImage());
         if(super.getvida()>0)
         {
             setcorazon();
             movimiento();
             ocultar();
             poder();
-            setImage(myGif.getCurrentImage());
             reproduceSonido();
             if (Greenfoot.isKeyDown("e") && unica==1){
-            super.setvida(super.getvida()+1);
-            unica=0;
-            setcorazon_seteado();
-            
+                super.setvida(super.getvida()+1);
+                unica=0;
+                setcorazon_seteado();
             }
         }else
         {
-            World mundo = getWorld();
-            mundo.removeObject(this);
+            if(transicionIniciada == false){
+                myGif = gif_tumbado;
+                transicionIniciada = true;
+                World mundo = getWorld();
+                t = new Transicion(2);
+                Derrota d = new Derrota();
+                mundo.addObject(d,300,200);
+                mundo.addObject(t,300,200);
+            }
         }
     }
+    
     public void setcorazon()
     {
         int i,j=0;
@@ -191,7 +203,7 @@ public class Heroe extends Personaje
     }
 
     @Override
-    public void movimiento()
+    public void movimiento() //Deja mover al jugador con las teclas mientras cancelaMovimiento sea false
     {
         //int veloz=(int)velocidad;
         int dx = 0, dy = 0;
@@ -220,21 +232,33 @@ public class Heroe extends Personaje
     
     public void poder()
     {
-        if(isTouching(Enemy.class) || isTouching(Projectile.class))
-        {
-            GreenfootSound sonido = new GreenfootSound("Golpe.mp3");
-            sonido.setVolume(60);
-            sonido.play();
-            TileWorld world = this.getWorldOfType(TileWorld.class);
-            world.reset();
-            super.setvida(super.getvida()-1);
-            Dificultad.vidaHeroe=super.getvida();
-            crea_contenedores=1;
-            setcorazon_seteado();
+        if(super.getvida() > 1){
+            if(isTouching(Enemy.class) || isTouching(Projectile.class))
+            {
+                GreenfootSound sonido = new GreenfootSound("Golpe.mp3");
+                sonido.setVolume(60);
+                sonido.play();
+                TileWorld world = this.getWorldOfType(TileWorld.class);
+                world.reset();
+                super.setvida(super.getvida()-1);
+                Dificultad.vidaHeroe=super.getvida();
+                crea_contenedores=1;
+                setcorazon_seteado();
+            }
         }
+        else{
+            if(isTouching(Enemy.class) || isTouching(Projectile.class))
+            {
+                GreenfootSound sonido = new GreenfootSound("Golpe.mp3");
+                sonido.setVolume(60);
+                sonido.play();
+                super.setvida(super.getvida()-1);
+            }
+        }
+        
     }
 
-    public void setCancelaMovimiento(boolean band){
+    public void setCancelaMovimiento(boolean band){ //Este metodo se encarga de indicar si el jugador puede moverse o no
         this.cancelaMovimiento = band;
     }
 }

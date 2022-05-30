@@ -17,7 +17,6 @@ comment3.params=
 comment3.target=void\ act()
 comment4.params=
 comment4.target=void\ cambiaImagen()
-comment4.text=public\ void\ changeSong(String\ song){\r\n\ \ \ \ \ \ \ \ TileWorld\ w\ \=\ this.getWorldOfType(TileWorld.class);\r\n\ \ \ \ \ \ \ \ w.getJB().changeSong(song);\r\n}
 comment5.params=
 comment5.target=void\ revisarRango()
 comment6.params=

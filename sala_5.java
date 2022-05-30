@@ -2,24 +2,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class sala_5 extends TileWorld
 {
-    private Actor halo;
     private boolean transicionInicialIniciada, transicionFinalIniciada; 
     private Transicion ti,tf;
     
     public sala_5(int spawnX, int spawnY,Counter count)
     {
-        super(ListaDeMundoTiles.TilesMundo3(), spawnX, spawnY,count); 
+        super(ListaDeMundoTiles.TilesMundo3(), spawnX, spawnY,count,0); 
         this.transicionInicialIniciada = false;
         this.transicionFinalIniciada = false;
-        halo = new HaloTile();
-        addObject(halo,spawnX - 8,spawnY + 5);
-        salaIzquierda = new PortalTile(1);
-        addObject(salaIzquierda,1,150);
         salaIzquierda = new PortalTile(1);
         addObject(salaIzquierda,1,150);
         salaDerecha = new PortalTile(1);
         addObject(salaDerecha,600,200);
     }
+    
     public void act() 
     {
         if(ti.animacionFinalizada() == true){
@@ -36,6 +32,7 @@ public class sala_5 extends TileWorld
             Greenfoot.setWorld(world);
         }
     }
+    
     @Override
     public void prepareIndividual(){
         if(Ingredientes_list.checkIngredient(1)==0){

@@ -2,17 +2,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Sala_2 extends TileWorld
 {
-    private Actor halo;
     private boolean transicionInicialIniciada, transicionFinalIniciada; 
     private Transicion ti,tf;
     
     public Sala_2(int spawnX, int spawnY,Counter count)
     {
-        super(ListaDeMundoTiles.TilesMundo2(), spawnX, spawnY,count); 
+        super(ListaDeMundoTiles.TilesMundo2(), spawnX, spawnY,count,0); 
         this.transicionInicialIniciada = false;
         this.transicionFinalIniciada = false;
-        halo = new HaloTile();
-        addObject(halo,spawnX - 8,spawnY + 5);
         salaIzquierda = new PortalTile(1);
         addObject(salaIzquierda,1,150);
         salaDerecha = new PortalTile(1);
