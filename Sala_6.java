@@ -13,10 +13,15 @@ public class Sala_6 extends TileWorld
      * Constructor for objects of class Sala_6.
      * 
      */
+    private boolean transicionInicialIniciada, transicionFinalIniciada; 
+    private Transicion ti,tf;
     private Actor halo;
     public Sala_6(int spawnX, int spawnY,Counter count)
     {
-        super(ListaDeMundoTiles.TilesMundo4(), spawnX, spawnY,count,0); 
+        super(ListaDeMundoTiles.TilesMundo4(), spawnX, spawnY,count,0,true);
+        this.transicionInicialIniciada = false;
+        this.transicionFinalIniciada = false;
+        //super(ListaDeMundoTiles.TilesMundo4(), spawnX, spawnY,count,0); 
         super.shadow=true;
         halo = new HaloTile();
         addObject(halo,spawnX - 8,spawnY + 5);
@@ -33,13 +38,27 @@ public class Sala_6 extends TileWorld
         if(IngredienteTiles.ingrediente[1]==0)
         {
             Ingrediente ingrediente = new Ingrediente("teprueba.png",1);
-            addObject(ingrediente,87,330);
+            /*addObject(ingrediente,87,330);
             ingrediente.getImage().scale(30,30);
-            ingrediente.setCorrespondiente(1);
+            ingrediente.setCorrespondiente(1);*/
         }    
+    }
+    public void act(){
+        if(ti.animacionFinalizada() == true){
+            getObjects(Heroe.class).get(0).setCancelaMovimiento(false);
+        }
+
     }
     @Override
     public void prepareIndividual(){
-        Actor enemigo1 = new Enemy(ListaDeSprites.enemigo1,200,1,0,100,100);
+        if(Ingredientes_list.checkIngredient(1)==0){
+            Ingrediente te = new Ingrediente("planta.png",1);
+            addObject(te,87,330);
+        }
+        if(transicionInicialIniciada == false){
+            transicionInicialIniciada = true;
+            ti = new Transicion(0);
+            addObject(ti,300,200);
+        }
     }
 }

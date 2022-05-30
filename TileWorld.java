@@ -57,7 +57,20 @@ public abstract class TileWorld extends World
         setPaintOrder(Derrota.class,Transicion.class,HeartTile.class,Counter.class,IngredientTile.class,ShadowTile.class,Heroe.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
         prepare();
     }
-    
+    public TileWorld(String tiles[][], int sX, int sY,Counter ingCount, int m,boolean bool)
+    {    
+        super(600, 400, 1, true);
+        shadow = bool;
+        spawnX = sX;
+        spawnY = sY;
+        mode = m;
+        this.ingCount = ingCount;
+        this.WORLD = tiles;
+        createWorldFromTiles();
+        //setPaintOrder(Counter.class,Derrota.class,Transicion.class,HeartTile.class,Tree.class,Heroe.class,LineOfSight.class,ShadowTile.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
+        setPaintOrder(Derrota.class,Transicion.class,HeartTile.class,Counter.class,IngredientTile.class,ShadowTile.class,Heroe.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
+        prepare();
+    }
     public TileWorld(String tiles[][], int sX, int sY,Counter ingCount)
     {    
         super(600, 400, 1, true);
@@ -132,7 +145,17 @@ public abstract class TileWorld extends World
             case "p12":
                 tile.setImage("path_12.png");      
                 break;
-            case "g01":
+            case "p13":
+                tile.setImage("path_13.png");
+                ShadowTile sombra_ = new ShadowTile();
+                addObject(sombra_, 12+x*TWIDTH, 12+y*THEIGHT);                
+                break;
+            case "p14":
+                tile.setImage("path_13.png");
+                //ShadowTile sombra_ = new ShadowTile();
+                //addObject(sombra_, 12+x*TWIDTH, 12+y*THEIGHT);                
+                break;
+                case "g01":
                 tile.setImage("grass_1.png");      
                 break;
             case "g02":
@@ -198,7 +221,15 @@ public abstract class TileWorld extends World
                 tile_2.setImage("arbol_3.png"); 
                 addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
                 break; 
-            case "G01" :
+             case "M05":
+                tile = new ColliderTile();
+                tile.setImage("muro_1.png"); 
+                tile_2.setImage("arbol_3.png"); 
+                addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
+                ShadowTile _sombra = new ShadowTile();
+                addObject(_sombra, 12+x*TWIDTH, 12+y*THEIGHT);
+                break; 
+                case "G01" :
                 tile = new TallGrass();
                 tile.setImage("tall_grass.png");
                 break;
@@ -218,9 +249,23 @@ public abstract class TileWorld extends World
                 tile_2 = new ArrowDispenserTile(1);
                 addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
                 break;
-                default : tile = new TallGrass();
-                
-                
+            case "J02" :
+                tile.setImage("grass_4.png");
+                tile_2 = new ArrowDispenserTile(4);
+                tile_2.getImage().setTransparency(0);
+                addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
+                ShadowTile _sombra_ = new ShadowTile();
+                addObject(_sombra_, 12+x*TWIDTH, 12+y*THEIGHT);
+                break;
+            case "J03" :
+                tile.setImage("grass_4.png");
+                tile_2 = new ArrowDispenserTile(3);
+                tile_2.getImage().setTransparency(0);
+                addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
+                ShadowTile _sombra__ = new ShadowTile();
+                addObject(_sombra__, 12+x*TWIDTH, 12+y*THEIGHT);
+                break;
+                default : tile = new TallGrass();                
             }    
             if(shadow==true)
             {

@@ -7,7 +7,7 @@ public class Sala_2 extends TileWorld
     
     public Sala_2(int spawnX, int spawnY,Counter count)
     {
-        super(ListaDeMundoTiles.TilesMundo2(), spawnX, spawnY,count,0); 
+        super(ListaDeMundoTiles.TilesMundo6(), spawnX, spawnY,count,0); 
         this.transicionInicialIniciada = false;
         this.transicionFinalIniciada = false;
         salaIzquierda = new PortalTile(1);
