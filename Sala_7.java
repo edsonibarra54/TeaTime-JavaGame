@@ -1,18 +1,43 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class Sala_2 extends TileWorld
+/**
+ * Write a description of class Sala_7 here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class Sala_7 extends TileWorld
 {
+    private Casa c,ct;
     private boolean transicionInicialIniciada, transicionFinalIniciada; 
     private Transicion ti,tf;
     
-    public Sala_2(int spawnX, int spawnY,Counter count)
+    public Sala_7(int spawnX, int spawnY,Counter count)
     {
-        super(ListaDeMundoTiles.TilesMundo2(), spawnX, spawnY,count,0); 
+        super(ListaDeMundoTiles.TilesMundo5(), spawnX, spawnY,count,0);
         this.transicionInicialIniciada = false;
         this.transicionFinalIniciada = false;
+        c = new Casa("casa.png");
+        addObject(c,78,100);
+        ct = new Casa("techo.png");
+        addObject(ct,78,0);
+        Casa casa,techo;
+        casa = new Casa("casa.png");
+        techo = new Casa("techo.png");
+        addObject(casa,195,100);
+        addObject(techo,195,0);
+        casa = new Casa("casa.png");
+        techo = new Casa("techo.png");
+        addObject(casa,403,100);
+        addObject(techo,403,0);
+        casa = new Casa("casa.png");
+        techo = new Casa("techo.png");
+        addObject(casa,516,100);
+        addObject(techo,516,0);
+        
         salaIzquierda = new PortalTile(1);
         addObject(salaIzquierda,1,150);
-        salaDerecha = new PortalTile(1);
+        salaDerecha = new PortalTile(0);
         addObject(salaDerecha,600,200);
     }
     
@@ -30,33 +55,16 @@ public class Sala_2 extends TileWorld
                 }
                 if(tf.getWorld() != null){
                     if(tf.animacionFinalizada() == true){
-                        World world = new sala_5(25,150,super.getCounter());
-                        Greenfoot.setWorld(world);
-                    }
-                }
-            } 
-            if(salaIzquierda.isHeroOn()){ 
-                if(transicionFinalIniciada == false){
-                    transicionFinalIniciada = true;
-                    tf = new Transicion(1); 
-                    addObject(tf,300,200);
-                }
-                if(tf.getWorld() != null){
-                    if(tf.animacionFinalizada() == true){
-                        World world = new Sala_7(570,270,super.getCounter());
+                        World world = new Sala_2(25,150,super.getCounter());
                         Greenfoot.setWorld(world);
                     }
                 }
             }
         }
+
     }
-    
     @Override
     public void prepareIndividual(){
-        if(Ingredientes_list.checkIngredient(2)==0){
-            Ingrediente taza = new Ingrediente("taza.png",2);
-            addObject(taza,300,100);
-        }
         if(transicionInicialIniciada == false){
             transicionInicialIniciada = true;
             ti = new Transicion(0);

@@ -13,6 +13,7 @@ public class Sala_1 extends TileWorld
     
     public Sala_1(int spawnX, int spawnY,Counter count)
     {
+        //super(ListaDeMundoTiles.TilesMundo5(), spawnX, spawnY,count,false);
         super(ListaDeMundoTiles.TilesMundo1(), spawnX, spawnY,count,0); 
         this.transicionInicialIniciada = false;
         this.transicionFinalIniciada = false;

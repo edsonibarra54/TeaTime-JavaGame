@@ -22,6 +22,7 @@ public class Jugar_button extends Button
     
     @Override
     public void clickedAction(){
+        Ingredientes_list.resetIngredients();
         World  w = this.getWorld();
         JukeBox.changeSong("Take some rest.mp3");
         World world = new Sala_0(); 
