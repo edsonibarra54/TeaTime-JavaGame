@@ -18,7 +18,6 @@ public abstract class Button extends Actor
             clickedAction();
         }
     } 
-    
+
     public abstract void clickedAction(); 
-  
 }
