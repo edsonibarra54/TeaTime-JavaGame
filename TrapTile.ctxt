@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=TrapTile
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ TrapTile\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=tiempoReposicion
+comment1.target=TrapTile(int)
+comment1.text=public\ TrapTile(int\ tiempoReposicion)\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ this.tiempoReposicion\=tiempoReposicion;\r\n\ \ \ \ \ \ \ \ //cont\=tiempoReposicion;\r\n}
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ actua()
+numComments=4

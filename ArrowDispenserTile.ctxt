@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=ArrowDispenserTile
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ ArrowDispenserTile\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=eje\ tiempodeespera
+comment1.target=ArrowDispenserTile(int,\ int)
+comment2.params=eje
+comment2.target=ArrowDispenserTile(int)
+comment3.params=
+comment3.target=void\ act()
+comment4.params=
+comment4.target=void\ actua()
+numComments=5

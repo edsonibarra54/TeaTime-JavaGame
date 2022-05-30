@@ -26,7 +26,7 @@ public class Sala_2 extends TileWorld
     
     public void act(){
         if(salaIzquierda.isHeroOn()){
-            World world = new Sala_1(570,200,super.getCounter());
+            World world = new Sala_7(570,270,super.getCounter());
             Greenfoot.setWorld(world);
         }
         if(salaDerecha.isHeroOn()){

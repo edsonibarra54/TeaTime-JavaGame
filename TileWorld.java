@@ -64,7 +64,7 @@ public abstract class TileWorld extends World
         this.ingCount = ingCount;
         this.WORLD = tiles;
         createWorldFromTiles(); 
-        setPaintOrder(Heroe.class,Counter.class,HeartTile.class,ShadowTile.class,Heroe.class/*,TrapTile.class*/,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
+        setPaintOrder(Heroe.class,Counter.class,HeartTile.class,ShadowTile.class,Heroe.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
         prepare();
     }
     
@@ -77,7 +77,7 @@ public abstract class TileWorld extends World
         this.ingCount = ingCount;
         this.WORLD = tiles;
         createWorldFromTiles(); 
-        setPaintOrder(Heroe.class,Counter.class,HeartTile.class,ShadowTile.class,Heroe.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
+        setPaintOrder(Heroe.class,Counter.class,HeartTile.class,ShadowTile.class,Heroe.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
         prepare();
     }
     
@@ -206,9 +206,14 @@ public abstract class TileWorld extends World
                 tile.setImage("tall_grass.png");                
                 tile.getImage().scale(35,25);
                 break;
-            case "J00" :
+             case "J00" :
                 tile.setImage("grass_4.png");
-                tile_2 = new TallGrass();
+                tile_2 = new Rock();
+                addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
+                break;
+            case "J01" :
+                tile.setImage("grass_4.png");
+                tile_2 = new ArrowDispenserTile(1);
                 addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
                 break;
                 default : tile = new TallGrass();
