@@ -17,7 +17,7 @@ public class Transicion extends Actor
         setImage("Transicion.png");
         tempo = 0;
         mode = m;
-        if(m == 1){
+        if(m == 1 || m == 2){
             this.getImage().setTransparency(0);
         }
     }
@@ -31,14 +31,21 @@ public class Transicion extends Actor
         if(this.mode == 1 && tempo < 50){ //Esta realiza la animacion donde se oscurece
             this.getImage().setTransparency(this.getImage().getTransparency() + 5);
         }
+        
+        if(this.mode == 2 && tempo < 254){ //Esta realiza la animacion donde se oscurece para la pantalla de derrota
+            this.getImage().setTransparency(this.getImage().getTransparency() + 1);
+        }
     }
     
     public boolean animacionFinalizada(){ //Indica si la animacion de transicion a sido finalizada
-        if(tempo >= 50){
+        if(tempo >= 50 && mode < 2){
             return true;
         }
-        else{
-            return false;
+        
+        if(tempo >= 254 && mode == 2){
+            return true;
         }
+        
+        return false;
     }
 }
