@@ -1,13 +1,10 @@
 #BlueJ class context
 comment0.target=Sala_1
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Sala_1\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=d
-comment1.target=Sala_1(int)
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Sala_1.\r\n\ \r\n
-comment2.params=spawnX\ spawnY\ count
-comment2.target=Sala_1(int,\ int,\ Counter)
+comment1.params=spawnX\ spawnY\ count
+comment1.target=Sala_1(int,\ int,\ Counter)
+comment2.params=
+comment2.target=void\ act()
 comment3.params=
-comment3.target=void\ act()
-comment4.params=
-comment4.target=void\ prepareIndividual()
-numComments=5
+comment3.target=void\ prepareIndividual()
+numComments=4

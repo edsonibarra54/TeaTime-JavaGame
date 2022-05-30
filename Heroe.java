@@ -21,13 +21,12 @@ public class Heroe extends Personaje
     private String checa;
     private int antX,antY;
     private int tiempo=50;
-    /**
-     * Act - do whatever the Heroe wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private boolean cancelaMovimiento; //Indica si el jugador podra mover al heroe 
+    
     public Heroe(int vida,int velocidadX,int velocidadY,String nombre_imagen)
     {
         super(vida,velocidadX,velocidadY,nombre_imagen);
+        cancelaMovimiento = true;
         HeartTile corazones;
         for(int i=0;i<(super.getvida()/2);i++)
         {
@@ -143,6 +142,7 @@ public class Heroe extends Personaje
         crea_contenedores=0;
     }
     }
+    
     public void setcorazon_seteado()
     {
         int i,j=0;
@@ -179,6 +179,7 @@ public class Heroe extends Personaje
         crea_contenedores=0;
     }
     }
+    
     public boolean ocultar(){
         boolean flag = false;
         if(isTouching(TallGrass.class)){
@@ -194,19 +195,19 @@ public class Heroe extends Personaje
     {
         //int veloz=(int)velocidad;
         int dx = 0, dy = 0;
-        if (Greenfoot.isKeyDown("W")){
+        if (Greenfoot.isKeyDown("W") && cancelaMovimiento == false){
             dy = -this.velocidadY;
             myGif = gif_espalda;
         }
-        if (Greenfoot.isKeyDown("A")){
+        if (Greenfoot.isKeyDown("A") && cancelaMovimiento == false){
             dx = -this.velocidadX;
             myGif = gif_izquierda;
         }
-        if (Greenfoot.isKeyDown("S")){
+        if (Greenfoot.isKeyDown("S") && cancelaMovimiento == false){
             dy = this.velocidadY;
             myGif = gif_enfrente;
         }
-        if (Greenfoot.isKeyDown("D")){
+        if (Greenfoot.isKeyDown("D") && cancelaMovimiento == false){
             dx = this.velocidadX;
             myGif = gif_derecha;
         }
@@ -216,17 +217,11 @@ public class Heroe extends Personaje
             setLocation(getX()-dx, getY()-dy);
         }   
     }
+    
     public void poder()
     {
         if(isTouching(Enemy.class) || isTouching(Projectile.class))
         {
-            /* List<Enemy> enemigos =getObjectsInRange(80,Enemy.class);
-            for(Enemy enemigo:enemigos)
-            {
-                //enemigo.setEspera(100);
-                //enemigo.retrocede(getX(),getY());
-                
-            }*/
             GreenfootSound sonido = new GreenfootSound("Golpe.mp3");
             sonido.setVolume(60);
             sonido.play();
@@ -237,7 +232,9 @@ public class Heroe extends Personaje
             crea_contenedores=1;
             setcorazon_seteado();
         }
-
     }
 
+    public void setCancelaMovimiento(boolean band){
+        this.cancelaMovimiento = band;
+    }
 }
