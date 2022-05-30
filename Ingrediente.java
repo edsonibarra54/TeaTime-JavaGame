@@ -9,8 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Ingrediente extends Actor
 {
     private int dx,dy,tempo,correspondiente;
-
-    private int dx,dy,tempo;
     private int list_position;
 
     public Ingrediente(String imagen, int index){

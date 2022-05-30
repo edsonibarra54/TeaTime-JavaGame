@@ -20,7 +20,7 @@ public class Enemy extends Personaje
     private int radioBusqueda = Dificultad.RadioBusqueda;
     private int velocidadX,velocidadY,rX,rY,vxabs,vyabs;//Variables que permiten modificar la velocidad;
     private int velocidadPersigueX,velocidadPersigueY;//Variables para modificar la velocidad con la que te perigue, util al cambiar dificultad
-    private boolean persigue=false,offPath=false,losActive=true;
+    private boolean persigue=false,offPath=false,losActive=false;
     /*Si persigue = true, entonces no esta en rango el heroe, si offPath = true, quiere decir que el enemigo persigió al heroe y se 
        salió de su ruta, si losActive = true, entonces el enemigo usa la vista linear en vez de radial*/
     private List<Heroe> heroInRange;
