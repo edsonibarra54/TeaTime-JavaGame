@@ -46,13 +46,15 @@ public abstract class TileWorld extends World
     public TileWorld(String tiles[][], int sX, int sY,Counter ingCount, int m)
     {    
         super(600, 400, 1, true);
+        shadow = false;
         spawnX = sX;
         spawnY = sY;
         mode = m;
         this.ingCount = ingCount;
         this.WORLD = tiles;
         createWorldFromTiles();
-        setPaintOrder(Derrota.class,Transicion.class,HeartTile.class,Tree.class,Heroe.class,LineOfSight.class,Counter.class,ShadowTile.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
+        //setPaintOrder(Counter.class,Derrota.class,Transicion.class,HeartTile.class,Tree.class,Heroe.class,LineOfSight.class,ShadowTile.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
+        setPaintOrder(Counter.class,Derrota.class,Transicion.class,HeartTile.class,ShadowTile.class,Heroe.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
         prepare();
     }
     
@@ -64,7 +66,7 @@ public abstract class TileWorld extends World
         this.ingCount = ingCount;
         this.WORLD = tiles;
         createWorldFromTiles(); 
-        setPaintOrder(Heroe.class,Counter.class,HeartTile.class,ShadowTile.class,Heroe.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
+        setPaintOrder(Counter.class,Heroe.class,HeartTile.class,ShadowTile.class,Heroe.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
         prepare();
     }
     
@@ -77,7 +79,7 @@ public abstract class TileWorld extends World
         this.ingCount = ingCount;
         this.WORLD = tiles;
         createWorldFromTiles(); 
-        setPaintOrder(Heroe.class,Counter.class,HeartTile.class,ShadowTile.class,Heroe.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
+        setPaintOrder(Counter.class,HeartTile.class,ShadowTile.class,Heroe.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
         prepare();
     }
     
@@ -255,7 +257,7 @@ public abstract class TileWorld extends World
             addObject(hero,spawnX,spawnY); 
             ingCount.addToWorld(this); 
         }
-        else{
+        else{ 
             hero_animation = new Heroe_animacion(Dificultad.vidaHeroe,1,1,"principal_enfrente.gif",animationNumber);
             addObject(hero_animation,spawnX,spawnY);
         }

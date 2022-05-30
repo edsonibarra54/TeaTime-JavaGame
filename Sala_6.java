@@ -16,7 +16,7 @@ public class Sala_6 extends TileWorld
     private Actor halo;
     public Sala_6(int spawnX, int spawnY,Counter count)
     {
-        super(ListaDeMundoTiles.TilesMundo4(), spawnX, spawnY,count,true); 
+        super(ListaDeMundoTiles.TilesMundo4(), spawnX, spawnY,count,0); 
         super.shadow=true;
         halo = new HaloTile();
         addObject(halo,spawnX - 8,spawnY + 5);

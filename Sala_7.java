@@ -9,13 +9,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Sala_7 extends TileWorld
 {
     private Casa c,ct;
+    private boolean transicionInicialIniciada, transicionFinalIniciada; 
+    private Transicion ti,tf;
     /**
      * Constructor for objects of class Sala_7.
      * 
      */
     public Sala_7(int spawnX, int spawnY,Counter count)
     {
-        super(ListaDeMundoTiles.TilesMundo5(), spawnX, spawnY,count,false);
+        super(ListaDeMundoTiles.TilesMundo5(), spawnX, spawnY,count,0);
+        this.transicionInicialIniciada = false;
+        this.transicionFinalIniciada = false;
         c = new Casa("casa.png");
         addObject(c,78,100);
         ct = new Casa("techo.png");
@@ -40,6 +44,25 @@ public class Sala_7 extends TileWorld
     }
     public void act() 
     {
+        if(ti.animacionFinalizada() == true){
+            getObjects(Heroe.class).get(0).setCancelaMovimiento(false);
+        }
+        
+        if(this.getObjects(Heroe.class).isEmpty()!=true){
+            if(salaDerecha.isHeroOn()){
+                if(transicionFinalIniciada == false){
+                    transicionFinalIniciada = true;
+                    tf = new Transicion(1); 
+                    addObject(tf,300,200);
+                }
+                if(tf.getWorld() != null){
+                    if(tf.animacionFinalizada() == true){
+                        World world = new Sala_2(25,150,super.getCounter());
+                        Greenfoot.setWorld(world);
+                    }
+                }
+            }
+        }
         if(salaIzquierda.isHeroOn()){
             World world = new Sala_6(575,200,super.getCounter());
             GreenfootSound sonido= new GreenfootSound("Golpe.mp3");

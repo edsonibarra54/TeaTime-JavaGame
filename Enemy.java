@@ -20,7 +20,7 @@ public class Enemy extends Personaje
     private int radioBusqueda = Dificultad.RadioBusqueda;
     private int velocidadX,velocidadY,rX,rY,vxabs,vyabs;//Variables que permiten modificar la velocidad;
     private int velocidadPersigueX,velocidadPersigueY;//Variables para modificar la velocidad con la que te perigue, util al cambiar dificultad
-    private boolean persigue=false,offPath=false,losActive=false;
+    private boolean persigue=false,offPath=false,losActive=true;
     /*Si persigue = true, entonces no esta en rango el heroe, si offPath = true, quiere decir que el enemigo persigió al heroe y se 
        salió de su ruta, si losActive = true, entonces el enemigo usa la vista linear en vez de radial*/
     private List<Heroe> heroInRange;
@@ -51,6 +51,11 @@ public class Enemy extends Personaje
         movimiento();
         cambiaImagen();
     }
+    
+    /*public void changeSong(String song){
+        TileWorld w = this.getWorldOfType(TileWorld.class);
+        w.getJB().changeSong(song);
+    }*/
     
     public void cambiaImagen(){
         if(persigue){
@@ -94,7 +99,7 @@ public class Enemy extends Personaje
         
     }
     
-    public void revisarRango(){ //Revisa si hay algun heroe en el rango
+    public void revisarRango(){//Revisa si hay algun heroe en el rango
         if(losActive){
             heroInRange = this.los.losClear();
             if(heroInRange.isEmpty()){
@@ -207,5 +212,6 @@ public class Enemy extends Personaje
         return this.pathcounter;
     }
 }
+
 
 
