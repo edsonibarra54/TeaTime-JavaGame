@@ -34,7 +34,7 @@ public class Sala_6 extends TileWorld
         MiniHalo luz = new MiniHalo();
         addObject(luz,87,337);
         salaDerecha = new PortalTile(0);
-        addObject(salaDerecha,600,200);
+        addObject(salaDerecha,599,200);
         if(IngredienteTiles.ingrediente[1]==0)
         {
             Ingrediente ingrediente = new Ingrediente("teprueba.png",1);
@@ -47,7 +47,21 @@ public class Sala_6 extends TileWorld
         if(ti.animacionFinalizada() == true){
             getObjects(Heroe.class).get(0).setCancelaMovimiento(false);
         }
-
+        if(this.getObjects(Heroe.class).isEmpty()!=true){
+            if(salaDerecha.isHeroOn()){
+                if(transicionFinalIniciada == false){
+                    transicionFinalIniciada = true;
+                    tf = new Transicion(1); 
+                    addObject(tf,300,200);
+                }
+                if(tf.getWorld() != null){
+                    if(tf.animacionFinalizada() == true){
+                        World world = new sala_5(20,190,super.getCounter());
+                        Greenfoot.setWorld(world);
+                    }
+                }
+            }
+        }
     }
     @Override
     public void prepareIndividual(){
