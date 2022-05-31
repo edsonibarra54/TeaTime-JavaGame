@@ -117,7 +117,7 @@ public class Heroe extends Personaje
                 transicionIniciada = true;
                 World mundo = getWorld();
                 t = new Transicion(2);
-                Derrota d = new Derrota();
+                FinJuego d = new FinJuego("Pantalla_derrota.png");
                 mundo.addObject(d,300,200);
                 mundo.addObject(t,300,200);
             }

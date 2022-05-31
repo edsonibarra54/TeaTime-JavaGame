@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Reina
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Reina\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Reina()
+comment2.params=
+comment2.target=void\ movimiento()
+comment3.params=
+comment3.target=void\ act()
+comment4.params=
+comment4.target=void\ cambiaImagen()
+comment5.params=t\ n
+comment5.target=void\ camino(int,\ int)
+comment6.params=t
+comment6.target=void\ setTempo(int)
+numComments=7

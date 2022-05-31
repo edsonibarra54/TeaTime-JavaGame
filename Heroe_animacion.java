@@ -18,6 +18,8 @@ public class Heroe_animacion extends Personaje
     private int numeroAnimacion,momentoAnimacion = 0; //numeroAnimacion indica que animacion es la que realizara, momentoAnimacion indica en que momento de la animacion se encuentra 
     private int tempo = 0;
     private int dx = 0,dy = 0; //Velocidad actual del personaje
+    private boolean transicionIniciada = false, transicionIniciada2 = false;
+    private Transicion tf;
     
     public Heroe_animacion(int vida,int velocidadX,int velocidadY,String nombre_imagen,int n)
     {
@@ -130,8 +132,37 @@ public class Heroe_animacion extends Personaje
             }
             movimiento();
         }
+        
         if(n == 2){
-            
+            if(t < 250 && momentoAnimacion == 0){
+                dx = 0;
+                dy = -velocidadY;
+                cambiaImagen();
+            }
+            if(t >= 250 && momentoAnimacion == 0){
+                dy = 0;
+                World w = this.getWorld();
+                Reina reina = new Reina();
+                momentoAnimacion = 1;
+                setTempo(0);
+                w.addObject(reina,550,25);
+            }
+            if(t >= 320 && t < 365 && momentoAnimacion == 1){
+                dy = -velocidadY;
+                cambiaImagen();
+            }
+            if(t >= 365 && momentoAnimacion == 1){
+                dy = 0;
+               if(transicionIniciada == false){
+                transicionIniciada = true;
+                World mundo = getWorld();
+                tf = new Transicion(2);
+                FinJuego d = new FinJuego("Pantalla_victoria.png");
+                mundo.addObject(d,300,200);
+                mundo.addObject(tf,300,200);
+                }
+            }
+            movimiento();
         }
     }
     
