@@ -191,7 +191,10 @@ public class Heroe extends Personaje
         crea_contenedores=0;
     }
     }
-    
+    /**
+     * Si el heroe esta dentro de una celda de tipo TallGrass, se regresa verdadero y los 
+     * enemigos no pueden seguirlo
+     */
     public boolean ocultar(){
         boolean flag = false;
         if(isTouching(TallGrass.class)){
@@ -201,7 +204,12 @@ public class Heroe extends Personaje
             this.getImage().setTransparency(255);
         return flag;
     }
-
+    
+    /**
+     * Utilizando las teclas WASD cambiamos la velocidad correspondientemente,
+     * despues, movemos al heroe esa cantidad de pixeles, si esta chocando con una pared
+     * no puede atravesarla
+     */
     @Override
     public void movimiento() //Deja mover al jugador con las teclas mientras cancelaMovimiento sea false
     {

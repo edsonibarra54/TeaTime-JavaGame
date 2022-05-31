@@ -14,7 +14,10 @@ public class LineOfSight extends Actor
     private int large,width = 10;
     private int cambioLongitud = 0;
     private GreenfootImage image;
-    
+    /**
+     * Constructor de los, necesita de un enemigo que será el poseedor de la misma
+     * Se asignan diversos datos con la informacion del enemigo
+     */
     public LineOfSight(Enemy owner){
         this.owner = owner;
         this.large = this.owner.getRadioB();
@@ -25,6 +28,9 @@ public class LineOfSight extends Actor
         this.addToWorld();
     }
     
+    /**
+     * Se añade al mundo frente a la posicion de su dueño
+     */
     public void addToWorld(){
         TileWorld w = this.owner.getWorldOfType(TileWorld.class);
         w.addObject(this,owner.getX()+(this.large/2),owner.getY());
@@ -35,6 +41,11 @@ public class LineOfSight extends Actor
         
     }
     
+    /**
+     * Revisa las clases con las que intersecta, si detecta solamente un heroe, se activa el seguimiento
+     * del enemigo, si detecta un heroe y una pared, se calcula quien esta más cerca para determinar si en realidad
+     * se ve al enemigo o no
+     */
     public List<Heroe> losClear(){//Revisamos lo que esta dentro del area de vision
         List<Heroe> heroAtlos = new ArrayList<Heroe>();
         if(getOneIntersectingObject(ColliderTile.class) == null && getIntersectingObjects(Heroe.class).isEmpty() == false){//Si solamente hay heroe
@@ -51,10 +62,16 @@ public class LineOfSight extends Actor
         return heroAtlos; 
     }
     
+    /**
+     * Se usa el teorema de Pitagoras para calcular la distancia entre dos Actores
+     */
     public double calDistance(Actor actor){//Se calcula la distancia entre los objetos por el metodo del teorema de pitagoras 
         return Math.sqrt(Math.pow(actor.getX()-this.getX(),2)+Math.pow(actor.getY()-this.getY(),2));
     }
-    
+    /**
+     * Se reescala la imagen para coincidir con hacia donde ve el enemigo
+     * Ademas de modificar su posicion para seguirlo
+     */
     public void setOrientation(int sprite){//Movemos la orientacion de la linea dependiendo de hacia donde ve el enemigo
         switch(sprite){
             case 0://Enfrente

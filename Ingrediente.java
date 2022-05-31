@@ -10,8 +10,12 @@ public class Ingrediente extends Actor
 {
     private int dx,dy,tempo,correspondiente;
     private int list_position;
-
-    public Ingrediente(String imagen, int index){
+    
+    /**
+     * Constructor para el ingrediente, necesita de el nombre de su imagen y el index, que representa
+     * Su posicion en el arreglo estatico de ingredientes
+     */
+    public Ingrediente(String imagen, int index){ 
         GreenfootImage image = new GreenfootImage(imagen);//Solo para la imagen de prueba;
         image.scale(25,25);
         this.setImage(imagen);
@@ -20,7 +24,11 @@ public class Ingrediente extends Actor
         tempo=0;
     }
 
-    
+    /**
+     * Cuando el heroe toca el ingrediente, este es eliminado del mundo
+     * se modifica la lista de ingredientes para marcarlo como recogido, emite un sonido
+     * y hace al contador cambiar su imagen
+     */
     public void Recoger(){
         if(isTouching(Heroe.class)){
             TileWorld world = getWorldOfType(TileWorld.class);

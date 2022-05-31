@@ -7,7 +7,10 @@ public class Counter extends Actor
     private int target;
     private ArrayList<IngredientTile> ingredients = new ArrayList<>();    
 
-    
+    /**
+     * Constructor de counter, instancia las siluetas de los ingredientes representados
+     * dentro de esta clase y los añade a una lista
+     */    
     public Counter()
     {
         IngredientTile azucar = new IngredientTile("azucar_silueta.png");
@@ -17,7 +20,9 @@ public class Counter extends Actor
         ingredients.add(te);
         ingredients.add(taza);
     }
-    
+    /**
+     * Se añaden los objetos que componen al contador al mundo
+     */
     public void addToWorld(World w){
         w.addObject(ingredients.get(2), 585, 350);
         w.addObject(ingredients.get(1), 545, 350);
@@ -31,7 +36,10 @@ public class Counter extends Actor
             i++; 
         }
     }*/
-    
+    /**
+     * Se modifican las siluetas por la imagen completa dependiendo de si el ingrediente fue recogido
+     * o no
+     */
     public void cambiaSilueta(){
         if(Ingredientes_list.checkIngredient(0)==1){
             ingredients.get(0).setImage("azucar.png");

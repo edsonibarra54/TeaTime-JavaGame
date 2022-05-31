@@ -20,6 +20,10 @@ public class Jugar_button extends Button
         handleMouseClicks();        // Add your action code here. 
     } 
     
+    
+    /**
+     * Cuando se hace click, se resetean diversos datos estaticos, además de instanciar la animacion inicial
+     */
     @Override
     public void clickedAction(){
         Ingredientes_list.resetIngredients();

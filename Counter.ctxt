@@ -2,11 +2,13 @@
 comment0.target=Counter
 comment1.params=
 comment1.target=Counter()
+comment1.text=\r\n\ Constructor\ de\ counter,\ instancia\ las\ siluetas\ de\ los\ ingredientes\ representados\r\n\ dentro\ de\ esta\ clase\ y\ los\ a\u00F1ade\ a\ una\ lista\r\n
 comment2.params=w
 comment2.target=void\ addToWorld(greenfoot.World)
+comment2.text=\r\n\ Se\ a\u00F1aden\ los\ objetos\ que\ componen\ al\ contador\ al\ mundo\r\n
 comment3.params=
 comment3.target=void\ cambiaSilueta()
-comment3.text=public\ void\ addToWorld(World\ w){\r\n\ \ \ \ \ \ \ \ int\ i\=0;\r\n\ \ \ \ \ \ \ \ for(IngredientTile\ t\:\ ingredients){\r\n\ \ \ \ \ \ \ \ \ \ \ \ w.addObject(t,w.getWidth()-15*(i+1)-t.getImage().getWidth()*i,w.getHeight()-50);\ \r\n\ \ \ \ \ \ \ \ \ \ \ \ i++;\ \r\n\ \ \ \ \ \ \ \ }\r\n}
+comment3.text=\r\n\ Se\ modifican\ las\ siluetas\ por\ la\ imagen\ completa\ dependiendo\ de\ si\ el\ ingrediente\ fue\ recogido\r\n\ o\ no\r\n
 comment4.params=
 comment4.target=void\ act()
 comment4.text=\r\n\ \ \ \ public\ void\ cambiaSilueta(){\r\n\ \ \ \ \ \ \ \ for(int\ i\ \=\ 0;i\ <\ ingredients.size();i++){\r\n\ \ \ \ \ \ \ \ \ \ \ \ if(Ingredientes_list.checkIngredient(i)\=\=1){\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ingredients.get(i).setImage(Ingredientes_list.getSprite(i));\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ }\r\n}
