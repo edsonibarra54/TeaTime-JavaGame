@@ -12,6 +12,8 @@ public class Sala_10 extends TileWorld
         this.transicionInicialIniciada = false;
         this.transicionFinalIniciada = false;
         this.activaFinal = false;
+        Fuente fuente = new Fuente();
+        addObject(fuente,300,200);
         salaAbajo = new PortalTile(0);
         addObject(salaAbajo,300,399);
         salaArriba = new PortalTile(0);
