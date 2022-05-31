@@ -34,7 +34,6 @@ public class Sala_7 extends TileWorld
         techo = new Casa("techo.png");
         addObject(casa,516,100);
         addObject(techo,516,0);
-        
         salaIzquierda = new PortalTile(1);
         addObject(salaIzquierda,1,275);
         salaDerecha = new PortalTile(1);
@@ -57,7 +56,20 @@ public class Sala_7 extends TileWorld
                 }
                 if(tf.getWorld() != null){
                     if(tf.animacionFinalizada() == true){
-                        World world = new Sala_2(25,150,super.getCounter());
+                        World world = new Sala3(50,150,super.getCounter());
+                        Greenfoot.setWorld(world);
+                    }
+                }
+            }
+            if(salaIzquierda.isHeroOn()){ 
+                if(transicionFinalIniciada == false){
+                    transicionFinalIniciada = true;
+                    tf = new Transicion(1); 
+                    addObject(tf,300,200);
+                }
+                if(tf.getWorld() != null){
+                    if(tf.animacionFinalizada() == true){
+                        World world = new sala_5(570,200,super.getCounter());
                         Greenfoot.setWorld(world);
                     }
                 }
@@ -91,6 +103,7 @@ public class Sala_7 extends TileWorld
                 }
             }
         }
+
 
     }
     @Override

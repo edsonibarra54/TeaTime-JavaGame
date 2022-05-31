@@ -7,13 +7,19 @@ public class Sala_2 extends TileWorld
     
     public Sala_2(int spawnX, int spawnY,Counter count)
     {
-        super(ListaDeMundoTiles.TilesMundo6(), spawnX, spawnY,count,0); 
+        super(ListaDeMundoTiles.TilesMundo2(), spawnX, spawnY,count,0); 
         this.transicionInicialIniciada = false;
         this.transicionFinalIniciada = false;
         salaIzquierda = new PortalTile(1);
         addObject(salaIzquierda,1,150);
         salaDerecha = new PortalTile(1);
         addObject(salaDerecha,600,200);
+        Actor enemigo1 = new Enemy(ListaDeSprites.enemigo1,200,1,0,100,100);
+        Actor enemigo2 = new Enemy(ListaDeSprites.pirata,200,0,1,250,250);
+        Actor enemigo3 = new Enemy(ListaDeSprites.pirata,200,0,1,350,250);
+        addObject(enemigo1,100,100);
+        addObject(enemigo2,250,250);
+        addObject(enemigo3,350,250);
     }
     
     public void act(){
@@ -30,7 +36,7 @@ public class Sala_2 extends TileWorld
                 }
                 if(tf.getWorld() != null){
                     if(tf.animacionFinalizada() == true){
-                        World world = new sala_5(25,150,super.getCounter());
+                        World world = new Sala8(35,200,super.getCounter());
                         Greenfoot.setWorld(world);
                     }
                 }
@@ -43,7 +49,7 @@ public class Sala_2 extends TileWorld
                 }
                 if(tf.getWorld() != null){
                     if(tf.animacionFinalizada() == true){
-                        World world = new Sala_7(570,270,super.getCounter());
+                        World world = new Sala_1(570,200,super.getCounter());
                         Greenfoot.setWorld(world);
                     }
                 }
@@ -53,10 +59,10 @@ public class Sala_2 extends TileWorld
     
     @Override
     public void prepareIndividual(){
-        if(Ingredientes_list.checkIngredient(2)==0){
+        /*if(Ingredientes_list.checkIngredient(2)==0){
             Ingrediente taza = new Ingrediente("taza.png",2);
             addObject(taza,300,100);
-        }
+        }*/
         if(transicionInicialIniciada == false){
             transicionInicialIniciada = true;
             ti = new Transicion(0);
