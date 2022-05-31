@@ -39,11 +39,17 @@ public class Enemy extends Personaje
             gifs.add(gif);
         }
     }
-    
+    /**
+     * Se añade su linea de vision al mundo
+     */
     protected void addedToWorld(World w){
         this.los = new LineOfSight(this);
     } 
     
+    /**
+     * Revisa si hay un heroe en rango, cambia su velocidad dependiendo de si lo hay o no
+     * Se mueve utilizando la velocidad anterior y cambia su sprite para coincidir hacia donde se mueve
+     */
     public void act()
     {   
         revisarRango();
@@ -57,6 +63,10 @@ public class Enemy extends Personaje
         w.getJB().changeSong(song);
     }*/
     
+    /**
+     * Utilizando su velocidad actual en los ejes determinamos hacia donde esta viendo y cambiamos
+     * su sprite para coincidir, si esta persiguiendo al heroe entonces su sprite es diferente
+     */
     public void cambiaImagen(){
         if(persigue){
             if(this.velocidadY==0){
@@ -98,7 +108,10 @@ public class Enemy extends Personaje
         }
         
     }
-    
+    /**
+     * Revisa si hay un heroe en el rango, si la los esta activa, utiliza esta para analizar su entorno
+     * si se encuentra persiguiendo al heroe, va a utilizar un rango radial para detectar al heroe
+     */
     public void revisarRango(){//Revisa si hay algun heroe en el rango
         if(losActive){
             heroInRange = this.los.losClear();
@@ -127,6 +140,10 @@ public class Enemy extends Personaje
 
     }
     
+    /**
+     * Cuando se detecta que salió de su camino para perseguir al heroe y después lo pierde
+     * va a regresar a su spawn definido
+     */
     public void regresarASpawn(){
             if(this.spawnX>this.getX()){
                 this.velocidadX = this.velocidadPersigueX;
@@ -148,7 +165,10 @@ public class Enemy extends Personaje
                 this.resetPosition();
             }
     }
-    
+    /**
+     * Dependiendo de si esta siguiendo o no al heroe, va a modificar su velocidad para 
+     * continuar su camino predefinido o para hacercarse al heroe
+     */
     public void cambiarVelocidad(){
         if(persigue && pathlength != 0){
             if(!offPath){
@@ -188,7 +208,9 @@ public class Enemy extends Personaje
             this.setLocation(this.getX()-velocidadX,this.getY()-velocidadY);
         }
     }
-    
+    /**
+     * Resetea la informacion del enemigo cuando este regresa a su spawn
+     */
     public void resetPosition(){//Regresa al enemigo a su spawn
         JukeBoxEnemy.stop();
         JukeBox.play(); 

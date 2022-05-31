@@ -6,7 +6,7 @@ import java.util.List;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public abstract class TileWorld extends World
+public abstract class TileWorld extends World 
 {
     static Actor hero;
     static Actor hero_animation;
@@ -30,6 +30,14 @@ public abstract class TileWorld extends World
         super(600, 400, 1, true);
     }
     
+    /**
+     * Constructor de TileWorld, instancia un mundo de celdas y además las
+     * pinta de acuerdo a la matriz tiles
+     * @param tiles La matriz que incluye la informacion con la que TileWorld va a ser dibujado
+     * @param sX el spawn en x del heroe dentro del mundo
+     * @param sY el spawn en y del heroe dentro del mundo
+     */
+    
     public TileWorld(String tiles[][], int sX, int sY, int m, int n)
     {    
         super(600, 400, 1, true);
@@ -42,6 +50,15 @@ public abstract class TileWorld extends World
         setPaintOrder(Derrota.class,Transicion.class,Heroe_animacion.class,Heroe.class,LineOfSight.class,HeartTile.class,Counter.class,IngredientTile.class,ShadowTile.class,Tree.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
         prepare();
     }
+    
+    /**
+     * Constructor de TileWorld, instancia un mundo de celdas y además las
+     * pinta de acuerdo a la matriz tiles
+     * @param tiles La matriz que incluye la informacion con la que TileWorld va a ser dibujado
+     * @param sX el spawn en x del heroe dentro del mundo
+     * @param sY el spawn en y del heroe dentro del mundo
+     * @param ingCount el contador que lleva la informacion de los ingredientes recogidos
+     */
     
     public TileWorld(String tiles[][], int sX, int sY,Counter ingCount, int m)
     {    
@@ -83,6 +100,11 @@ public abstract class TileWorld extends World
         prepare();
     }
     
+    /**
+     * Metodo que lee la informacion dentro de la matriz y a su vez llama al metodo 
+     * que añade la celda a su ubicacion
+     */
+    
     private void createWorldFromTiles() {    
         for( int i=0; i < WORLD.length; i++ ) {      
             for( int j=0; j < SWIDTH/TWIDTH; j++ ) {        
@@ -90,6 +112,14 @@ public abstract class TileWorld extends World
             }    
         }  
     }
+    
+    /**
+     * Metodo que añade una celda dentro de su posicion, no sin antes asignarle 
+     * el tipo de celda e imagen correspondiete
+     * @param c la cadena que indica que tipo de celda va a crearse
+     * @param x la posicion en x de la celda
+     * @param y la posicion en y de la celda
+     */
     
     public void addActorAtTileLocation(String c, int x, int y){
         Actor tile = new NoColliderTile(); 
@@ -236,10 +266,16 @@ public abstract class TileWorld extends World
                 //addObject(tallo,12+x*TWIDTH, 12+y*THEIGHT);
     }
     
+    /**
+     * Metodo que regresa el contador del mundo
+     */
     public Counter getCounter(){
         return this.ingCount;
     }
     
+    /**
+     * 
+     */
     public int getMode(){
         return this.mode;
     }
@@ -248,6 +284,10 @@ public abstract class TileWorld extends World
         this.mode = m;
     }
     
+    
+    /**
+     * Metodo que resetea el mundo, regresando al heroe y los enemigos a sus correspondientes spawns
+     */
     public void reset(){
         this.hero.setLocation(spawnX,spawnY);
         for(Enemy enemy : this.getObjects(Enemy.class)){
@@ -255,6 +295,11 @@ public abstract class TileWorld extends World
         }
     }
     
+    /**
+     * Prepara el mundo, haciendo que la musica suene y que el heroe se intancie y añada al mundo
+     * Ademas, llama al metodo abstracto prepareIndividual que permite modificar cuantos enemigos
+     * hay por sala de manera individual
+     */
     private void prepare() { 
         if(JukeBox.isPlaying() == false){
             JukeBoxEnemy.stop();
