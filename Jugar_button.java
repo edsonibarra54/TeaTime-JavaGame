@@ -24,7 +24,7 @@ public class Jugar_button extends Button
     public void clickedAction(){
         Ingredientes_list.resetIngredients();
         World  w = this.getWorld();
-        JukeBox.changeSong("Take some rest.mp3");
+        JukeBox.changeSong("Animacion.mp3");
         World world = new Sala_0(); 
         Greenfoot.setWorld(world);
     }

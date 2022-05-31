@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Enemy extends Personaje
 {
     
-    private ArrayList<GifImage> gifs = new ArrayList();
+    private ArrayList<GifImage> gifs = new ArrayList(); 
     private LineOfSight los;
     private int songFlag = 0;
     private int spawnX,spawnY;
@@ -109,7 +109,8 @@ public class Enemy extends Personaje
                 persigue = heroInRange.get(0).ocultar();
                 if(persigue == false){
                     losActive = false;
-                    JukeBox.changeSong("Battle.mp3"); 
+                    JukeBox.pause();
+                    JukeBoxEnemy.play();
                 }
             }
             
@@ -189,7 +190,8 @@ public class Enemy extends Personaje
     }
     
     public void resetPosition(){//Regresa al enemigo a su spawn
-        JukeBox.changeSong("Take some rest.mp3"); 
+        JukeBoxEnemy.stop();
+        JukeBox.play(); 
         this.setLocation(spawnX,spawnY);
         this.pathcounter=this.pathlength;
         this.rX=this.vxabs;

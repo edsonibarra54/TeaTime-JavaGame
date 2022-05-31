@@ -3,7 +3,7 @@ import java.lang.Math;
 import java.util.List;
 import java.util.ArrayList;
 /**
- * Write a description of class LineOfSight here.
+ * Write a description of class LineOfSight here. 
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -12,6 +12,7 @@ public class LineOfSight extends Actor
 {
     private Enemy owner;
     private int large,width = 10;
+    private int cambioLongitud = 0;
     private GreenfootImage image;
     
     public LineOfSight(Enemy owner){
@@ -57,19 +58,33 @@ public class LineOfSight extends Actor
     public void setOrientation(int sprite){//Movemos la orientacion de la linea dependiendo de hacia donde ve el enemigo
         switch(sprite){
             case 0://Enfrente
-                this.image.scale(width,large);
+                if(cambioLongitud == 0){
+                    this.image.scale(width,large);
+                    cambioLongitud = 1;
+                }
+                
                 this.setLocation(owner.getX(),owner.getY()+(this.large/2));
             break;
             case 1://De espaldas
-                this.image.scale(width,large);
+                if(cambioLongitud == 0){
+                    this.image.scale(width,large);
+                    cambioLongitud = 1;
+                }
                 this.setLocation(owner.getX(),owner.getY()-(this.large/2));
             break;
             case 2://Derecha
-                this.image.scale(large,width);
+                if(cambioLongitud == 1){
+                    this.image.scale(large,width);
+                    cambioLongitud = 0;
+                }
+                
                 this.setLocation(owner.getX()+(this.large/2),owner.getY());
-            break;
+            break; 
             case 3://Izquierda
-                this.image.scale(large,width);
+                if(cambioLongitud == 1){
+                    this.image.scale(large,width);
+                    cambioLongitud = 0;
+                }
                 this.setLocation(owner.getX()-(this.large/2),owner.getY());
             break;
         }
