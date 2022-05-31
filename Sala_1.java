@@ -44,6 +44,7 @@ public class Sala_1 extends TileWorld
                     }
                 }
             } 
+            
             if(salaIzquierda.isHeroOn()){ 
                 if(transicionFinalIniciada == false){
                     transicionFinalIniciada = true;
@@ -53,6 +54,20 @@ public class Sala_1 extends TileWorld
                 if(tf.getWorld() != null){
                     if(tf.animacionFinalizada() == true){
                         World world = new sala_5(570,200,super.getCounter());
+                        Greenfoot.setWorld(world);
+                    }
+                }
+            }
+            
+            if(salaArriba.isHeroOn()){ 
+                if(transicionFinalIniciada == false){
+                    transicionFinalIniciada = true;
+                    tf = new Transicion(1); 
+                    addObject(tf,300,200);
+                }
+                if(tf.getWorld() != null){
+                    if(tf.animacionFinalizada() == true){
+                        World world = new Sala_10(300,370,super.getCounter());
                         Greenfoot.setWorld(world);
                     }
                 }

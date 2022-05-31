@@ -31,7 +31,7 @@ public class Sala_0 extends TileWorld
                 }
                 if(tf.getWorld() != null){
                     if(tf.animacionFinalizada() == true){
-                        World world = new Sala_1(300,15,new Counter());
+                        World world = new Sala_1(300,20,new Counter());
                         JukeBox.changeSong("Take some rest.mp3");
                         Greenfoot.setWorld(world);
                     } 

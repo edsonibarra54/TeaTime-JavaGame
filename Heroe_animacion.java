@@ -130,6 +130,9 @@ public class Heroe_animacion extends Personaje
             }
             movimiento();
         }
+        if(n == 2){
+            
+        }
     }
     
     
