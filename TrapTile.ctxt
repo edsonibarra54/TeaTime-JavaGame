@@ -1,11 +1,12 @@
 #BlueJ class context
 comment0.target=TrapTile
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ TrapTile\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Clase\ Que\ instancia\ las\ trampas\r\n\ \r\n\ @author\ Alan\r\n\ @version\ 20/05/2022\r\n
 comment1.params=tiempoReposicion
 comment1.target=TrapTile(int)
-comment1.text=public\ TrapTile(int\ tiempoReposicion)\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ this.tiempoReposicion\=tiempoReposicion;\r\n\ \ \ \ \ \ \ \ //cont\=tiempoReposicion;\r\n}
+comment1.text=\r\n\ Constructor\ el\ cual\ le\ da\ un\ tiempo\ de\ espera\ a\ cada\ trampa\ antes\ de\ lanzar\ un\ proyectil\r\n\ @params\ int\ un\ entero\ que\ representa\ 1/50\ de\ segundo\ el\ cual\ simboliza\ la\ cantidad\ de\ tiempo\ que\ va\ a\ tardar\ en\ lanzar\ un\ proyectil\r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ \ Un\ metodo\ el\ cual\ va\ verificando\ si\ ya\ transcurrio\ el\ tiempo\ suficiente\ para\ lanzar\ un\ proyectil\r\n
 comment3.params=
 comment3.target=void\ actua()
 numComments=4

@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class NoColliderTile here.
+ * un Tile que no es colisionable
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Alan
+ * @version 02/05/2022
  */
 public class NoColliderTile extends TileActor
 {

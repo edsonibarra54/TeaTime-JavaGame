@@ -10,16 +10,18 @@ public class HaloTile extends NoColliderTile
 {
     private int existe=1;
     private Heroe heroe = null;
-    /**
-     * Act - do whatever the HaloTile wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-    */
+   /**
+    * Le modifica la transparencia y escala su tamaño
+      */
     public HaloTile()
     {
         setImage("circulo_naranja.png");
         getImage().setTransparency(0);
         getImage().scale(60,50);
     }
+    /**
+     * verifica si hay un heroe en el mundo para empezar a seguirlo
+       */
     public void act()
     {
         World mundo = getWorld();

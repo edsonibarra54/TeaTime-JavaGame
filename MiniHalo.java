@@ -1,23 +1,25 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MiniHalo here.
+ * Un HaloTile el cual se puede mantener parado como una linterna
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Alan
+ * @version 21/04/2022
  */
 public class MiniHalo extends HaloTile
 {
     private boolean sigue=false;
     private Actor nonulo;
     /**
-     * Act - do whatever the MiniHalo wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+     * Hereda las caracteristicas de HaloTile
+       */
     public MiniHalo()
     {
         super();
     }
+    /**
+     * Verifica si hay un HaloTile encima de este para cambiar su transparencia y ademas verific si hay un heroe tocandolo para empezar a seguirlo
+       */
     public void act()
     {
         if(sigue==false)

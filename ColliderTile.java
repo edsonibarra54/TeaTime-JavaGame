@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class ColliderTile here.
+ * Una clase que es colisionable con otros objetos
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Alan
+ * @version 01/05/2022
  */
 public class ColliderTile extends TileActor
 {

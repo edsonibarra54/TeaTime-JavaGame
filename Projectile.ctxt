@@ -1,8 +1,10 @@
 #BlueJ class context
 comment0.target=Projectile
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Projectile\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Clase\ que\ instancia\ objetos\ que\ siguen\ direcciones\ especificas\ y\ lineales\r\n\ \r\n\ @author\ Alan\r\n\ @version\ 20/05/2022\r\n
 comment1.params=destinoX\ destinoY
 comment1.target=Projectile(int,\ int)
+comment1.text=\r\n\ Constructor\ que\ toma\ dos\ direcciones\ en\ las\ cuales\ cuaando\ llegue\ este\ objeto\ sera\ removido\ del\ mundo\r\n\ @params\ int\ lugar\ de\ destinoX\r\n\ @params\ int\ lugar\ de\ destinoY\r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ verifica\ si\ el\ objeto\ ha\ llegado\ al\ lugar\ de\ destino,\ si\ no\ sigue\ avanzando\ en\ su\ eje,\ y\ si\ si\ se\ elimina\r\n
 numComments=3

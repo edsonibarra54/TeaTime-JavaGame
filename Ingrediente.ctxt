@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Ingrediente
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Ingrediente\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Los\ recolectables\ del\ juego\r\n\ \r\n\ @author\ Alan\r\n\ @version\ 1.5.7\r\n
 comment1.params=imagen\ index
 comment1.target=Ingrediente(java.lang.String,\ int)
 comment1.text=\r\n\ Constructor\ para\ el\ ingrediente,\ necesita\ de\ el\ nombre\ de\ su\ imagen\ y\ el\ index,\ que\ representa\r\n\ Su\ posicion\ en\ el\ arreglo\ estatico\ de\ ingredientes\r\n
@@ -9,9 +9,11 @@ comment2.target=void\ Recoger()
 comment2.text=\r\n\ Cuando\ el\ heroe\ toca\ el\ ingrediente,\ este\ es\ eliminado\ del\ mundo\r\n\ se\ modifica\ la\ lista\ de\ ingredientes\ para\ marcarlo\ como\ recogido,\ emite\ un\ sonido\r\n\ y\ hace\ al\ contador\ cambiar\ su\ imagen\r\n
 comment3.params=
 comment3.target=void\ act()
-comment3.text=\r\n\ Act\ -\ do\ whatever\ the\ Ingrediente\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment3.text=\r\n\ metodo\ para\ mover\ el\ objeto\ arriba\ y\ abajo\ de\ manera\ que\ parece\ que\ levita\r\n
 comment4.params=x
 comment4.target=void\ setCorrespondiente(int)
+comment4.text=\r\n\ Inicializa\ a\ que\ numero\ de\ ingrediente\ corresponde\ el\ actual\r\n
 comment5.params=
 comment5.target=int\ getCorrespondiente()
+comment5.text=\r\n\ Obtiene\ que\ numero\ de\ ingrediente\ corresponde\ el\ actual\r\n
 numComments=6

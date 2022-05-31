@@ -55,7 +55,9 @@ public class Heroe extends Personaje
             mundo.addObject(contenedor,0,0);            
         }
     }
-    
+    /**
+     *  Metodo que reproduce un sonido de pasto mientras el personaje camine
+       */
     public void reproduceSonido()
     {
         String imagen;
@@ -123,7 +125,9 @@ public class Heroe extends Personaje
             }
         }
     }
-    
+    /**
+     * Establece los corazones especificos en la primer instanciaque le corresponden al personaje segun su vida y le modifica la longitud del total de corazones
+       */
     public void setcorazon()
     {
         int i,j=0;
@@ -154,7 +158,9 @@ public class Heroe extends Personaje
         crea_contenedores=0;
     }
     }
-    
+ /**
+     * Establece los corazones especificos despues de la primer instanciaque le corresponden al personaje segun su vida y le modifica la longitud del total de corazones
+       */ 
     public void setcorazon_seteado()
     {
         int i,j=0;

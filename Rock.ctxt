@@ -1,11 +1,13 @@
 #BlueJ class context
 comment0.target=Rock
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Rock\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Trampa\ que\ lanza\ rocas\r\n\ \r\n\ @author\ Alan\r\n\ @version\ 20/05/2022\r\n
 comment1.params=
 comment1.target=Rock()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Rock\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.text=\r\n\ Constructor\ que\ inicializa\ la\ trampa\ con\ un\ tiempo\ de\ 2\ segundos\r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Rock\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment3.params=
 comment3.target=void\ actua()
+comment3.text=\r\n\ Verifica\ si\ hay\ un\ heroe\ encima\ de\ la\ trampa,\ ademas\ tambien\ verifica\ que\ no\ haya\ sido\ usada\ en\ al\ menos\ su\ tiempo\ de\ reposicion,\ en\ caso\ de\ ser\ cierto,\ lanza\ un\ projectile\ hacia\ arriba\ y\ que\ cae\ hasta\ la\ posicion\ de\ la\ roca\r\n
 numComments=4

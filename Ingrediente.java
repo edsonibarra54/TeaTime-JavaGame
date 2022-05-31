@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Ingrediente here.
+ * Los recolectables del juego
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Alan
+ * @version 1.5.7
  */
 public class Ingrediente extends Actor
 {
@@ -44,8 +44,7 @@ public class Ingrediente extends Actor
     
     
     /**
-     * Act - do whatever the Ingrediente wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * metodo para mover el objeto arriba y abajo de manera que parece que levita
      */
     public void act()
     {
@@ -61,10 +60,16 @@ public class Ingrediente extends Actor
         
         
     }
+    /**
+     * Inicializa a que numero de ingrediente corresponde el actual
+       */
     public void setCorrespondiente(int x)
     {
         this.correspondiente=x;
     }
+    /**
+     * Obtiene que numero de ingrediente corresponde el actual
+       */
     public int getCorrespondiente()
     {
         return this.correspondiente;

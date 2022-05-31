@@ -1,8 +1,8 @@
 /**
- * Write a description of class Dificultad here.
+ * Clase Que modifica la velocidad y rango de enemigos
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Alan
+ * @version 20/05/2022
  */
 public class Dificultad  
 {
@@ -11,7 +11,10 @@ public class Dificultad
     public static int nivelDificultad=2;
     public static int RadioBusqueda=80;
     public static int velocidadX,velocidadY;
-    
+    /**
+     * Constructor el cual cambia la dificultad del juego segun el nivel
+    @params int que representa la dificultad elegida, la cual va de 1 a 3
+    */
     public static void changeDifficulty(int difficulty){ 
         switch(difficulty){
             case 1:
@@ -37,7 +40,9 @@ public class Dificultad
             break;
         }
     } 
-    
+    /**
+       *metodo que inicializa la dificultad al nivel 2 al momento de perder o ganar una partida
+       */
     public static void resetDificulty(){
         vidaHeroe=6;
         nivelDificultad=2;

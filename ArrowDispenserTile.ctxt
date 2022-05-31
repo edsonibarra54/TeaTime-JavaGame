@@ -1,12 +1,16 @@
 #BlueJ class context
 comment0.target=ArrowDispenserTile
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ ArrowDispenserTile\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Clase\ Que\ instancia\ Arrows\ hacia\ una\ direccion\ segun\ el\ constructor\r\n\ \r\n\ @author\ Alan\r\n\ @version\ 20/05/2022\r\n
 comment1.params=eje\ tiempodeespera
 comment1.target=ArrowDispenserTile(int,\ int)
+comment1.text=\r\n\ @params\ int\ un\ entero\ el\ cual\ simboliza\ en\ que\ eje\ ira\ la\ flecha\ lanzada\r\n\ @params\ int\ un\ entero\ que\ simboliza\ el\ tiempo\ de\ espera,\ se\ multiplica\ por\ 1/50\ para\ conocer\ los\ segundos\ de\ espera\r\n
 comment2.params=eje
 comment2.target=ArrowDispenserTile(int)
+comment2.text=\r\n\ @params\ int\ un\ entero\ el\ cual\ simboliza\ en\ que\ eje\ ira\ la\ flecha\ lanzada\r\n
 comment3.params=
 comment3.target=void\ act()
+comment3.text=\r\n\ Act\ -\ do\ whatever\ the\ ArrowDispenserTile\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment4.params=
 comment4.target=void\ actua()
+comment4.text=\r\n\ Verifica\ si\ hay\ un\ heroe\ encima\ de\ la\ trampa,\ ademas\ tambien\ verifica\ que\ no\ haya\ sido\ usada\ en\ al\ menos\ su\ tiempo\ de\ reposicion,\ en\ caso\ de\ ser\ cierto,\ lanza\ un\ Arrow\ hacia\ el\ eje\ indicado\r\n
 numComments=5

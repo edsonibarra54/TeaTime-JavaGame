@@ -1,22 +1,24 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class ShadowTile here.
+ * Un objeto el cual cambia su transparencia con HaloTile
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Alan
+ * @version 21/05/2022
  */
 public class ShadowTile extends NoColliderTile
 {
     /**
-     * Act - do whatever the ShadowTile wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+     * Un constructor que modifica la transparencia del objeto
+       */
     public ShadowTile()
     {
         this.getImage().setTransparency(220);
         this.getImage().scale(25,25);
     }
+    /**
+     * verifica que no este un HaloTile tocandolo, y si si se vuelve transparente
+       */
     public void act()
     {
         if(isTouching(HaloTile.class))

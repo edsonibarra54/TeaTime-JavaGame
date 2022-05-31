@@ -1,22 +1,24 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 /**
- * Write a description of class HeartTile here.
+ * Corazones ligados al heroe, simboliza su cantidad de errores maximos a cometer
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Alan
+ * @version 10/05/2022
  */
 public class HeartTile extends TileActor
 {
     /**
-     * Act - do whatever the HeartTile wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+     * Se voltea la imagen y se coloca una imagen de corazon completo
+       */
     public HeartTile()
     {
         setImage("Corazon_rojo.png");
         getImage().mirrorHorizontally();
     }
+    /**
+     * verifica si hay heroes en el mundo
+       */
     public void act() 
     {
         World mundo = getWorld();

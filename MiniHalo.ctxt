@@ -1,9 +1,10 @@
 #BlueJ class context
 comment0.target=MiniHalo
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ MiniHalo\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Un\ HaloTile\ el\ cual\ se\ puede\ mantener\ parado\ como\ una\ linterna\r\n\ \r\n\ @author\ Alan\r\n\ @version\ 21/04/2022\r\n
 comment1.params=
 comment1.target=MiniHalo()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ MiniHalo\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.text=\r\n\ Hereda\ las\ caracteristicas\ de\ HaloTile\r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ Verifica\ si\ hay\ un\ HaloTile\ encima\ de\ este\ para\ cambiar\ su\ transparencia\ y\ ademas\ verific\ si\ hay\ un\ heroe\ tocandolo\ para\ empezar\ a\ seguirlo\r\n
 numComments=3

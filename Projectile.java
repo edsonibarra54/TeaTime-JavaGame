@@ -1,24 +1,29 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Projectile here.
+ * Clase que instancia objetos que siguen direcciones especificas y lineales
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Alan
+ * @version 20/05/2022
  */
 public class Projectile extends Actor
 {
-    /**
-     * Act - do whatever the Projectile wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+
     private int destinoX,destinoY,transparency=30;
+    /**
+     * Constructor que toma dos direcciones en las cuales cuaando llegue este objeto sera removido del mundo
+     * @params int lugar de destinoX
+     * @params int lugar de destinoY
+       */
     public Projectile(int destinoX,int destinoY)
     {
         this.getImage().setTransparency(30);
         this.destinoX=destinoX;
         this.destinoY=destinoY;
     }
+    /**
+     * verifica si el objeto ha llegado al lugar de destino, si no sigue avanzando en su eje, y si si se elimina
+       */
     public void act()
     {
         if(getX()==destinoX && destinoY==getY())

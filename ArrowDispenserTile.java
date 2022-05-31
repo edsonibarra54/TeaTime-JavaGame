@@ -2,18 +2,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class ArrowDispenserTile here.
+ * Clase Que instancia Arrows hacia una direccion segun el constructor
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Alan
+ * @version 20/05/2022
  */
 public class ArrowDispenserTile extends TrapTile
 {
-    /**
-     * Act - do whatever the ArrowDispenserTile wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     private int x,y;
+    /**
+     * @params int un entero el cual simboliza en que eje ira la flecha lanzada
+     * @params int un entero que simboliza el tiempo de espera, se multiplica por 1/50 para conocer los segundos de espera
+       */
     public ArrowDispenserTile(int eje,int tiempodeespera)
     {
         super(200);
@@ -40,6 +40,9 @@ public class ArrowDispenserTile extends TrapTile
         }
         getImage().scale(25,25);
     }
+    /**
+     * @params int un entero el cual simboliza en que eje ira la flecha lanzada
+       */
     public ArrowDispenserTile(int eje)
     {
         super(200);
@@ -66,12 +69,19 @@ public class ArrowDispenserTile extends TrapTile
         }
         getImage().scale(25,25);
     }
+     /**
+     * Act - do whatever the ArrowDispenserTile wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     @Override
     public void act()
     {
     super.act();
     
     }
+    /**
+     * Verifica si hay un heroe encima de la trampa, ademas tambien verifica que no haya sido usada en al menos su tiempo de reposicion, en caso de ser cierto, lanza un Arrow hacia el eje indicado
+       */
     public void actua()
     {
         if(getNeighbours(300,false,Heroe.class).size()>0 && super.usada==false)

@@ -1,29 +1,27 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TrapTile here.
+ * Clase Que instancia las trampas
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Alan
+ * @version 20/05/2022
  */
 abstract class TrapTile extends TileActor
 {
-    /**
-     * Act - do whatever the TrapTile wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     protected int tiempoReposicion=100,cont=0;
     protected boolean usada=false;
-    /*public TrapTile(int tiempoReposicion)
-    {
-        this.tiempoReposicion=tiempoReposicion;
-        //cont=tiempoReposicion;
-    }*/
+    /**
+     * Constructor el cual le da un tiempo de espera a cada trampa antes de lanzar un proyectil
+     * @params int un entero que representa 1/50 de segundo el cual simboliza la cantidad de tiempo que va a tardar en lanzar un proyectil
+       */
     public TrapTile(int tiempoReposicion)
     {
         this.tiempoReposicion=tiempoReposicion;
         //cont=tiempoReposicion;
     }
+    /**
+     *  Un metodo el cual va verificando si ya transcurrio el tiempo suficiente para lanzar un proyectil
+      */
     public void act()
     {
         getImage().setTransparency(255);

@@ -1,8 +1,8 @@
 /**
- * Write a description of class ListaDeMundoTiles here.
+ * Clase Que tiene guardados la construccion de mundos
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Alan
+ * @version 20/05/2022
  */
 public class ListaDeMundoTiles  
 {
@@ -220,27 +220,42 @@ public class ListaDeMundoTiles
     public ListaDeMundoTiles()
     {
     }
-
+    /**
+     Un arreglo 
+     @return una matriz de strings que representan un objeto o varios en una misma posicion
+     **/
     public static String[][] TilesMundo0()
     {
         return Tiles0;    
     }
-    
+    /**
+     Un arreglo 
+     @return una matriz de strings que representan un objeto o varios en una misma posicion
+     **/    
     public static String[][] TilesMundo1()
     {
         return Tiles1;
     }
-    
+    /**
+     Un arreglo 
+     @return una matriz de strings que representan un objeto o varios en una misma posicion
+     **/
     public static String[][] TilesMundo2()
     {
         return Tiles2;
     }
-    
+    /**
+     Un arreglo 
+     @return una matriz de strings que representan un objeto o varios en una misma posicion
+     **/
     public static String[][] TilesMundo3()
     {
         return Tiles3;
     }
-    
+    /**
+     Un arreglo 
+     @return una matriz de strings que representan un objeto o varios en una misma posicion
+     **/
     public static String[][] TilesMundo4()
     {
         return Tiles4;
@@ -250,27 +265,42 @@ public class ListaDeMundoTiles
     {
         return Tiles5;
     }
-
+    /**
+     Un arreglo 
+     @return una matriz de strings que representan un objeto o varios en una misma posicion
+     **/
     public static String[][] TilesMundo6()
     {
         return Tiles6;
     }
-    
+    /**
+     Un arreglo 
+     @return una matriz de strings que representan un objeto o varios en una misma posicion
+     **/
     public static String[][] TilesMundo10()
     {
         return Tiles10;
     }
-    
+    /**
+     Un arreglo 
+     @return una matriz de strings que representan un objeto o varios en una misma posicion
+     **/
     public static String[][] TilesMundo11()
     {
         return Tiles11;
     }
-    
+    /**
+     Un arreglo 
+     @return una matriz de strings que representan un objeto o varios en una misma posicion
+     **/
     public static String[][] TilesMundo7()
     {
         return Tiles7;
     }
-    
+    /**
+     Un arreglo 
+     @return una matriz de strings que representan un objeto o varios en una misma posicion
+     **/
     public static String[][] TilesMundo8()
     {
         return Tiles8;

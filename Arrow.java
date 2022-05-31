@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Arrow here.
+ * Un objeto que sigue un camino unidireccional en una direccion
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Alan
+ * @version 10.0
  */
 public class Arrow extends Projectile
 {
@@ -25,7 +25,9 @@ public class Arrow extends Projectile
         /*GifImage nueva = new GifImage("pixil-gif-drawing.gif");
         setImage(nueva.getCurrentImage());*/
     }
-    
+    /**
+     * verifica si el objeto ha llegado ha tocado un collidertile o al heroe o esta en el limite del mapa, si no sigue avanzando en su eje, y si si se elimina
+       */
     public void act()
     {
         if(!isTouching(ColliderTile.class) && !isAtEdge() && !isTouching(Heroe.class))

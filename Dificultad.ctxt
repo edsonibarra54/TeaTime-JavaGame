@@ -1,8 +1,10 @@
 #BlueJ class context
 comment0.target=Dificultad
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Dificultad\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Clase\ Que\ modifica\ la\ velocidad\ y\ rango\ de\ enemigos\r\n\ \r\n\ @author\ Alan\r\n\ @version\ 20/05/2022\r\n
 comment1.params=difficulty
 comment1.target=void\ changeDifficulty(int)
+comment1.text=\r\n\ Constructor\ el\ cual\ cambia\ la\ dificultad\ del\ juego\ segun\ el\ nivel\r\n\ \ \ \ @params\ int\ que\ representa\ la\ dificultad\ elegida,\ la\ cual\ va\ de\ 1\ a\ 3\r\n
 comment2.params=
 comment2.target=void\ resetDificulty()
+comment2.text=\r\nmetodo\ que\ inicializa\ la\ dificultad\ al\ nivel\ 2\ al\ momento\ de\ perder\ o\ ganar\ una\ partida\r\n
 numComments=3

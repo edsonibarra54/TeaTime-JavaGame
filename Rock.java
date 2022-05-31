@@ -1,28 +1,34 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Rock here.
+ * Trampa que lanza rocas
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Alan
+ * @version 20/05/2022
  */
 public class Rock extends TrapTile
 {
     /**
-     * Act - do whatever the Rock wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+     * Constructor que inicializa la trampa con un tiempo de 2 segundos
+       */
     public Rock()
     {
         super(100);
         setImage("circulo_naranja.png");
         getImage().scale(25,25);
     }
+    /**
+     * Act - do whatever the Rock wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     @Override
     public void act()
     {
     super.act();
     }
+    /**
+     * Verifica si hay un heroe encima de la trampa, ademas tambien verifica que no haya sido usada en al menos su tiempo de reposicion, en caso de ser cierto, lanza un projectile hacia arriba y que cae hasta la posicion de la roca
+       */
     public void actua()
     {
         if(isTouching(Heroe.class) && super.usada==false)
