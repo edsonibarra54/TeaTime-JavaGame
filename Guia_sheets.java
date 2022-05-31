@@ -8,7 +8,7 @@
  */
 public abstract class Guia_sheets  
 {
-    private static String sheets[] = {"guia_0.png","guia_1.png","guia_2.png","guia_3.png","guia_4.png"};
+    private static String sheets[] = {"guia_0.png","guia_1.png","guia_2.png","guia_3.png","guia_4.png","guia_5.png"};
 
     public Guia_sheets()
     {
