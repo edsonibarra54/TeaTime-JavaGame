@@ -1,27 +1,30 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Sala_1 here.
+ * Write a description of class Sala4 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Sala_1 extends TileWorld
+public class Sala4 extends TileWorld
 {
+    private Casa c,ct;
     private boolean transicionInicialIniciada, transicionFinalIniciada; 
     private Transicion ti,tf;
-    
-    public Sala_1(int spawnX, int spawnY,Counter count)
+    /**
+     * Constructor for objects of class Sala4.
+     * 
+     */
+    public Sala4(int spawnX, int spawnY,Counter count)
     {
-        super(ListaDeMundoTiles.TilesMundo1(), spawnX, spawnY,count,0); 
+        super(ListaDeMundoTiles.TilesMundo2(), spawnX, spawnY,count,0); 
         this.transicionInicialIniciada = false;
         this.transicionFinalIniciada = false;
-        salaDerecha = new PortalTile(1); 
-        addObject(salaDerecha,600,200);
         salaIzquierda = new PortalTile(1);
-        addObject(salaIzquierda,1,150);
+        addObject(salaIzquierda,1,200);
+        salaDerecha = new PortalTile(1);
+        addObject(salaDerecha,600,200);
     }
-
     public void act(){
         if(ti.animacionFinalizada() == true){
             getObjects(Heroe.class).get(0).setCancelaMovimiento(false);
@@ -36,12 +39,11 @@ public class Sala_1 extends TileWorld
                 }
                 if(tf.getWorld() != null){
                     if(tf.animacionFinalizada() == true){
-                        World world = new Sala_2(25,150,super.getCounter());
+                        World world = new Sala3(50,150,super.getCounter());
                         Greenfoot.setWorld(world);
                     }
                 }
-            } 
-            
+            }
             if(salaIzquierda.isHeroOn()){ 
                 if(transicionFinalIniciada == false){
                     transicionFinalIniciada = true;
@@ -50,26 +52,17 @@ public class Sala_1 extends TileWorld
                 }
                 if(tf.getWorld() != null){
                     if(tf.animacionFinalizada() == true){
-                        World world = new Sala3(570,200,super.getCounter());
+                        World world = new sala_5(570,200,super.getCounter());
                         Greenfoot.setWorld(world);
                     }
                 }
             }
         }
+
+
     }
-    
     @Override
-    public void prepareIndividual() 
-    { 
-        
-        if(Ingredientes_list.checkIngredient(0) == 0){
-            Ingrediente azucar = new Ingrediente("azucar.png",0);
-            addObject(azucar,75,300);
-        }        
-        Actor enemigo1 = new Enemy(ListaDeSprites.enemigo1,300,1,0,100,100);
-        Actor enemigo2 = new Enemy(ListaDeSprites.pirata,200,0,1,500,100);
-        addObject(enemigo1,150,85);
-        addObject(enemigo2,500,100);
+    public void prepareIndividual(){
         if(transicionInicialIniciada == false){
             transicionInicialIniciada = true;
             ti = new Transicion(0);
@@ -77,4 +70,3 @@ public class Sala_1 extends TileWorld
         }
     }
 }
-

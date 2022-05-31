@@ -1,51 +1,43 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Sala_6 here.
+ * Write a description of class Sala3 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Sala_6 extends TileWorld
+public class Sala3 extends TileWorld
 {
 
     /**
-     * Constructor for objects of class Sala_6.
+     * Constructor for objects of class Sala3.
      * 
      */
+    private Casa c,ct;
     private boolean transicionInicialIniciada, transicionFinalIniciada; 
     private Transicion ti,tf;
-    private Actor halo;
     
-    public Sala_6(int spawnX, int spawnY,Counter count)
+    public Sala3(int spawnX, int spawnY,Counter count)
     {
-        super(ListaDeMundoTiles.TilesMundo4(), spawnX, spawnY,count,0,true);
+        super(ListaDeMundoTiles.TilesMundo3(), spawnX, spawnY,count,0);
         this.transicionInicialIniciada = false;
         this.transicionFinalIniciada = false;
-        //super(ListaDeMundoTiles.TilesMundo4(), spawnX, spawnY,count,0); 
-        super.shadow=true;
-        halo = new HaloTile();
-        addObject(halo,spawnX - 8,spawnY + 5);
-        /*Moneda act = new Moneda();
-        addObject(act,500,100);*/
         salaIzquierda = new PortalTile(1);
         addObject(salaIzquierda,1,150);
-        salaDerecha = new PortalTile(0);
+        salaDerecha = new PortalTile(1);
         addObject(salaDerecha,600,200);
-        MiniHalo luz = new MiniHalo();
-        addObject(luz,87,337);
-        salaDerecha = new PortalTile(0);
-        addObject(salaDerecha,599,200);
-        if(IngredienteTiles.ingrediente[1]==0)
-        {
-            Ingrediente ingrediente = new Ingrediente("teprueba.png",1);
-            addObject(ingrediente,87,330);
-        }    
+        Actor enemigo1 = new Enemy(ListaDeSprites.pirata,200,1,0,150,100);
+        Actor enemigo2 = new Enemy(ListaDeSprites.pirata,200,0,1,425,200);
+        Actor enemigo3 = new Enemy(ListaDeSprites.pirata,200,0,1,500,200);
+        addObject(enemigo1,150,100);
+        addObject(enemigo2,425,200);
+        addObject(enemigo3,500,200);
     }
     public void act(){
         if(ti.animacionFinalizada() == true){
             getObjects(Heroe.class).get(0).setCancelaMovimiento(false);
         }
+        
         if(this.getObjects(Heroe.class).isEmpty()!=true){
             if(salaDerecha.isHeroOn()){
                 if(transicionFinalIniciada == false){
@@ -55,19 +47,29 @@ public class Sala_6 extends TileWorld
                 }
                 if(tf.getWorld() != null){
                     if(tf.animacionFinalizada() == true){
-                        World world = new sala_5(20,190,super.getCounter());
+                        World world = new Sala_1(25,150,super.getCounter());
+                        Greenfoot.setWorld(world);
+                    }
+                }
+            }
+            if(salaIzquierda.isHeroOn()){ 
+                if(transicionFinalIniciada == false){
+                    transicionFinalIniciada = true;
+                    tf = new Transicion(1); 
+                    addObject(tf,300,200);
+                }
+                if(tf.getWorld() != null){
+                    if(tf.animacionFinalizada() == true){
+                        World world = new Sala_7(570,300,super.getCounter());
                         Greenfoot.setWorld(world);
                     }
                 }
             }
         }
+
     }
     @Override
     public void prepareIndividual(){
-        if(Ingredientes_list.checkIngredient(1)==0){
-            Ingrediente te = new Ingrediente("planta.png",1);
-            addObject(te,87,330);
-        }
         if(transicionInicialIniciada == false){
             transicionInicialIniciada = true;
             ti = new Transicion(0);

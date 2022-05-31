@@ -12,7 +12,7 @@ public class PortalTile extends TileActor
     
     public PortalTile(int x){
         setImage("circulo_naranja.png");
-        getImage().setTransparency(0);
+        getImage().setTransparency(255);
         if(x == 1){ //Un 1 significa que el portal sera Vertical 
             getImage().scale(5,50);
         }
