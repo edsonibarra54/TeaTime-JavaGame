@@ -14,6 +14,12 @@ public class Sala_2 extends TileWorld
         addObject(salaIzquierda,1,150);
         salaDerecha = new PortalTile(1);
         addObject(salaDerecha,600,200);
+        Actor enemigo1 = new Enemy(ListaDeSprites.enemigo1,200,1,0,100,100);
+        Actor enemigo2 = new Enemy(ListaDeSprites.pirata,200,0,1,250,250);
+        Actor enemigo3 = new Enemy(ListaDeSprites.pirata,200,0,1,350,250);
+        addObject(enemigo1,100,100);
+        addObject(enemigo2,250,250);
+        addObject(enemigo3,350,250);
     }
     
     public void act(){
