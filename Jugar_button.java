@@ -20,11 +20,15 @@ public class Jugar_button extends Button
         handleMouseClicks();        // Add your action code here. 
     } 
     
+    
+    /**
+     * Cuando se hace click, se resetean diversos datos estaticos, además de instanciar la animacion inicial
+     */
     @Override
     public void clickedAction(){
         Ingredientes_list.resetIngredients();
         World  w = this.getWorld();
-        JukeBox.changeSong("Take some rest.mp3");
+        JukeBox.changeSong("Animacion.mp3");
         World world = new Sala_0(); 
         Greenfoot.setWorld(world);
     }

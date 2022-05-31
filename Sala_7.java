@@ -36,9 +36,11 @@ public class Sala_7 extends TileWorld
         addObject(techo,516,0);
         
         salaIzquierda = new PortalTile(1);
-        addObject(salaIzquierda,1,150);
-        salaDerecha = new PortalTile(0);
-        addObject(salaDerecha,600,200);
+        addObject(salaIzquierda,1,275);
+        salaDerecha = new PortalTile(1);
+        addObject(salaDerecha,600,275);
+        salaArriba = new PortalTile(0);
+        addObject(salaArriba,300,1);
     }
     
     public void act(){
@@ -47,7 +49,7 @@ public class Sala_7 extends TileWorld
         }
         
         if(this.getObjects(Heroe.class).isEmpty()!=true){
-            if(salaDerecha.isHeroOn()){
+            if(salaIzquierda.isHeroOn()){
                 if(transicionFinalIniciada == false){
                     transicionFinalIniciada = true;
                     tf = new Transicion(1); 
@@ -56,6 +58,34 @@ public class Sala_7 extends TileWorld
                 if(tf.getWorld() != null){
                     if(tf.animacionFinalizada() == true){
                         World world = new Sala_2(25,150,super.getCounter());
+                        Greenfoot.setWorld(world);
+                    }
+                }
+            }
+            
+            if(salaDerecha.isHeroOn()){
+                if(transicionFinalIniciada == false){
+                    transicionFinalIniciada = true;
+                    tf = new Transicion(1); 
+                    addObject(tf,300,200);
+                }
+                if(tf.getWorld() != null){
+                    if(tf.animacionFinalizada() == true){
+                        World world = new Sala_1(20,150,super.getCounter());
+                        Greenfoot.setWorld(world);
+                    }
+                }
+            }
+            
+            if(salaArriba.isHeroOn()){
+                if(transicionFinalIniciada == false){
+                    transicionFinalIniciada = true;
+                    tf = new Transicion(1); 
+                    addObject(tf,300,200);
+                }
+                if(tf.getWorld() != null){
+                    if(tf.animacionFinalizada() == true){
+                        World world = new Sala_10(300,375,super.getCounter());
                         Greenfoot.setWorld(world);
                     }
                 }

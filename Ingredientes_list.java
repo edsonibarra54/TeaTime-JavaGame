@@ -30,4 +30,16 @@ public class Ingredientes_list
         ing_checklist[1] = 0;
         ing_checklist[2] = 0;
     }
+    
+    public static int getIngredient0(){
+        return ing_checklist[0];
+    }
+    
+    public static int getIngredient1(){
+        return ing_checklist[1];
+    }
+    
+    public static int getIngredient2(){
+        return ing_checklist[2];
+    }
 }

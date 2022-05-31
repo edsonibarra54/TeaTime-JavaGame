@@ -6,7 +6,7 @@ import java.util.List;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public abstract class TileWorld extends World
+public abstract class TileWorld extends World 
 {
     static Actor hero;
     static Actor hero_animation;
@@ -30,6 +30,14 @@ public abstract class TileWorld extends World
         super(600, 400, 1, true);
     }
     
+    /**
+     * Constructor de TileWorld, instancia un mundo de celdas y además las
+     * pinta de acuerdo a la matriz tiles
+     * @param tiles La matriz que incluye la informacion con la que TileWorld va a ser dibujado
+     * @param sX el spawn en x del heroe dentro del mundo
+     * @param sY el spawn en y del heroe dentro del mundo
+     */
+    
     public TileWorld(String tiles[][], int sX, int sY, int m, int n)
     {    
         super(600, 400, 1, true);
@@ -39,9 +47,18 @@ public abstract class TileWorld extends World
         this.WORLD = tiles;
         createWorldFromTiles(); 
         mode = m;
-        setPaintOrder(Derrota.class,Transicion.class,Heroe_animacion.class,Heroe.class,LineOfSight.class,HeartTile.class,Counter.class,IngredientTile.class,ShadowTile.class,Tree.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
+        setPaintOrder(Derrota.class,Transicion.class,Heroe_animacion.class,LineOfSight.class,HeartTile.class,Counter.class,IngredientTile.class,ShadowTile.class,Fuente.class,Tree.class,Heroe.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
         prepare();
     }
+    
+    /**
+     * Constructor de TileWorld, instancia un mundo de celdas y además las
+     * pinta de acuerdo a la matriz tiles
+     * @param tiles La matriz que incluye la informacion con la que TileWorld va a ser dibujado
+     * @param sX el spawn en x del heroe dentro del mundo
+     * @param sY el spawn en y del heroe dentro del mundo
+     * @param ingCount el contador que lleva la informacion de los ingredientes recogidos
+     */
     
     public TileWorld(String tiles[][], int sX, int sY,Counter ingCount, int m)
     {    
@@ -54,7 +71,7 @@ public abstract class TileWorld extends World
         this.WORLD = tiles;
         createWorldFromTiles();
         //setPaintOrder(Counter.class,Derrota.class,Transicion.class,HeartTile.class,Tree.class,Heroe.class,LineOfSight.class,ShadowTile.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
-        setPaintOrder(Derrota.class,Transicion.class,HeartTile.class,Counter.class,IngredientTile.class,ShadowTile.class,Heroe.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
+        setPaintOrder(Derrota.class,Transicion.class,HeartTile.class,Counter.class,IngredientTile.class,ShadowTile.class,Fuente.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,Heroe.class,ColliderTile.class);
         prepare();
     }
     public TileWorld(String tiles[][], int sX, int sY,Counter ingCount, int m,boolean bool)
@@ -68,7 +85,7 @@ public abstract class TileWorld extends World
         this.WORLD = tiles;
         createWorldFromTiles();
         //setPaintOrder(Counter.class,Derrota.class,Transicion.class,HeartTile.class,Tree.class,Heroe.class,LineOfSight.class,ShadowTile.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
-        setPaintOrder(Derrota.class,Transicion.class,HeartTile.class,Counter.class,IngredientTile.class,ShadowTile.class,Heroe.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
+        setPaintOrder(Derrota.class,Transicion.class,HeartTile.class,Counter.class,IngredientTile.class,ShadowTile.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,Heroe.class,ColliderTile.class);
         prepare();
     }
     public TileWorld(String tiles[][], int sX, int sY,Counter ingCount)
@@ -79,7 +96,7 @@ public abstract class TileWorld extends World
         this.ingCount = ingCount;
         this.WORLD = tiles;
         createWorldFromTiles(); 
-        setPaintOrder(Counter.class,Heroe.class,HeartTile.class,Counter.class,IngredientTile.class,ShadowTile.class,Heroe.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
+        setPaintOrder(Counter.class,Heroe.class,HeartTile.class,Counter.class,IngredientTile.class,ShadowTile.class,Fuente.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,Heroe.class,ColliderTile.class);
         prepare();
     }
     
@@ -92,9 +109,14 @@ public abstract class TileWorld extends World
         this.ingCount = ingCount;
         this.WORLD = tiles;
         createWorldFromTiles(); 
-        setPaintOrder(Counter.class,HeartTile.class,Counter.class,IngredientTile.class,ShadowTile.class,Heroe.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
+        setPaintOrder(Counter.class,HeartTile.class,Counter.class,IngredientTile.class,ShadowTile.class,Fuente.class,Heroe.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
         prepare();
     }
+    
+    /**
+     * Metodo que lee la informacion dentro de la matriz y a su vez llama al metodo 
+     * que añade la celda a su ubicacion
+     */
     
     private void createWorldFromTiles() {    
         for( int i=0; i < WORLD.length; i++ ) {      
@@ -103,6 +125,14 @@ public abstract class TileWorld extends World
             }    
         }  
     }
+    
+    /**
+     * Metodo que añade una celda dentro de su posicion, no sin antes asignarle 
+     * el tipo de celda e imagen correspondiete
+     * @param c la cadena que indica que tipo de celda va a crearse
+     * @param x la posicion en x de la celda
+     * @param y la posicion en y de la celda
+     */
     
     public void addActorAtTileLocation(String c, int x, int y){
         Actor tile = new NoColliderTile(); 
@@ -155,7 +185,7 @@ public abstract class TileWorld extends World
                 //ShadowTile sombra_ = new ShadowTile();
                 //addObject(sombra_, 12+x*TWIDTH, 12+y*THEIGHT);                
                 break;
-                case "g01":
+            case "g01":
                 tile.setImage("grass_1.png");      
                 break;
             case "g02":
@@ -220,8 +250,8 @@ public abstract class TileWorld extends World
                 tile.setImage("muro_1.png"); 
                 tile_2.setImage("arbol_3.png"); 
                 addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
-                break; 
-             case "M05":
+                break;
+            case "M05":
                 tile = new ColliderTile();
                 tile.setImage("muro_1.png"); 
                 tile_2.setImage("arbol_3.png"); 
@@ -229,17 +259,25 @@ public abstract class TileWorld extends World
                 ShadowTile _sombra = new ShadowTile();
                 addObject(_sombra, 12+x*TWIDTH, 12+y*THEIGHT);
                 break; 
-                case "G01" :
+            case "M06":
+                tile = new ColliderTile();
+                tile.setImage("grass_4.png"); 
+                break; 
+            case "M07":
+                tile = new ColliderTile();
+                tile.setImage("muro_3.png"); 
+                break;
+            case "G01" :
                 tile = new TallGrass();
                 tile.setImage("tall_grass.png");
                 break;
-                case "G02":
+            case "G02":
                 tile = new TallGrass();
                 
                 tile.setImage("tall_grass.png");                
                 tile.getImage().scale(35,25);
                 break;
-             case "J00" :
+            case "J00" :
                 tile.setImage("grass_4.png");
                 tile_2 = new Rock();
                 addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
@@ -277,10 +315,16 @@ public abstract class TileWorld extends World
                 //addObject(tallo,12+x*TWIDTH, 12+y*THEIGHT);
     }
     
+    /**
+     * Metodo que regresa el contador del mundo
+     */
     public Counter getCounter(){
         return this.ingCount;
     }
     
+    /**
+     * 
+     */
     public int getMode(){
         return this.mode;
     }
@@ -289,6 +333,10 @@ public abstract class TileWorld extends World
         this.mode = m;
     }
     
+    
+    /**
+     * Metodo que resetea el mundo, regresando al heroe y los enemigos a sus correspondientes spawns
+     */
     public void reset(){
         this.hero.setLocation(spawnX,spawnY);
         for(Enemy enemy : this.getObjects(Enemy.class)){
@@ -296,7 +344,16 @@ public abstract class TileWorld extends World
         }
     }
     
+    /**
+     * Prepara el mundo, haciendo que la musica suene y que el heroe se intancie y añada al mundo
+     * Ademas, llama al metodo abstracto prepareIndividual que permite modificar cuantos enemigos
+     * hay por sala de manera individual
+     */
     private void prepare() { 
+        if(JukeBox.isPlaying() == false){
+            JukeBoxEnemy.stop();
+            JukeBox.play();
+        }
         if(mode != 1){
             hero = new Heroe(Dificultad.vidaHeroe,2,2,"principal_enfrente.gif");
             addObject(hero,spawnX,spawnY); 
