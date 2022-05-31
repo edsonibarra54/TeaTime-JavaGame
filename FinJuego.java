@@ -1,10 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class Derrota extends Actor
+/**
+ * Write a description of class FinJuego here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class FinJuego extends Actor
 {
     private int tempo;
-    public Derrota(){
-        setImage("Pantalla_derrota.png");
+    
+    public FinJuego(String s){
+        setImage(s);
         tempo = 0;
         this.getImage().setTransparency(0);
     }

@@ -47,7 +47,7 @@ public abstract class TileWorld extends World
         this.WORLD = tiles;
         createWorldFromTiles(); 
         mode = m;
-        setPaintOrder(Derrota.class,Transicion.class,Tree.class,Heroe_animacion.class,Heroe.class,LineOfSight.class,HeartTile.class,Counter.class,IngredientTile.class,ShadowTile.class,Tree.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
+        setPaintOrder(FinJuego.class,Transicion.class,Tree.class,Heroe_animacion.class,Heroe.class,LineOfSight.class,HeartTile.class,Counter.class,IngredientTile.class,ShadowTile.class,Tree.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
         prepare();
     }
     
@@ -71,7 +71,7 @@ public abstract class TileWorld extends World
         this.WORLD = tiles;
         createWorldFromTiles();
         //setPaintOrder(Counter.class,Derrota.class,Transicion.class,HeartTile.class,Tree.class,Heroe.class,LineOfSight.class,ShadowTile.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
-        setPaintOrder(Derrota.class,Transicion.class,HeartTile.class,Counter.class,IngredientTile.class,ShadowTile.class,Fuente.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,Heroe.class,ColliderTile.class);
+        setPaintOrder(FinJuego.class,Transicion.class,HeartTile.class,Counter.class,IngredientTile.class,ShadowTile.class,Fuente.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,Heroe.class,ColliderTile.class);
         prepare();
     }
     public TileWorld(String tiles[][], int sX, int sY,Counter ingCount, int m,boolean bool)
@@ -85,7 +85,7 @@ public abstract class TileWorld extends World
         this.WORLD = tiles;
         createWorldFromTiles();
         //setPaintOrder(Counter.class,Derrota.class,Transicion.class,HeartTile.class,Tree.class,Heroe.class,LineOfSight.class,ShadowTile.class,ColliderTile.class,Projectile.class,/*TrapTile.class,*/Ingrediente.class,Projectile.class,Personaje.class,NoColliderTile.class);
-        setPaintOrder(Derrota.class,Transicion.class,HeartTile.class,Counter.class,IngredientTile.class,ShadowTile.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,Heroe.class,ColliderTile.class);
+        setPaintOrder(FinJuego.class,Transicion.class,HeartTile.class,Counter.class,IngredientTile.class,ShadowTile.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,Heroe.class,ColliderTile.class);
         prepare();
     }
     public TileWorld(String tiles[][], int sX, int sY,Counter ingCount)
@@ -96,7 +96,7 @@ public abstract class TileWorld extends World
         this.ingCount = ingCount;
         this.WORLD = tiles;
         createWorldFromTiles(); 
-        setPaintOrder(Counter.class,Heroe.class,HeartTile.class,Counter.class,IngredientTile.class,ShadowTile.class,Fuente.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,Heroe.class,ColliderTile.class);
+        setPaintOrder(FinJuego.class,Counter.class,Heroe.class,HeartTile.class,Counter.class,IngredientTile.class,ShadowTile.class,Fuente.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,Heroe.class,ColliderTile.class);
         prepare();
     }
     
@@ -109,7 +109,7 @@ public abstract class TileWorld extends World
         this.ingCount = ingCount;
         this.WORLD = tiles;
         createWorldFromTiles(); 
-        setPaintOrder(Counter.class,HeartTile.class,Counter.class,IngredientTile.class,ShadowTile.class,Fuente.class,Heroe.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
+        setPaintOrder(FinJuego.class,Counter.class,HeartTile.class,Counter.class,IngredientTile.class,ShadowTile.class,Fuente.class,Heroe.class,Casa.class,TrapTile.class,Ingrediente.class,Projectile.class,Tree.class,ColliderTile.class);
         prepare();
     }
     

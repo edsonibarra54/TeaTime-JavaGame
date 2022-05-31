@@ -53,7 +53,7 @@ public class Sala_10 extends TileWorld
                 }
                 if(tf.getWorld() != null){
                     if(tf.animacionFinalizada() == true){
-                        World world = new Sala_11("sala_castillo.png");
+                        World world = new Sala_11();
                         Greenfoot.setWorld(world);
                     }
                 }
