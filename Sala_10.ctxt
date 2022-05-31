@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Sala_10
+comment1.params=spawnX\ spawnY\ count
+comment1.target=Sala_10(int,\ int,\ Counter)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ prepareIndividual()
+numComments=4

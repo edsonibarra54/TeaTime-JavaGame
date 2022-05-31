@@ -13,7 +13,7 @@ public class JukeBox
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    public static void changeSong(String newSong){ 
+    public static void changeSong(String newSong){  
         if(song.isPlaying()){
             song.stop();
         }
@@ -21,16 +21,28 @@ public class JukeBox
         song.playLoop();
         song.setVolume(20);
     }
-    public void stop(){
+    public static void stop(){
         song.stop();
+    }
+    
+    public static void pause(){
+        song.pause();
+    }
+    
+    public static void play(){
+        song.playLoop();
+    }
+    
+    public static boolean isPlaying(){
+        return song.isPlaying();
     }
     public void act()
     {
         
         
     }
-    public void silencio() 
+    public void silenc() 
     {
-            
+        
     }
 }

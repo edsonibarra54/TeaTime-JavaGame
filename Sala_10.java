@@ -1,34 +1,37 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Sala_1 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class Sala_1 extends TileWorld
-{
+public class Sala_10 extends TileWorld
+{   
     private boolean transicionInicialIniciada, transicionFinalIniciada; 
+    private boolean activaFinal;
     private Transicion ti,tf;
     
-    public Sala_1(int spawnX, int spawnY,Counter count)
+    public Sala_10(int spawnX, int spawnY,Counter count)
     {
-        super(ListaDeMundoTiles.TilesMundo1(), spawnX, spawnY,count,0); 
+        super(ListaDeMundoTiles.TilesMundo10(), spawnX, spawnY,count,0); 
         this.transicionInicialIniciada = false;
         this.transicionFinalIniciada = false;
-        salaDerecha = new PortalTile(1); 
-        addObject(salaDerecha,600,200);
-        salaIzquierda = new PortalTile(1);
-        addObject(salaIzquierda,1,150);
+        this.activaFinal = false;
+        Fuente fuente = new Fuente();
+        addObject(fuente,300,200);
+        salaAbajo = new PortalTile(0);
+        addObject(salaAbajo,300,399);
+        salaArriba = new PortalTile(0);
+        addObject(salaArriba,300,51);
     }
-
+    
     public void act(){
+        if(Ingredientes_list.getIngredient0() == 1 && Ingredientes_list.getIngredient1() == 1 && Ingredientes_list.getIngredient2() == 1)
+        {
+            activaFinal = true;
+        }
+        
         if(ti.animacionFinalizada() == true){
             getObjects(Heroe.class).get(0).setCancelaMovimiento(false);
         }
         
         if(this.getObjects(Heroe.class).isEmpty()!=true){
-            if(salaDerecha.isHeroOn()){
+            if(salaAbajo.isHeroOn()){ 
                 if(transicionFinalIniciada == false){
                     transicionFinalIniciada = true;
                     tf = new Transicion(1); 
@@ -36,13 +39,13 @@ public class Sala_1 extends TileWorld
                 }
                 if(tf.getWorld() != null){
                     if(tf.animacionFinalizada() == true){
-                        World world = new Sala_2(25,150,super.getCounter());
+                        World world = new Sala_7(570,270,super.getCounter());
                         Greenfoot.setWorld(world);
                     }
                 }
-            } 
+            }
             
-            if(salaIzquierda.isHeroOn()){ 
+            if(salaArriba.isHeroOn() && activaFinal == true){ 
                 if(transicionFinalIniciada == false){
                     transicionFinalIniciada = true;
                     tf = new Transicion(1); 
@@ -50,7 +53,7 @@ public class Sala_1 extends TileWorld
                 }
                 if(tf.getWorld() != null){
                     if(tf.animacionFinalizada() == true){
-                        World world = new Sala3(570,200,super.getCounter());
+                        World world = new Sala_11();
                         Greenfoot.setWorld(world);
                     }
                 }
@@ -59,17 +62,10 @@ public class Sala_1 extends TileWorld
     }
     
     @Override
-    public void prepareIndividual() 
-    { 
-        
-        if(Ingredientes_list.checkIngredient(0) == 0){
-            Ingrediente azucar = new Ingrediente("azucar.png",0);
-            addObject(azucar,75,300);
-        }        
-        Actor enemigo1 = new Enemy(ListaDeSprites.enemigo1,300,1,0,100,100);
-        Actor enemigo2 = new Enemy(ListaDeSprites.pirata,200,0,1,500,100);
-        addObject(enemigo1,150,85);
-        addObject(enemigo2,500,100);
+    public void prepareIndividual(){
+        TileActor puerta = new ColliderTile();
+        puerta.setImage("Puerta.png");
+        addObject(puerta,300,25);
         if(transicionInicialIniciada == false){
             transicionInicialIniciada = true;
             ti = new Transicion(0);
@@ -77,4 +73,3 @@ public class Sala_1 extends TileWorld
         }
     }
 }
-

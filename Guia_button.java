@@ -7,7 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Guia_button extends Button
-{
+{ 
     int index = 0;
     public Guia_button(String s){
         super(s);
@@ -21,7 +21,9 @@ public class Guia_button extends Button
         handleMouseClicks();
         // Add your action code here.
     }
-    
+    /**
+     * Cuando se hace click, se intancia un objeto de tipo guia y se añade al mapa
+     */
     @Override
     public void clickedAction(){
          Guia guia = new Guia();
