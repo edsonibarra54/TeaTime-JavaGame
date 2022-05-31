@@ -17,4 +17,6 @@ comment7.params=
 comment7.target=java.lang.String[][]\ TilesMundo5()
 comment8.params=
 comment8.target=java.lang.String[][]\ TilesMundo10()
-numComments=9
+comment9.params=
+comment9.target=java.lang.String[][]\ TilesMundo11()
+numComments=10
