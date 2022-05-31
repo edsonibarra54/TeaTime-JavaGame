@@ -14,8 +14,9 @@ public class Rock extends TrapTile
     public Rock()
     {
         super(100);
-        setImage("circulo_naranja.png");
-        getImage().scale(25,25);
+        getImage().setTransparency(160);
+        setImage("block_2.png");
+        getImage().scale(15,15);
     }
     /**
      * Act - do whatever the Rock wants to do. This method is called whenever
