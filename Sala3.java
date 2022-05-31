@@ -60,7 +60,7 @@ public class Sala3 extends TileWorld
                 }
                 if(tf.getWorld() != null){
                     if(tf.animacionFinalizada() == true){
-                        World world = new Sala_7(570,250,super.getCounter());
+                        World world = new Sala_7(570,275,super.getCounter());
                         Greenfoot.setWorld(world);
                     }
                 }
