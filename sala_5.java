@@ -28,7 +28,7 @@ public class sala_5 extends TileWorld
         }
         
         if(salaDerecha.isHeroOn()){
-            World world = new Sala_7(40,200,super.getCounter()); 
+            World world = new Sala_7(40,285,super.getCounter()); 
             Greenfoot.setWorld(world);
         }
     }
