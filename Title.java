@@ -1,14 +1,26 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+/**
+ * Clase que muestra el titulo junto con su animacion,
+ * esta tambien se encarga de instanciar los objetos del menu
+ * cono el texto, los botones y las nubes
+ */
 public class Title extends Actor
 {
     private int dx,dy,tempo,flag=0;
-    //private GreenfootSound intro= new GreenfootSound("PALACIO DE VERSALLES...MUSICA RELAJANTE...NISI DOMINUS (128 kbps).mp3");
+    
+    /**
+     * Constructor Tile
+     */
     public Title(){
         dx=dy = 2;
         tempo = 0;
     }
     
+    /**
+     * Metodo que realiza la animacion, despues de realizarla genera el texto,
+     * si se presiona la tecla espacio genera los botones
+     */
     public void act()
     {
         tempo++;

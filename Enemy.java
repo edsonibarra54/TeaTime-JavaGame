@@ -68,11 +68,6 @@ public class Enemy extends Personaje
         cambiaImagen();
     }
     
-    /*public void changeSong(String song){
-        TileWorld w = this.getWorldOfType(TileWorld.class);
-        w.getJB().changeSong(song);
-    }*/
-    
     /**
      * Utilizando su velocidad actual en los ejes determinamos hacia donde esta viendo y cambiamos
      * su sprite para coincidir, si esta persiguiendo al heroe entonces su sprite es diferente

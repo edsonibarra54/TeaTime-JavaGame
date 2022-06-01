@@ -12,7 +12,10 @@ public class Transicion extends Actor
     private int tempo;
     private String image;
     
-    
+    /**
+     * Metodo que se encarga de realizar los movimientos de la animacion
+     * @param m Indica para que se usara la transicion(0 == transicion de entrada, 1 == transicion de salida, 2 == transicion de fin de juego )
+     */
     public Transicion(int m){
         setImage("Transicion.png");
         tempo = 0;
@@ -22,6 +25,10 @@ public class Transicion extends Actor
         }
     }
     
+    /**
+     * Metodo que cambia la tranparencia para hacer el efeto de transicion, la transparencia
+     * se modificara dependiendo del valor de mode
+     */
     public void act(){
         tempo++;
         if(this.mode == 0 && tempo < 50){ //Esta realiza la animacion donde se aclara
@@ -37,6 +44,10 @@ public class Transicion extends Actor
         }
     }
     
+    /**
+     * Metodo que devuelve un true si la animacion de la transicion
+     * ya ha terminado, devuelve un false si no es asi
+     */
     public boolean animacionFinalizada(){ //Indica si la animacion de transicion a sido finalizada
         if(tempo >= 50 && mode < 2){
             return true;

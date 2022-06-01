@@ -3,8 +3,11 @@ comment0.target=Transicion
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Transicion\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=m
 comment1.target=Transicion(int)
+comment1.text=\r\n\ Metodo\ que\ se\ encarga\ de\ realizar\ los\ movimientos\ de\ la\ animacion\r\n\ @param\ m\ Indica\ para\ que\ se\ usara\ la\ transicion(0\ \=\=\ transicion\ de\ entrada,\ 1\ \=\=\ transicion\ de\ salida,\ 2\ \=\=\ transicion\ de\ fin\ de\ juego\ )\r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ Metodo\ que\ cambia\ la\ tranparencia\ para\ hacer\ el\ efeto\ de\ transicion,\ la\ transparencia\r\n\ se\ modificara\ dependiendo\ del\ valor\ de\ mode\r\n
 comment3.params=
 comment3.target=boolean\ animacionFinalizada()
+comment3.text=\r\n\ Metodo\ que\ devuelve\ un\ true\ si\ la\ animacion\ de\ la\ transicion\r\n\ ya\ ha\ terminado,\ devuelve\ un\ false\ si\ no\ es\ asi\r\n
 numComments=4

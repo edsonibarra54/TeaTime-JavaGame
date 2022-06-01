@@ -1,7 +1,10 @@
 #BlueJ class context
 comment0.target=Title
+comment0.text=\r\n\ Clase\ que\ muestra\ el\ titulo\ junto\ con\ su\ animacion,\r\n\ esta\ tambien\ se\ encarga\ de\ instanciar\ los\ objetos\ del\ menu\r\n\ cono\ el\ texto,\ los\ botones\ y\ las\ nubes\r\n
 comment1.params=
 comment1.target=Title()
+comment1.text=\r\n\ Constructor\ Tile\r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ Metodo\ que\ realiza\ la\ animacion,\ despues\ de\ realizarla\ genera\ el\ texto,\r\n\ si\ se\ presiona\ la\ tecla\ espacio\ genera\ los\ botones\r\n
 numComments=3
