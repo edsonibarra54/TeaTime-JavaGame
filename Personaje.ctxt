@@ -1,16 +1,22 @@
 #BlueJ class context
 comment0.target=Personaje
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Personaje\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Representa\ a\ los\ personajes,\ contiene\ vida\ y\ velocidad\ \r\n
 comment1.params=vida\ velocidadX\ velocidadY\ imagen
 comment1.target=Personaje(int,\ int,\ int,\ java.lang.String)
+comment1.text=\r\n\ Constructor\ de\ la\ clase\ personaje\r\n\ @param\ vida\ La\ vida\ del\ personaje\r\n\ @param\ velocidadX\ La\ velocidad\ del\ personaje\ en\ x\r\n\ @param\ velocidadY\ La\ velocidad\ del\ personaje\ en\ y\r\n\ @param\ imagen\ El\ nombre\ de\ la\ imagen\ que\ se\ le\ asigna\ \r\n
 comment2.params=
 comment2.target=int\ getvida()
+comment2.text=\r\n\ return\ La\ vida\ actual\ del\ personaje\r\n
 comment3.params=x
 comment3.target=void\ setvida(int)
+comment3.text=\r\n\ Setea\ la\ vida\ a\ la\ variable\ x\r\n\ @param\ x\ el\ nuevo\ valor\ de\ la\ vida\r\n
 comment4.params=
 comment4.target=void\ act()
+comment4.text=\r\n\ Cada\ subclase\ define\ su\ propio\ act\r\n
 comment5.params=imagen
 comment5.target=void\ cambiaImagen(java.lang.String)
+comment5.text=\r\n\ Cambia\ la\ imagen\ dependiendo\ de\ su\ parametro\r\n\ @param\ imagen\ El\ nombre\ de\ la\ nueva\ imagen\r\n
 comment6.params=
 comment6.target=void\ movimiento()
+comment6.text=\r\n\ Cada\ subclase\ define\ su\ propio\ movimiento\r\n
 numComments=7

@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Guia here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Clase que muestra en pantalla las imagenes correspondientes a la guia
  */
 public class Guia extends Actor
 {

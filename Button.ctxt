@@ -1,13 +1,16 @@
 #BlueJ class context
 comment0.target=Button
+comment0.text=\r\n\ Clase\ que\ representa\ la\ funcionalidad\ de\ un\ boton\r\n\ al\ cual\ se\ le\ puede\ dar\ click\r\n
 comment1.params=s
 comment1.target=Button(java.lang.String)
 comment1.text=\r\n\ Constructor\ de\ boton,\ recibe\ una\ cadena\ que\ representa\ la\ imagen\ que\ mostrar\u00E1\r\n\ @param\ s\ la\ cadena\ que\ ser\u00E1\ mostrada\r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ Se\ encarga\ de\ manejar\ el\ click\ \r\n
 comment3.params=
 comment3.target=void\ handleMouseClicks()
 comment3.text=\r\n\ Metodo\ que\ maneja\ la\ accion\ que\ cada\ boton\ va\ a\ realizar\ cuando\ se\ da\ un\ click\r\n
 comment4.params=
 comment4.target=void\ clickedAction()
+comment4.text=\r\n\ Accion\ a\ realizar\ cuando\ se\ da\ click,\ cada\ subclase\ define\ su\ propia\ accion\ \r\n
 numComments=5

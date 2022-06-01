@@ -1,8 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+/**
+ * Clase que representa la funcionalidad de un boton
+ * al cual se le puede dar click
+ */
 public abstract class Button extends Actor
 {
-    private int difficulty;
     
     /**
      * Constructor de boton, recibe una cadena que representa la imagen que mostrará
@@ -11,7 +13,9 @@ public abstract class Button extends Actor
     public Button(String s){
         setImage(s);
     }
-    
+    /**
+     * Se encarga de manejar el click 
+     */
     public void act() 
     {
         handleMouseClicks();
@@ -25,6 +29,8 @@ public abstract class Button extends Actor
             clickedAction();
         }
     } 
-
+    /**
+     * Accion a realizar cuando se da click, cada subclase define su propia accion 
+     */
     public abstract void clickedAction(); 
 }

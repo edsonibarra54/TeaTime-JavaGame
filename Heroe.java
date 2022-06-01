@@ -2,10 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 import java.util.List;
 /**
- * Write a description of class Heroe here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * El heroe es el mejor 
  */
 //Edson
 public class Heroe extends Personaje

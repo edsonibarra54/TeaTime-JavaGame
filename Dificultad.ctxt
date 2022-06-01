@@ -6,5 +6,5 @@ comment1.target=void\ changeDifficulty(int)
 comment1.text=\r\n\ Constructor\ el\ cual\ cambia\ la\ dificultad\ del\ juego\ segun\ el\ nivel\r\n\ \ \ \ @params\ int\ que\ representa\ la\ dificultad\ elegida,\ la\ cual\ va\ de\ 1\ a\ 3\r\n
 comment2.params=
 comment2.target=void\ resetDificulty()
-comment2.text=\r\nmetodo\ que\ inicializa\ la\ dificultad\ al\ nivel\ 2\ al\ momento\ de\ perder\ o\ ganar\ una\ partida\r\n
+comment2.text=\r\nmetodo\ que\ inicializa\ la\ dificultad\ al\ nivel\ 2\ al\ momento\ de\ perder\ o\ ganar\ una\ partida,\ esto\ para\ evitar\r\nque\ si\ alguna\ de\ las\ variables\ estaticas\ fue\ modificada\ con\ anterioridad\ se\ quede\ este\ cambio\ en\ la\ partida\ actual\r\nadem\u00E1s\ de\ seleccionar\ la\ dificultad\ normal\ como\ predefinida\r\n
 numComments=3
