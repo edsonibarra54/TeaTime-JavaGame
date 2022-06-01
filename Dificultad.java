@@ -1,8 +1,6 @@
 /**
  * Clase Que modifica la velocidad y rango de enemigos
- * 
- * @author Alan
- * @version 20/05/2022
+ * y la vida del heroe
  */
 public class Dificultad  
 {
@@ -41,7 +39,9 @@ public class Dificultad
         }
     } 
     /**
-       *metodo que inicializa la dificultad al nivel 2 al momento de perder o ganar una partida
+       *metodo que inicializa la dificultad al nivel 2 al momento de perder o ganar una partida, esto para evitar
+       *que si alguna de las variables estaticas fue modificada con anterioridad se quede este cambio en la partida actual
+       *además de seleccionar la dificultad normal como predefinida
        */
     public static void resetDificulty(){
         vidaHeroe=6;

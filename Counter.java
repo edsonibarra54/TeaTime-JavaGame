@@ -1,6 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 
+/**
+ * Clase que lleva la cuenta de cuantos ingredientes han sido recogidos
+ * además de mostrarlo en pantalla
+ */
 public class Counter extends Actor
 {
     private static final Color transparent = new Color(0,0,0,0);
@@ -28,14 +32,7 @@ public class Counter extends Actor
         w.addObject(ingredients.get(1), 545, 350);
         w.addObject(ingredients.get(0), 505, 350); 
     }
-    
-    /*public void addToWorld(World w){
-        int i=0;
-        for(IngredientTile t: ingredients){
-            w.addObject(t,w.getWidth()-15*(i+1)-t.getImage().getWidth()*i,w.getHeight()-50); 
-            i++; 
-        }
-    }*/
+
     /**
      * Se modifican las siluetas por la imagen completa dependiendo de si el ingrediente fue recogido
      * o no
@@ -51,22 +48,6 @@ public class Counter extends Actor
             ingredients.get(2).setImage("taza.png"); 
         }
     }
-    
-    
-    /*
-    public void cambiaSilueta(){
-        for(int i = 0;i < ingredients.size();i++){
-            if(Ingredientes_list.checkIngredient(i)==1){
-                ingredients.get(i).setImage(Ingredientes_list.getSprite(i));
-            }
-        }
-    }*/
-    
-    public void act()  
-    {
-
-    }
-    
 
     /**
      * Add a new score to the current counter value.  This will animate

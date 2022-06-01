@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 /**
- * Write a description of class HaloTile here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * genera un halo de luz al rededor de cierta ubicacion 
  */
 public class HaloTile extends NoColliderTile
 {

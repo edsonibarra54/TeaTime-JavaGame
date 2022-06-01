@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Heroe
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Heroe\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ El\ heroe\ es\ el\ personaje\ principal\ de\ la\ historia\r\n
 comment1.params=vida\ velocidadX\ velocidadY\ nombre_imagen
 comment1.target=Heroe(int,\ int,\ int,\ java.lang.String)
 comment10.params=band
@@ -20,7 +20,7 @@ comment6.target=void\ setcorazon_seteado()
 comment6.text=\r\n\ Establece\ los\ corazones\ especificos\ despues\ de\ la\ primer\ instanciaque\ le\ corresponden\ al\ personaje\ segun\ su\ vida\ y\ le\ modifica\ la\ longitud\ del\ total\ de\ corazones\r\n
 comment7.params=
 comment7.target=boolean\ ocultar()
-comment7.text=\r\n\ Si\ el\ heroe\ esta\ dentro\ de\ una\ celda\ de\ tipo\ TallGrass,\ se\ regresa\ verdadero\ y\ los\ \r\n\ enemigos\ no\ pueden\ seguirlo\r\n
+comment7.text=\r\n\ Si\ el\ heroe\ esta\ dentro\ de\ una\ celda\ de\ tipo\ TallGrass,\ se\ regresa\ verdadero\ y\ los\ \r\n\ enemigos\ no\ pueden\ seguirlo\r\n\ @return\ Verdadero\ si\ el\ heroe\ esta\ oculto\r\n
 comment8.params=
 comment8.target=void\ movimiento()
 comment8.text=\r\n\ Utilizando\ las\ teclas\ WASD\ cambiamos\ la\ velocidad\ correspondientemente,\r\n\ despues,\ movemos\ al\ heroe\ esa\ cantidad\ de\ pixeles,\ si\ esta\ chocando\ con\ una\ pared\r\n\ no\ puede\ atravesarla\r\n

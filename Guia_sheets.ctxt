@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=Guia_sheets
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Guia_sheets\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=Guia_sheets()
-comment2.params=index
-comment2.target=java.lang.String\ returnText(int)
-comment3.params=
-comment3.target=int\ returnSheetslength()
-numComments=4
+comment0.text=\r\n\ Esta\ clase\ permite\ acceder\ a\ las\ paginas\ de\ la\ guia\ mediante\ metodos\ estaticos\r\n
+comment1.params=index
+comment1.target=java.lang.String\ returnText(int)
+comment1.text=\r\n\ Regresa\ el\ nombre\ de\ la\ imagen\ correspondiente\ a\ la\ posicion\ index\ en\ el\ arreglo\r\n\ @param\ index\ la\ posicion\ que\ se\ busca\ obtener\ en\ el\ arreglo\r\n
+comment2.params=
+comment2.target=int\ returnSheetslength()
+comment2.text=\r\n\ Regresa\ la\ longitud\ del\ arreglo\ sheets,\ que\ representa\ la\ cantidad\ de\ paginas\ en\ la\ guia\r\n\ @return\ la\ cantidad\ de\ paginas\ en\ la\ guia\ \r\n
+numComments=3

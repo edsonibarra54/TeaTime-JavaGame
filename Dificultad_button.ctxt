@@ -1,11 +1,12 @@
 #BlueJ class context
 comment0.target=Dificultad_button
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Dificultad_button\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Boton\ que\ permite\ seleccionar\ la\ dificultad\ del\ juego\r\n
 comment1.params=s\ mensaje\ dificultad
 comment1.target=Dificultad_button(java.lang.String,\ java.lang.String,\ int)
 comment1.text=\r\n\ Constructor\ de\ boton\ de\ dificultad,\ contiene\ la\ dificultad\ que\ estar\u00E1\ representando\r\n\ @param\ s\ el\ nombre\ de\ la\ imagen\ que\ se\ le\ dara\r\n\ @param\ mensaje\ el\ nombre\ de\ la\ imagen\ que\ contiene\ la\ informacion\ de\ su\ dificultad\r\n\ @param\ dificultad\ la\ dificultad\ que\ el\ boton\ representa\r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ Maneja\ las\ acciones\ a\ realizar\ cuando\ se\ da\ click,\ adem\u00E1s,\ cambia\ su\ transparencia\r\n\ cuando\ el\ boton\ ha\ sido\ seleccionado\r\n
 comment3.params=
 comment3.target=void\ clickedAction()
 comment3.text=\r\n\ Cuando\ se\ le\ da\ click,\ llama\ al\ metodo\ estatico\ changeDifficulty\ con\ la\ dificultad\ del\ boton\r\n\ Adem\u00E1s,\ se\ a\u00F1ade\ la\ imagen\ que\ presenta\ su\ descripcion\r\n

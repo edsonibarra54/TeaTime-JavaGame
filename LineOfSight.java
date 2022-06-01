@@ -3,10 +3,8 @@ import java.lang.Math;
 import java.util.List;
 import java.util.ArrayList;
 /**
- * Write a description of class LineOfSight here. 
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Crea una linea de vision para el enemigo, de esta manera solo puede ver hacia enfrente en vez 
+ * de tener una vista radial
  */
 public class LineOfSight extends Actor
 {
@@ -17,6 +15,7 @@ public class LineOfSight extends Actor
     /**
      * Constructor de los, necesita de un enemigo que será el poseedor de la misma
      * Se asignan diversos datos con la informacion del enemigo
+     * @param owner El enemigo propietario de la los
      */
     public LineOfSight(Enemy owner){
         this.owner = owner;
@@ -36,15 +35,11 @@ public class LineOfSight extends Actor
         w.addObject(this,owner.getX()+(this.large/2),owner.getY());
     }
     
-    public void act()
-    {
-        
-    }
-    
     /**
      * Revisa las clases con las que intersecta, si detecta solamente un heroe, se activa el seguimiento
      * del enemigo, si detecta un heroe y una pared, se calcula quien esta más cerca para determinar si en realidad
      * se ve al enemigo o no
+     * @return una lista de heroes
      */
     public List<Heroe> losClear(){//Revisamos lo que esta dentro del area de vision
         List<Heroe> heroAtlos = new ArrayList<Heroe>();
@@ -64,13 +59,15 @@ public class LineOfSight extends Actor
     
     /**
      * Se usa el teorema de Pitagoras para calcular la distancia entre dos Actores
+     * @return la distancia entre el actor y el enemigo 
      */
     public double calDistance(Actor actor){//Se calcula la distancia entre los objetos por el metodo del teorema de pitagoras 
         return Math.sqrt(Math.pow(actor.getX()-this.getX(),2)+Math.pow(actor.getY()-this.getY(),2));
     }
     /**
      * Se reescala la imagen para coincidir con hacia donde ve el enemigo
-     * Ademas de modificar su posicion para seguirlo
+     * ademas de modificar su posicion para seguirlo
+     * @param sprite indica el sprite que tiene el owner en determinado momento
      */
     public void setOrientation(int sprite){//Movemos la orientacion de la linea dependiendo de hacia donde ve el enemigo
         switch(sprite){

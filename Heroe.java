@@ -2,10 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 import java.util.List;
 /**
- * Write a description of class Heroe here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * El heroe es el personaje principal de la historia
  */
 //Edson
 public class Heroe extends Personaje
@@ -174,7 +171,7 @@ public class Heroe extends Personaje
         {
             corazon.get(0).setImage("Corazon_mitad_rojo.png");
             //corazon.get(0).turn(180);
-        }
+        } 
         World mundo = getWorld();
         for(i=0;i<(super.getvida()/2);i++){
           corazon.get(i);  
@@ -200,6 +197,7 @@ public class Heroe extends Personaje
     /**
      * Si el heroe esta dentro de una celda de tipo TallGrass, se regresa verdadero y los 
      * enemigos no pueden seguirlo
+     * @return Verdadero si el heroe esta oculto
      */
     public boolean ocultar(){
         boolean flag = false;
@@ -243,6 +241,7 @@ public class Heroe extends Personaje
             setLocation(getX()-dx, getY()-dy);
         }   
     }
+    
     
     public void poder()
     {

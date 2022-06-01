@@ -1,19 +1,19 @@
 #BlueJ class context
 comment0.target=JukeBox
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ JukeBox\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Clase\ que\ permite\ reproducir\ la\ musica\ de\ fondo\ del\ juego\r\n\ cambiarla,\ pausarla\ o\ pararla\r\n
 comment1.params=newSong
 comment1.target=void\ changeSong(java.lang.String)
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ JukeBox\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.text=\r\n\ Cambia\ la\ cancion\ que\ reproduce\ jukebox\ por\ la\ que\ corresponde\ a\ el\ string\r\n\ de\ su\ parametro,\ si\ hay\ alguna\ sonando\ en\ ese\ momento,\ la\ detiene\ antes\ de\ empezar\r\n\ la\ nueva\ \r\n\ @param\ newSong\ el\ nombre\ de\ la\ nueva\ cancion\r\n
 comment2.params=
 comment2.target=void\ stop()
+comment2.text=\r\n\ Detiene\ la\ reproduccion\ de\ la\ cancion\ en\ jukebox\r\n
 comment3.params=
 comment3.target=void\ pause()
+comment3.text=\r\n\ Pausa\ la\ reproduccion\ de\ la\ cancion\ en\ jukebox\r\n
 comment4.params=
 comment4.target=void\ play()
+comment4.text=\r\n\ Reanuda\ la\ reproduccio\ \ de\ la\ cancion\ en\ jukebox\r\n
 comment5.params=
 comment5.target=boolean\ isPlaying()
-comment6.params=
-comment6.target=void\ act()
-comment7.params=
-comment7.target=void\ silenc()
-numComments=8
+comment5.text=\r\n\ Regresa\ true\ si\ la\ jukebox\ esta\ reproduciondo\ una\ cancion,\ false\ de\ lo\ contrario\r\n
+numComments=6

@@ -1,7 +1,4 @@
 #BlueJ class context
 comment0.target=ColliderTile
-comment0.text=\r\n\ Una\ clase\ que\ es\ colisionable\ con\ otros\ objetos\r\n\ \r\n\ @author\ Alan\r\n\ @version\ 01/05/2022\r\n
-comment1.params=
-comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ ColliderTile\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=2
+comment0.text=\r\n\ Una\ clase\ que\ es\ colisionable\ con\ otros\ objetos,\ si\ bien\ no\ hace\ nada,\r\n\ si\ genera\ reacciones\ cuando\ otras\ clases\ colisionan\ con\ esta\r\n
+numComments=1

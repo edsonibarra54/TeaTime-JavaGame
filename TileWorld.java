@@ -2,7 +2,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 
 /**
+<<<<<<< HEAD
  * Clase padre de todas las salas
+=======
+ * La clase TileWorld permite la construccion de mundos a base de celdas utilizando
+ * un arreglo que representa la distribucion del mismo
+ * 
+>>>>>>> 1464f744a512e967aa058be0d095405925d8d657
  */
 
 public abstract class TileWorld extends World 
@@ -326,6 +332,7 @@ public abstract class TileWorld extends World
     
     /**
      * Metodo que regresa el contador del mundo
+     * @returns un objeto de la clase contador
      */
     public Counter getCounter(){
         return this.ingCount;
@@ -380,6 +387,9 @@ public abstract class TileWorld extends World
         prepareIndividual();
     }
     
+    /**
+     * Permite a cada mundo añadir preparaciones individualmente
+     */
     public abstract void prepareIndividual();
         
     

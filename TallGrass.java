@@ -1,17 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TallGrass here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Una celda que representa cesped alto
  */
 public class TallGrass extends HidingTile
 {
     private GifImage myGif = new GifImage("tall_grass.gif");
     /**
-     * Act - do whatever the TallGrass wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Setea la imagen de la clase con el gif correspondiente
      */
     public void act()
     {

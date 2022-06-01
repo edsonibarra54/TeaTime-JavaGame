@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TileActor here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * El tileactor es el componente con el cual estan dibujados los mapas
  */
 public abstract class TileActor extends Actor
 {
@@ -17,6 +14,9 @@ public abstract class TileActor extends Actor
     {
         // Add your action code here.
     }
+    /**
+     * se pone la ubicacion de la tile
+     */
     public void setAbsoluteLocation(int dx) {    
         setLocation(getX()+dx, getY());  
     }

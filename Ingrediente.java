@@ -60,18 +60,5 @@ public class Ingrediente extends Actor
         
         
     }
-    /**
-     * Inicializa a que numero de ingrediente corresponde el actual
-       */
-    public void setCorrespondiente(int x)
-    {
-        this.correspondiente=x;
-    }
-    /**
-     * Obtiene que numero de ingrediente corresponde el actual
-       */
-    public int getCorrespondiente()
-    {
-        return this.correspondiente;
-    }
+
 }

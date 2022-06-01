@@ -4,10 +4,8 @@ import java.util.*;
 import java.util.ArrayList;
 
 /**
- * Write a description of class Enemy here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * El enemigo es el principal obstaculo del juego, persigue y daña al heroe, para esto
+ * analiza lo que hay en su rango de vision
  */ 
 public class Enemy extends Personaje
 {
@@ -16,7 +14,7 @@ public class Enemy extends Personaje
     private LineOfSight los;
     private int songFlag = 0;
     private int spawnX,spawnY;
-    private int pathlength,pathcounter;
+    private int pathlength,pathcounter;//pl = longitud del path, pc = variable que se modifica para saber cuando ya se recorrio todo el path
     private int radioBusqueda = Dificultad.RadioBusqueda;
     private int velocidadX,velocidadY,rX,rY,vxabs,vyabs;//Variables que permiten modificar la velocidad;
     private int velocidadPersigueX,velocidadPersigueY;//Variables para modificar la velocidad con la que te perigue, util al cambiar dificultad
@@ -24,11 +22,21 @@ public class Enemy extends Personaje
     /*Si persigue = true, entonces no esta en rango el heroe, si offPath = true, quiere decir que el enemigo persigió al heroe y se 
        salió de su ruta, si losActive = true, entonces el enemigo usa la vista linear en vez de radial*/
     private List<Heroe> heroInRange;
+    
+    /**
+     * Constructor de enemy
+     * @param gifsarreglo Un arreglo con los nombres de los sprites correspondientes
+     * @param pathL el largo del camino que el enemigo va a recorrer
+     * @param speedX la velocidad del enemigo en X
+     * @param speedY la velocidad del enemigo en Y
+     * @param spawnX el spawn del enemigo en X
+     * @param spawnY el spawn del enemigo en Y
+     */
     public Enemy(String[] gifsarreglo,int pathL,int speedX,int speedY,int spawnX,int spawnY)
     {
         super(1,speedX,speedY,gifsarreglo[0]);
         this.pathlength=this.pathcounter=pathL;//Definimos el largo del camino que va a hacer
-        this.velocidadX=this.rX=this.vxabs=speedX;
+        this.velocidadX=this.rX=this.vxabs=speedX;//vxabs no cambia y permite siempre recordar la velocidad original
         this.velocidadY=this.rY=this.vyabs=speedY;
         this.spawnX=spawnX;
         this.spawnY=spawnY;
@@ -41,6 +49,7 @@ public class Enemy extends Personaje
     }
     /**
      * Se añade su linea de vision al mundo
+     * @param w el mundo donde se encuentra el enemigo
      */
     protected void addedToWorld(World w){
         this.los = new LineOfSight(this);
@@ -145,6 +154,7 @@ public class Enemy extends Personaje
      * va a regresar a su spawn definido
      */
     public void regresarASpawn(){
+        /*Se usan las velocidades de persecucion por que puede ser que el enemigo no tenga velocidad en algun eje*/
             if(this.spawnX>this.getX()){
                 this.velocidadX = this.velocidadPersigueX;
             }else if(this.spawnX==this.getX()){
@@ -177,7 +187,7 @@ public class Enemy extends Personaje
                 this.pathcounter--;
                 if(pathcounter == 0){//Si ya terminó de recorrer el camino, hacemos que se de la media vuelta
                     this.pathcounter = this.pathlength;
-                    this.velocidadX = this.rX = -this.velocidadX;
+                    this.velocidadX = this.rX = -this.velocidadX;//Se inverte la velocidad por que regresa sobre sus pasos
                     this.velocidadY = this.rY = -this.velocidadY;
                 }
             }else{   
@@ -201,6 +211,10 @@ public class Enemy extends Personaje
         }
     }
     
+    /**
+     * El movimiento del enemigo es sencillo, se mueve en velocidad pixeles, la velocidad varia con su propio metodo
+     * tambien cuenta con colision en las paredes
+     */
     @Override 
     public void movimiento(){
         this.setLocation(this.getX()+velocidadX,this.getY()+velocidadY);
@@ -220,18 +234,30 @@ public class Enemy extends Personaje
         this.rY=this.vyabs;
     }
     
+    /**
+     * @return la velocidad en X
+     */
     public int getVelX(){
         return rX;
     }
     
+    /**
+     * @return la velocidad en Y
+     */
     public int getVelY(){
         return rY;
     }
     
+    /**
+     * @return su radio de busqueda
+     */
     public int getRadioB(){
         return this.radioBusqueda;
     }
     
+    /**
+     * @return el pathcounter
+     */
     public int getPathCounter(){
         return this.pathcounter;
     }

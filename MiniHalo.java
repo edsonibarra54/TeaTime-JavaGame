@@ -2,9 +2,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Un HaloTile el cual se puede mantener parado como una linterna
- * 
- * @author Alan
- * @version 21/04/2022
  */
 public class MiniHalo extends HaloTile
 {
@@ -18,7 +15,7 @@ public class MiniHalo extends HaloTile
         super();
     }
     /**
-     * Verifica si hay un HaloTile encima de este para cambiar su transparencia y ademas verific si hay un heroe tocandolo para empezar a seguirlo
+     * Verifica si hay un HaloTile encima de este para cambiar su transparencia y ademas verifica si hay un heroe tocandolo para empezar a seguirlo
        */
     public void act()
     {

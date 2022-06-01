@@ -1,25 +1,25 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Jugar_button here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+ * Boton que permite iniciar el juego   
+*/
 public class Jugar_button extends Button
 {
+    /**
+     * Constructor que recibe el nombre de la imagen a asignar
+     * @param s nombre de la imagen que se asigna
+     */
     public Jugar_button(String s){
         super(s);
     }
+    
     /**
-     * Act - do whatever the Jugar_button wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Maneja la accion a realizar con el click
      */
     public void act()
     {
         handleMouseClicks();        // Add your action code here. 
     } 
-    
     
     /**
      * Cuando se hace click, se resetean diversos datos estaticos, además de instanciar la animacion inicial
