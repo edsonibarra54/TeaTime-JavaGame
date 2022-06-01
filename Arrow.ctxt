@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Arrow
-comment0.text=\r\n\ Un\ objeto\ que\ sigue\ un\ camino\ unidireccional\ en\ una\ direccion\r\n\ \r\n\ @author\ Alan\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Un\ objeto\ que\ sigue\ un\ camino\ unidireccional\ en\ una\ direccion\r\n\ \r\n\ @author\ Alan\r\n\ @version\ 10.0\r\n
 comment1.params=x\ y
 comment1.target=Arrow(int,\ int)
 comment2.params=

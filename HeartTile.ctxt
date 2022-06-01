@@ -6,5 +6,5 @@ comment1.target=HeartTile()
 comment1.text=\r\n\ Se\ voltea\ la\ imagen\ y\ se\ coloca\ una\ imagen\ de\ corazon\ completo\r\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ \r\n
+comment2.text=\r\n\ verifica\ si\ hay\ heroes\ en\ el\ mundo\r\n
 numComments=3
