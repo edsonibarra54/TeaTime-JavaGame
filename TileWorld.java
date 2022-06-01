@@ -189,14 +189,10 @@ public abstract class TileWorld extends World
                 addObject(sombra_, 12+x*TWIDTH, 12+y*THEIGHT);                
                 break;
             case "p14":
-                tile.setImage("path_13.png");
-                //ShadowTile sombra_ = new ShadowTile();
-                //addObject(sombra_, 12+x*TWIDTH, 12+y*THEIGHT);                
+                tile.setImage("path_13.png");            
                 break;
             case "p15":
-                tile.setImage("path_13.png");
-                //ShadowTile sombra_ = new ShadowTile();
-                //addObject(sombra_, 12+x*TWIDTH, 12+y*THEIGHT);                
+                tile.setImage("path_13.png");              
                 tile_2 = new Rock();
                 addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
                 break;
@@ -288,7 +284,6 @@ public abstract class TileWorld extends World
                 break;
             case "G02":
                 tile = new TallGrass();
-                
                 tile.setImage("tall_grass.png");                
                 tile.getImage().scale(35,25);
                 break;
@@ -318,7 +313,12 @@ public abstract class TileWorld extends World
                 ShadowTile _sombra__ = new ShadowTile();
                 addObject(_sombra__, 12+x*TWIDTH, 12+y*THEIGHT);
                 break;
-                default : tile = new TallGrass();                
+                default : tile = new TallGrass();
+            case "J04" :
+                tile.setImage("path_13.png");
+                tile_2 = new Rock();
+                addObject(tile_2, 12+x*TWIDTH, 12+y*THEIGHT);
+                break;
             }    
             if(shadow==true)
             {

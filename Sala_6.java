@@ -21,16 +21,12 @@ public class Sala_6 extends TileWorld
         super(ListaDeMundoTiles.TilesMundo4(), spawnX, spawnY,count,0,true);
         this.transicionInicialIniciada = false;
         this.transicionFinalIniciada = false;
-        super.shadow=true;
+        super.shadow = true;
         halo = new HaloTile();
         addObject(halo,spawnX - 8,spawnY + 5);
-        salaIzquierda = new PortalTile(1);
-        addObject(salaIzquierda,1,150);
-        salaDerecha = new PortalTile(0);
-        addObject(salaDerecha,600,200);
         MiniHalo luz = new MiniHalo();
         addObject(luz,87,337);
-        salaDerecha = new PortalTile(0);
+        salaDerecha = new PortalTile(1);
         addObject(salaDerecha,599,200);
     }
     
