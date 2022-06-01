@@ -17,7 +17,7 @@ public class ArrowDispenserTile extends TrapTile
     public ArrowDispenserTile(int eje,int tiempodeespera)
     {
         super(200);
-        setImage("Muro.png");
+        setImage("Lanzador.png");
         if(eje==1)
         {
             x=3;
@@ -46,7 +46,7 @@ public class ArrowDispenserTile extends TrapTile
     public ArrowDispenserTile(int eje)
     {
         super(200);
-        setImage("Muro.png");
+        setImage("Lanzador.png");
         if(eje==1)
         {
             x=3;

@@ -17,6 +17,7 @@ public class Projectile extends Actor
        */
     public Projectile(int destinoX,int destinoY)
     {
+        this.setImage("roca_2.png");
         this.getImage().setTransparency(30);
         this.destinoX=destinoX;
         this.destinoY=destinoY;
