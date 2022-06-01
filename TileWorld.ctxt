@@ -1,13 +1,14 @@
 #BlueJ class context
 comment0.target=TileWorld
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ TileWorld\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Clase\ padre\ de\ todas\ las\ salas\r\n
 comment1.params=
 comment1.target=TileWorld()
 comment10.params=
 comment10.target=int\ getMode()
-comment10.text=\r\n\ \r\n
+comment10.text=\r\n\ Metodo\ que\ regresa\ el\ modo\ en\ el\ que\ se\ encuentra\ el\ mapa\r\n
 comment11.params=m
 comment11.target=void\ setMode(int)
+comment11.text=\r\n\ Metodo\ para\ cambiar\ el\ modo\ en\ el\ que\ se\ encuentra\ el\ mapa\r\n\ @param\ m\ modo\ al\ que\ se\ quiere\ cambiar\r\n
 comment12.params=
 comment12.target=void\ reset()
 comment12.text=\r\n\ Metodo\ que\ resetea\ el\ mundo,\ regresando\ al\ heroe\ y\ los\ enemigos\ a\ sus\ correspondientes\ spawns\r\n
@@ -18,10 +19,10 @@ comment14.params=
 comment14.target=void\ prepareIndividual()
 comment2.params=tiles\ sX\ sY\ m\ n
 comment2.target=TileWorld(java.lang.String[][],\ int,\ int,\ int,\ int)
-comment2.text=\r\n\ Constructor\ de\ TileWorld,\ instancia\ un\ mundo\ de\ celdas\ y\ adem\u00E1s\ las\r\n\ pinta\ de\ acuerdo\ a\ la\ matriz\ tiles\r\n\ @param\ tiles\ La\ matriz\ que\ incluye\ la\ informacion\ con\ la\ que\ TileWorld\ va\ a\ ser\ dibujado\r\n\ @param\ sX\ el\ spawn\ en\ x\ del\ heroe\ dentro\ del\ mundo\r\n\ @param\ sY\ el\ spawn\ en\ y\ del\ heroe\ dentro\ del\ mundo\r\n
+comment2.text=\r\n\ Constructor\ de\ TileWorld,\ instancia\ un\ mundo\ de\ celdas\ y\ adem\u00E1s\ las\r\n\ pinta\ de\ acuerdo\ a\ la\ matriz\ tiles\r\n\ @param\ tiles\ La\ matriz\ que\ incluye\ la\ informacion\ con\ la\ que\ TileWorld\ va\ a\ ser\ dibujado\r\n\ @param\ sX\ el\ spawn\ en\ x\ del\ heroe\ dentro\ del\ mundo\r\n\ @param\ sY\ el\ spawn\ en\ y\ del\ heroe\ dentro\ del\ mundo\r\n\ @param\ m\ el\ modo\ en\ el\ que\ se\ encuentra\ el\ mundo\ (0\ \=\ modo\ Animacion,\ 1\ \=\ modo\ Gameplay)\r\n\ @param\ n\ la\ animacion\ que\ van\ a\ realizar\ el\ personaje\r\n
 comment3.params=tiles\ sX\ sY\ ingCount\ m
 comment3.target=TileWorld(java.lang.String[][],\ int,\ int,\ Counter,\ int)
-comment3.text=\r\n\ Constructor\ de\ TileWorld,\ instancia\ un\ mundo\ de\ celdas\ y\ adem\u00E1s\ las\r\n\ pinta\ de\ acuerdo\ a\ la\ matriz\ tiles\r\n\ @param\ tiles\ La\ matriz\ que\ incluye\ la\ informacion\ con\ la\ que\ TileWorld\ va\ a\ ser\ dibujado\r\n\ @param\ sX\ el\ spawn\ en\ x\ del\ heroe\ dentro\ del\ mundo\r\n\ @param\ sY\ el\ spawn\ en\ y\ del\ heroe\ dentro\ del\ mundo\r\n\ @param\ ingCount\ el\ contador\ que\ lleva\ la\ informacion\ de\ los\ ingredientes\ recogidos\r\n
+comment3.text=\r\n\ Constructor\ de\ TileWorld,\ instancia\ un\ mundo\ de\ celdas\ y\ adem\u00E1s\ las\r\n\ pinta\ de\ acuerdo\ a\ la\ matriz\ tiles\r\n\ @param\ tiles\ La\ matriz\ que\ incluye\ la\ informacion\ con\ la\ que\ TileWorld\ va\ a\ ser\ dibujado\r\n\ @param\ sX\ el\ spawn\ en\ x\ del\ heroe\ dentro\ del\ mundo\r\n\ @param\ sY\ el\ spawn\ en\ y\ del\ heroe\ dentro\ del\ mundo\r\n\ @param\ ingCount\ el\ contador\ que\ lleva\ la\ informacion\ de\ los\ ingredientes\ recogidos\r\n\ @param\ m\ el\ modo\ en\ el\ que\ se\ encuentra\ el\ mundo\ (0\ \=\ modo\ Animacion,\ 1\ \=\ modo\ Gameplay)\r\n
 comment4.params=tiles\ sX\ sY\ ingCount\ m\ bool
 comment4.target=TileWorld(java.lang.String[][],\ int,\ int,\ Counter,\ int,\ boolean)
 comment5.params=tiles\ sX\ sY\ ingCount

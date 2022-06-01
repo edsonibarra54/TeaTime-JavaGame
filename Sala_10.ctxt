@@ -2,8 +2,11 @@
 comment0.target=Sala_10
 comment1.params=spawnX\ spawnY\ count
 comment1.target=Sala_10(int,\ int,\ Counter)
+comment1.text=\r\n\ Constructor\ de\ Sala_10,\ llama\ al\ constructor\ de\ TileWorld\ instanciando\ el\ cual\ instancia\r\n\ sus\ tiles,\ tambien\ instancia\ los\ portales\ necesarios\ para\ movernos\ a\ otras\ salas,\r\n\ al\ objeto\ fuente\ e\ indica\ que\ las\ transiciones\ de\ inicio\ y\ de\ salida\ aun\ no\ se\ han\ realizado\r\n\ asi\ como\ tambien\ que\ el\ final\ esta\ inactivo\r\n\ @param\ spawnX\ el\ spawn\ en\ x\ del\ heroe\ dentro\ del\ mundo\r\n\ @param\ spawnY\ el\ spawn\ en\ y\ del\ heroe\ dentro\ del\ mundo\r\n\ @param\ count\ el\ contador\ de\ los\ ingredientes\ que\ lleva\ el\ jugador\r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ Metodo\ que\ se\ encarga\ de\ verificar\ si\ la\ animacion\ inicial\ ya\ termino,\ si\r\n\ el\ jugador\ a\ tocado\ algun\ portal\ para\ teletranportarlo\ a\ otra\ sala\ o\ si\r\n\ todos\ los\ ingredientes\ han\ sido\ recolectados\ para\ poder\ activar\ el\ final\r\n
 comment3.params=
 comment3.target=void\ prepareIndividual()
+comment3.text=\r\n\ Este\ metodo\ se\ encarga\ de\ generar\ la\ transicion\ inicial\ y\ de\ instanciar\r\n\ los\ objetos\ fuente\ y\ puerta\r\n
 numComments=4

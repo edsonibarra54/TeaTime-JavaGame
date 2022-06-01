@@ -5,6 +5,15 @@ public class Sala_2 extends TileWorld
     private boolean transicionInicialIniciada, transicionFinalIniciada; 
     private Transicion ti,tf;
     
+    /**
+     * Constructor de Sala_2, llama al constructor de TileWorld instanciando el cual instancia
+     * sus tiles, tambien instancia los portales necesarios para movernos a otras salas
+     * e indica que las transiciones de inicio y de salida aun no se han realizado
+     * @param spawnX el spawn en x del heroe dentro del mundo
+     * @param spawnY el spawn en y del heroe dentro del mundo
+     * @param count el contador de los ingredientes que lleva el jugador
+     */
+    
     public Sala_2(int spawnX, int spawnY,Counter count)
     {
         super(ListaDeMundoTiles.TilesMundo2(), spawnX, spawnY,count,0); 
@@ -14,13 +23,12 @@ public class Sala_2 extends TileWorld
         addObject(salaIzquierda,1,150);
         salaDerecha = new PortalTile(1);
         addObject(salaDerecha,600,200);
-        Actor enemigo1 = new Enemy(ListaDeSprites.enemigo1,200,1,0,100,100);
-        Actor enemigo2 = new Enemy(ListaDeSprites.pirata,200,0,1,250,250);
-        Actor enemigo3 = new Enemy(ListaDeSprites.pirata,200,0,1,350,250);
-        addObject(enemigo1,100,100);
-        addObject(enemigo2,250,250);
-        addObject(enemigo3,350,250);
     }
+    
+    /**
+     * Metodo que se encarga de verificar si la animacion inicial ya termino o si
+     * el jugador a tocado algun portal para teletranportarlo a otra sala
+     */
     
     public void act(){
         if(ti.animacionFinalizada() == true){
@@ -57,12 +65,20 @@ public class Sala_2 extends TileWorld
         }
     }
     
+    /**
+     * Este metodo se encarga de instanciar los enemigos de la sala,
+     * y generar la transicion inicial
+     */
+    
     @Override
     public void prepareIndividual(){
-        /*if(Ingredientes_list.checkIngredient(2)==0){
-            Ingrediente taza = new Ingrediente("taza.png",2);
-            addObject(taza,300,100);
-        }*/
+        Actor enemigo1 = new Enemy(ListaDeSprites.enemigo1,200,1,0,100,100);
+        Actor enemigo2 = new Enemy(ListaDeSprites.pirata,200,0,1,250,250);
+        Actor enemigo3 = new Enemy(ListaDeSprites.pirata,200,0,1,350,250);
+        addObject(enemigo1,100,100);
+        addObject(enemigo2,250,250);
+        addObject(enemigo3,350,250);
+        
         if(transicionInicialIniciada == false){
             transicionInicialIniciada = true;
             ti = new Transicion(0);

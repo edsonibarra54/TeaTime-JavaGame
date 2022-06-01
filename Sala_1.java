@@ -1,15 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Sala_1 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Sala_1 extends TileWorld
 {
     private boolean transicionInicialIniciada, transicionFinalIniciada; 
     private Transicion ti,tf;
+    
+    /**
+     * Constructor de Sala_1, llama al constructor de TileWorld instanciando el cual instancia
+     * sus tiles, tambien instancia los portales necesarios para movernos a otras salas
+     * e indica que las transiciones de inicio y de salida aun no se han realizado
+     * @param spawnX el spawn en x del heroe dentro del mundo
+     * @param spawnY el spawn en y del heroe dentro del mundo
+     * @param count el contador de los ingredientes que lleva el jugador
+     */
     
     public Sala_1(int spawnX, int spawnY,Counter count)
     {
@@ -22,6 +25,11 @@ public class Sala_1 extends TileWorld
         addObject(salaIzquierda,1,150);
     }
 
+    /**
+     * Metodo que se encarga de verificar si la animacion inicial ya termino o si
+     * el jugador a tocado algun portal para teletranportarlo a otra sala
+     */
+    
     public void act(){
         if(ti.animacionFinalizada() == true){
             getObjects(Heroe.class).get(0).setCancelaMovimiento(false);
@@ -57,6 +65,12 @@ public class Sala_1 extends TileWorld
             }
         }
     }
+    
+    /**
+     * Este metodo se encarga de instanciar los enemigos de la sala,
+     * al ingrediente azucar si aun no ha sido agarrado y  genera
+     * la transicion inicial
+     */
     
     @Override
     public void prepareIndividual() 

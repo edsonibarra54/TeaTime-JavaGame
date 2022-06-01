@@ -6,19 +6,33 @@ public class Sala_10 extends TileWorld
     private boolean activaFinal;
     private Transicion ti,tf;
     
+    /**
+     * Constructor de Sala_10, llama al constructor de TileWorld instanciando el cual instancia
+     * sus tiles, tambien instancia los portales necesarios para movernos a otras salas,
+     * al objeto fuente e indica que las transiciones de inicio y de salida aun no se han realizado
+     * asi como tambien que el final esta inactivo
+     * @param spawnX el spawn en x del heroe dentro del mundo
+     * @param spawnY el spawn en y del heroe dentro del mundo
+     * @param count el contador de los ingredientes que lleva el jugador
+     */
+    
     public Sala_10(int spawnX, int spawnY,Counter count)
     {
         super(ListaDeMundoTiles.TilesMundo10(), spawnX, spawnY,count,0); 
         this.transicionInicialIniciada = false;
         this.transicionFinalIniciada = false;
         this.activaFinal = false;
-        Fuente fuente = new Fuente();
-        addObject(fuente,300,200);
         salaAbajo = new PortalTile(0);
         addObject(salaAbajo,300,399);
         salaArriba = new PortalTile(0);
         addObject(salaArriba,300,51);
     }
+    
+    /**
+     * Metodo que se encarga de verificar si la animacion inicial ya termino, si
+     * el jugador a tocado algun portal para teletranportarlo a otra sala o si
+     * todos los ingredientes han sido recolectados para poder activar el final
+     */
     
     public void act(){
         if(Ingredientes_list.getIngredient0() == 1 && Ingredientes_list.getIngredient1() == 1 && Ingredientes_list.getIngredient2() == 1)
@@ -61,8 +75,15 @@ public class Sala_10 extends TileWorld
         }
     }
     
+    /**
+     * Este metodo se encarga de generar la transicion inicial y de instanciar
+     * los objetos fuente y puerta
+     */
+    
     @Override
     public void prepareIndividual(){
+        Fuente fuente = new Fuente();
+        addObject(fuente,300,200);
         TileActor puerta = new ColliderTile();
         puerta.setImage("Puerta.png");
         addObject(puerta,300,25);

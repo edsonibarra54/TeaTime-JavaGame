@@ -1,10 +1,12 @@
 #BlueJ class context
 comment0.target=Sala_7
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Sala_7\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=spawnX\ spawnY\ count
 comment1.target=Sala_7(int,\ int,\ Counter)
+comment1.text=\r\n\ Constructor\ de\ Sala_7,\ llama\ al\ constructor\ de\ TileWorld\ instanciando\ el\ cual\ instancia\r\n\ sus\ tiles,\ tambien\ instancia\ los\ portales\ necesarios\ para\ movernos\ a\ otras\ salas\r\n\ e\ indica\ que\ las\ transiciones\ de\ inicio\ y\ de\ salida\ aun\ no\ se\ han\ realizado\r\n\ @param\ spawnX\ el\ spawn\ en\ x\ del\ heroe\ dentro\ del\ mundo\r\n\ @param\ spawnY\ el\ spawn\ en\ y\ del\ heroe\ dentro\ del\ mundo\r\n\ @param\ count\ el\ contador\ de\ los\ ingredientes\ que\ lleva\ el\ jugador\r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ Metodo\ que\ se\ encarga\ de\ verificar\ si\ la\ animacion\ inicial\ ya\ termino\ o\ si\r\n\ el\ jugador\ a\ tocado\ algun\ portal\ para\ teletranportarlo\ a\ otra\ sala\r\n
 comment3.params=
 comment3.target=void\ prepareIndividual()
+comment3.text=\r\n\ Este\ metodo\ se\ encarga\ de\ instanciar\ los\ enemigos\ de\ la\ sala,\r\n\ las\ casas\ del\ mapa\ junto\ con\ sus\ techos\ y\ de\ generar\ la\ \r\n\ transicion\ inicial\r\n
 numComments=4

@@ -2,8 +2,11 @@
 comment0.target=Sala_0
 comment1.params=
 comment1.target=Sala_0()
+comment1.text=\r\n\ Constructor\ de\ Sala_0,\ llama\ al\ constructor\ de\ TileWorld\ el\ cual\ instancia\r\n\ sus\ tiles,\ tambien\ instancia\ los\ portales\ necesarios\ para\ movernos\ a\ otras\ salas,\r\n\ instancia\ la\ casa\ junto\ con\ su\ techo,\ indica\ el\ orden\ de\ pintado\ de\ las\ clases\r\n\ e\ indica\ que\ las\ transiciones\ de\ inicio\ y\ de\ salida\ aun\ no\ se\ han\ realizado\r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ Metodo\ que\ se\ encarga\ de\ verificar\ si\ la\ animacion\ inicial\ ya\ termino\ o\ si\r\n\ el\ jugador\ a\ tocado\ algun\ portal\ para\ teletranportarlo\ a\ otra\ sala\r\n
 comment3.params=
 comment3.target=void\ prepareIndividual()
+comment3.text=\r\n\ Este\ metodo\ se\ encarga\ de\ generar\ la\ transicion\ inicial\r\n
 numComments=4

@@ -6,7 +6,13 @@ public class Sala_0 extends TileWorld
     private Transicion ti,tf;
     private Casa c,ct;
     
-    //Se instancia por primera vez esta sala
+    /**
+     * Constructor de Sala_0, llama al constructor de TileWorld el cual instancia
+     * sus tiles, tambien instancia los portales necesarios para movernos a otras salas,
+     * instancia la casa junto con su techo, indica el orden de pintado de las clases
+     * e indica que las transiciones de inicio y de salida aun no se han realizado
+     */
+    
     public Sala_0()
     {
         super(ListaDeMundoTiles.TilesMundo0(), 300, 180,1,1); 
@@ -20,6 +26,11 @@ public class Sala_0 extends TileWorld
         addObject(ct,300,25);
         setPaintOrder(Carta.class,Transicion.class,Heroe_animacion.class,Casa.class,Tree.class);
     }
+    
+    /**
+     * Metodo que se encarga de verificar si la animacion inicial ya termino o si
+     * el jugador a tocado algun portal para teletranportarlo a otra sala
+     */
     
     public void act(){
         if(this.getObjects(Heroe_animacion.class).isEmpty()!=true){
@@ -39,6 +50,10 @@ public class Sala_0 extends TileWorld
             } 
         }
     }
+    
+    /**
+     * Este metodo se encarga de generar la transicion inicial
+     */
     
     @Override
     public void prepareIndividual() 

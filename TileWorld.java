@@ -1,11 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
+
 /**
- * Write a description of class TileWorld here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Clase padre de todas las salas
  */
+
 public abstract class TileWorld extends World 
 {
     static Actor hero;
@@ -36,6 +35,8 @@ public abstract class TileWorld extends World
      * @param tiles La matriz que incluye la informacion con la que TileWorld va a ser dibujado
      * @param sX el spawn en x del heroe dentro del mundo
      * @param sY el spawn en y del heroe dentro del mundo
+     * @param m el modo en el que se encuentra el mundo (0 = modo Animacion, 1 = modo Gameplay)
+     * @param n la animacion que van a realizar el personaje
      */
     
     public TileWorld(String tiles[][], int sX, int sY, int m, int n)
@@ -58,6 +59,7 @@ public abstract class TileWorld extends World
      * @param sX el spawn en x del heroe dentro del mundo
      * @param sY el spawn en y del heroe dentro del mundo
      * @param ingCount el contador que lleva la informacion de los ingredientes recogidos
+     * @param m el modo en el que se encuentra el mundo (0 = modo Animacion, 1 = modo Gameplay)
      */
     
     public TileWorld(String tiles[][], int sX, int sY,Counter ingCount, int m)
@@ -330,11 +332,16 @@ public abstract class TileWorld extends World
     }
     
     /**
-     * 
+     * Metodo que regresa el modo en el que se encuentra el mapa
      */
     public int getMode(){
         return this.mode;
     }
+    
+    /**
+     * Metodo para cambiar el modo en el que se encuentra el mapa
+     * @param m modo al que se quiere cambiar
+     */
     
     public void setMode(int m){
         this.mode = m;
