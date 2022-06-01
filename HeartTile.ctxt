@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=HeartTile
-comment0.text=\r\n\ Corazones\ ligados\ al\ heroe,\ simboliza\ su\ cantidad\ de\ errores\ maximos\ a\ cometer\r\n\ \r\n\ @author\ Alan\r\n\ @version\ 10/05/2022\r\n
+comment0.text=\r\n\ Corazones\ ligados\ al\ heroe,\ simboliza\ su\ cantidad\ de\ errores\ maximos\ a\ cometer\r\n
 comment1.params=
 comment1.target=HeartTile()
 comment1.text=\r\n\ Se\ voltea\ la\ imagen\ y\ se\ coloca\ una\ imagen\ de\ corazon\ completo\r\n

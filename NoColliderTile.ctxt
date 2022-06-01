@@ -1,7 +1,4 @@
 #BlueJ class context
 comment0.target=NoColliderTile
-comment0.text=\r\n\ un\ Tile\ que\ no\ es\ colisionable\r\n\ \r\n\ @author\ Alan\r\n\ @version\ 02/05/2022\r\n
-comment1.params=
-comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ NoColliderTile\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=2
+comment0.text=\r\n\ un\ Tile\ que\ no\ es\ colisionable\r\n
+numComments=1

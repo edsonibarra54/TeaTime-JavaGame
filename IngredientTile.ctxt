@@ -1,8 +1,7 @@
 #BlueJ class context
 comment0.target=IngredientTile
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ IngredientTile\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Representa\ una\ celda\ con\ la\ imagen\ del\ ingrediente\r\n\ es\ usada\ por\ el\ contador\ para\ asi\ generar\ ingredientes\ sin\ sus\ \r\n\ correspondientes\ funciones\r\n
 comment1.params=s
 comment1.target=IngredientTile(java.lang.String)
-comment2.params=
-comment2.target=void\ act()
-numComments=3
+comment1.text=\r\n\ Se\ setea\ la\ imagen\ con\ el\ nombre\ correspondiente\r\n\ @param\ s\ el\ nombre\ de\ la\ imagen\ \r\n
+numComments=2

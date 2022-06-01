@@ -1,8 +1,6 @@
 /**
  * Clase Que modifica la velocidad y rango de enemigos
- * 
- * @author Alan
- * @version 20/05/2022
+ * y la vida del heroe
  */
 public class Dificultad  
 {

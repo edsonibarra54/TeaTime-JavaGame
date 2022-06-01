@@ -35,12 +35,7 @@ public class Sala_6 extends TileWorld
         MiniHalo luz = new MiniHalo();
         addObject(luz,87,337);
         salaDerecha = new PortalTile(0);
-        addObject(salaDerecha,599,200);
-        if(IngredienteTiles.ingrediente[1]==0)
-        {
-            Ingrediente ingrediente = new Ingrediente("teprueba.png",1);
-            //addObject(ingrediente,87,330);
-        }    
+        addObject(salaDerecha,599,200);  
     }
     public void act(){
         if(ti.animacionFinalizada() == true){

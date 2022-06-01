@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=HaloTile
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ HaloTile\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ genera\ un\ halo\ de\ luz\ al\ rededor\ de\ cierta\ ubicacion\ \r\n
 comment1.params=
 comment1.target=HaloTile()
 comment1.text=\r\n\ Le\ modifica\ la\ transparencia\ y\ escala\ su\ tama\u00F1o\r\n

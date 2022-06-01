@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=ShadowTile
-comment0.text=\r\n\ Un\ objeto\ el\ cual\ cambia\ su\ transparencia\ con\ HaloTile\r\n\ \r\n\ @author\ Alan\r\n\ @version\ 21/05/2022\r\n
+comment0.text=\r\n\ Un\ objeto\ el\ cual\ cambia\ su\ transparencia\ con\ HaloTile\r\n\r\n
 comment1.params=
 comment1.target=ShadowTile()
 comment1.text=\r\n\ Un\ constructor\ que\ modifica\ la\ transparencia\ del\ objeto\r\n
