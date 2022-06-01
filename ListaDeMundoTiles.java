@@ -1,8 +1,5 @@
 /**
- * Clase Que tiene guardados la construccion de mundos
- * 
- * @author Alan
- * @version 20/05/2022 
+ * Clase Que tiene guardado las matrices de construccion de mundos
  */
 public class ListaDeMundoTiles  
 {

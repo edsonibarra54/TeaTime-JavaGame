@@ -29,7 +29,7 @@ public class JukeBoxEnemy
      * Reproduce la cancion correspondeinte de jukeboxEnemy
      */
     public static void play(){
-        song.setVolume(20);
+        song.setVolume(30);
         song.playLoop(); 
     }
 

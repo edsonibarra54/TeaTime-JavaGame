@@ -1,10 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class JukeBox here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Clase que permite reproducir la musica de fondo del juego
+ * cambiarla, pausarla o pararla
  */
 public class JukeBox 
 {
@@ -22,7 +20,7 @@ public class JukeBox
         }
         song = new GreenfootSound(newSong); 
         song.playLoop();
-        song.setVolume(20);
+        song.setVolume(30);
     }
     
     /**

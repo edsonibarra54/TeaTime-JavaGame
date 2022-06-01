@@ -2,9 +2,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 /**
  * Corazones ligados al heroe, simboliza su cantidad de errores maximos a cometer
- * 
- * @author Alan
- * @version 10/05/2022
  */
 public class HeartTile extends TileActor
 {

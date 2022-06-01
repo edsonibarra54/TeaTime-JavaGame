@@ -2,9 +2,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Un objeto el cual cambia su transparencia con HaloTile
- * 
- * @author Alan
- * @version 21/05/2022
  */
 public class ShadowTile extends NoColliderTile
 {
