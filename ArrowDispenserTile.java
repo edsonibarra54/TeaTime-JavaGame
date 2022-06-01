@@ -91,6 +91,7 @@ public class ArrowDispenserTile extends TrapTile
             mundo.addObject(arrow,getX()+(x*2),getY()+(y*2));
             super.usada=true;
             GreenfootSound sondo= new GreenfootSound("flecha lanzada.mp3");
+            sondo.setVolume(25);
             sondo.play();
         }
     }

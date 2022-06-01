@@ -1,10 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Nube2 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Clase que muestra el png de la nube y genera una nube
+ * de la clase Nube2
  */
 public class Nube2 extends Nube
 {
@@ -15,6 +13,9 @@ public class Nube2 extends Nube
         myGif = new GifImage(s);
     }
     
+    /**
+     * Metodo que ejecuta su gif propio, despues de cierto tiempo agrega otra nube
+     */
     public void act(){
         setImage(myGif.getCurrentImage()); //Se encarga que el gif vaya cambiando de frame
         tempo++;

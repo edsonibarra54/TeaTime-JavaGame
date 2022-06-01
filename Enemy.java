@@ -47,6 +47,7 @@ public class Enemy extends Personaje
             gifs.add(gif);
         }
     }
+    
     /**
      * Se añade su linea de vision al mundo
      * @param w el mundo donde se encuentra el enemigo

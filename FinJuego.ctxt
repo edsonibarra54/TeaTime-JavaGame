@@ -1,8 +1,10 @@
 #BlueJ class context
 comment0.target=FinJuego
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ FinJuego\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Clase\ que\ muestra\ si\ perdiste\ o\ ganaste\r\n
 comment1.params=s
 comment1.target=FinJuego(java.lang.String)
+comment1.text=\r\n\ Constructor\ de\ clase\ FinJuego\ donde\ se\ le\ asigna\ a\ tempo\ el\r\n\ valor\ de\ 0\ y\ hacemos\ transparente\ el\ png\r\n\ @s\ nombre\ de\ la\ imagen\ que\ se\ asigna\r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ Metodo\ que\ se\ encarga\ de\ ir\ cambiando\ la\ transparencia\ hasta\ que\ llegue\r\n\ a\ 255\ que\ es\ el\ maximo\r\n
 numComments=3

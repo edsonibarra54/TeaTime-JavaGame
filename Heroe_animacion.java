@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Heroe_animacion here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Esta clase se encarga de representar las animaciones del heroe
  */
 public class Heroe_animacion extends Personaje
 {
@@ -21,18 +18,33 @@ public class Heroe_animacion extends Personaje
     private boolean transicionIniciada = false, transicionIniciada2 = false;
     private Transicion tf;
     
+    /**
+     * Constructor de Heroe_animacion
+     * @param vida la vida del heroe
+     * @param velocidadX la velocidad en X del heroe
+     * @param velocidadY la velocidad en Y del heroe
+     * @param nombre_imagen nombre del gif con el que inicia
+     * @param n animacion que realizara
+     */
     public Heroe_animacion(int vida,int velocidadX,int velocidadY,String nombre_imagen,int n)
     {
         super(vida,velocidadX,velocidadY,nombre_imagen);
         numeroAnimacion = n;
     }
     
+    /**
+     * Metodo que se encarga de modificar la posicion 
+     */
     @Override
     public void movimiento() //Con este metodo logramos que el personaje se mueva 
     {
        this.setLocation(this.getX()+dx,this.getY()+dy);
     }
     
+    /**
+     * Metodo que se encarga de ejecutar el gif propio y la animacion asi como
+     * tambien aumentar el contador
+     */
     public void act()
     {
         tempo++;
@@ -41,6 +53,9 @@ public class Heroe_animacion extends Personaje
         if(getWorld() == null) return;
     }
     
+    /**
+     * Cambia el gif dependiendo de hacia donde se esta moviendo
+     */
     public void cambiaImagen(){ //Este metodo cambia el gid del personaje dependiendo de hacia donde se este moviendo
         if(this.dy == 0){
             if(this.dx > 0){
@@ -57,9 +72,13 @@ public class Heroe_animacion extends Personaje
                 myGif = gif_espalda;
             }
         }
-        
     }
     
+    /**
+     * Metodo que se encarga de realizar los movimientos de la animacion
+     * @param t tiempo que ha transcurrido
+     * @param n animacion que esta realizando
+     */
     private void camino(int t, int n){ //Este metodo es el que indica hacia donde moverse dependiendo del tiempo
         if(n == 1){ //Indica que esta rezlizando la animacion numero 1
             if(t < 40 && momentoAnimacion == 0){
@@ -166,7 +185,9 @@ public class Heroe_animacion extends Personaje
         }
     }
     
-    
+    /**
+     * Metodo que se encarga de modificar el tiempo
+     */
     void setTempo(int t){ //Este metodo tiene la finalidad de reiniciar el tiempo al que nosotros deseemos
         this.tempo = t;
     }

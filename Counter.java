@@ -24,6 +24,7 @@ public class Counter extends Actor
         ingredients.add(te);
         ingredients.add(taza);
     }
+    
     /**
      * Se añaden los objetos que componen al contador al mundo
      */

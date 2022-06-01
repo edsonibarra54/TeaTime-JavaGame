@@ -27,7 +27,7 @@ public class Arrow extends Projectile
     }
     /**
      * verifica si el objeto ha llegado ha tocado un collidertile o al heroe o esta en el limite del mapa, si no sigue avanzando en su eje, y si si se elimina
-       */
+     */
     public void act()
     {
         if(!isTouching(ColliderTile.class) && !isAtEdge() && !isTouching(Heroe.class))

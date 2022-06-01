@@ -1,16 +1,22 @@
 #BlueJ class context
 comment0.target=Reina
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Reina\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Esta\ clase\ se\ encarga\ de\ representar\ las\ animaciones\ del\ heroe\r\n
 comment1.params=
 comment1.target=Reina()
+comment1.text=\r\n\ Constructor\ de\ Reina\r\n
 comment2.params=
 comment2.target=void\ movimiento()
+comment2.text=\r\n\ Metodo\ que\ se\ encarga\ de\ modificar\ la\ posicion\ del\ personaje\r\n
 comment3.params=
 comment3.target=void\ act()
+comment3.text=\r\n\ Metodo\ que\ se\ encarga\ de\ aumentar\ el\ tiempo,\ ejecutar\ el\ gif\ propio\ \r\n\ y\ realizar\ la\ animacion\r\n
 comment4.params=
 comment4.target=void\ cambiaImagen()
+comment4.text=\r\n\ Cambia\ el\ gif\ dependiendo\ de\ hacia\ donde\ se\ esta\ moviendo\r\n
 comment5.params=t\ n
 comment5.target=void\ camino(int,\ int)
+comment5.text=\r\n\ Metodo\ que\ se\ encarga\ de\ realizar\ los\ movimientos\ de\ la\ animacion\r\n\ @param\ t\ tiempo\ que\ ha\ transcurrido\r\n\ @param\ n\ animacion\ que\ esta\ realizando\r\n
 comment6.params=t
 comment6.target=void\ setTempo(int)
+comment6.text=\r\n\ Metodo\ que\ se\ encarga\ de\ modificar\ el\ tiempo\r\n
 numComments=7

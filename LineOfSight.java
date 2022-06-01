@@ -12,6 +12,7 @@ public class LineOfSight extends Actor
     private int large,width = 10;
     private int cambioLongitud = 0;
     private GreenfootImage image;
+    
     /**
      * Constructor de los, necesita de un enemigo que será el poseedor de la misma
      * Se asignan diversos datos con la informacion del enemigo
@@ -64,6 +65,7 @@ public class LineOfSight extends Actor
     public double calDistance(Actor actor){//Se calcula la distancia entre los objetos por el metodo del teorema de pitagoras 
         return Math.sqrt(Math.pow(actor.getX()-this.getX(),2)+Math.pow(actor.getY()-this.getY(),2));
     }
+    
     /**
      * Se reescala la imagen para coincidir con hacia donde ve el enemigo
      * ademas de modificar su posicion para seguirlo

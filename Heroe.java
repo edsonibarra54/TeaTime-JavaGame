@@ -23,6 +23,13 @@ public class Heroe extends Personaje
     private boolean transicionIniciada;
     private Transicion t;
     
+    /**
+     * Constructor de Heroe
+     * @param vida la vida del heroe
+     * @param velocidadX la velocidad en X del heroe
+     * @param velocidadY la velocidad en Y del heroe
+     * @param nombre_imagen nombre del gif con el que inicia
+     */
     public Heroe(int vida,int velocidadX,int velocidadY,String nombre_imagen)
     {
         super(vida,velocidadX,velocidadY,nombre_imagen);
@@ -43,30 +50,19 @@ public class Heroe extends Personaje
         antX=antY=300;
     }
     
-    public void addActorAtTileLocation(int i)
-    {
-        HeartTile contenedor = new HeartTile();
-        World mundo = getWorld();
-        if(contenedor!=null)
-        {
-            mundo.addObject(contenedor,0,0);            
-        }
-    }
     /**
      *  Metodo que reproduce un sonido de pasto mientras el personaje camine
-       */
+    */
     public void reproduceSonido()
     {
         String imagen;
         Actor Sonido = getOneIntersectingObject(TileActor.class);
         checa=Sonido.getImage().toString();
         imagen=checa;
-        //World mundo = getWorld();
-        //mundo.showText(imagen,300,300);
         if(sonido.isPlaying()==false && tiempo!=0)
         {
             sonido=new GreenfootSound("pasto.mp3");
-            sonido.setVolume(50);
+            sonido.setVolume(30);
             sonido.play();
         }
         if(getX()==antX && getY()==antY && tiempo!=0)
@@ -84,15 +80,15 @@ public class Heroe extends Personaje
                 tiempo=25;
             }
         }
-        /*if(imagen=="grass_1.png" || imagen=="grass_2.png" || imagen=="grass_3.png" || imagen=="grass_4.png")
-        {
-            
-            sonido=new GreenfootSound("pasto.mp3");
-            sonido.play();
-        }*/
         antX=getX();
         antY=getY();
     }
+    
+    /**
+     * Metodo que ejecuta su gif propio, si la vida del heroe es mayor a 1 ejecutara los
+     * metodos setCorazon, movimiento, ocultar, poder y reproduceSonido, si la vida es 0 
+     * el gif cambiara y se vera la pantalla derrota
+     */
     @Override
     public void act()
     {
@@ -104,11 +100,6 @@ public class Heroe extends Personaje
             ocultar();
             poder();
             reproduceSonido();
-            if (Greenfoot.isKeyDown("e") && unica==1){
-                super.setvida(super.getvida()+1);
-                unica=0;
-                setcorazon_seteado();
-            }
         }else
         {
             if(transicionIniciada == false){
@@ -122,6 +113,7 @@ public class Heroe extends Personaje
             }
         }
     }
+    
     /**
      * Establece los corazones especificos en la primer instanciaque le corresponden al personaje segun su vida y le modifica la longitud del total de corazones
        */
@@ -142,7 +134,7 @@ public class Heroe extends Personaje
             medio_corazon.setImage("Corazon_mitad_rojo.png");
             medio_corazon.getImage().mirrorHorizontally();
             corazon.add(medio_corazon);
-              mundo.addObject(corazon.get(j+1),mundo.getWidth()-15*(j+1)-corazon.get(j).getImage().getWidth()*j,mundo.getHeight()-20);  
+            mundo.addObject(corazon.get(j+1),mundo.getWidth()-15*(j+1)-corazon.get(j).getImage().getWidth()*j,mundo.getHeight()-20);  
  
         }
         if(((super.getvida()/2)+super.getvida()%2)<corazon.size()-1)
@@ -155,6 +147,7 @@ public class Heroe extends Personaje
         crea_contenedores=0;
     }
     }
+    
  /**
      * Establece los corazones especificos despues de la primer instanciaque le corresponden al personaje segun su vida y le modifica la longitud del total de corazones
        */ 
@@ -194,6 +187,7 @@ public class Heroe extends Personaje
         crea_contenedores=0;
     }
     }
+    
     /**
      * Si el heroe esta dentro de una celda de tipo TallGrass, se regresa verdadero y los 
      * enemigos no pueden seguirlo
@@ -242,35 +236,33 @@ public class Heroe extends Personaje
         }   
     }
     
-    
+    /**
+     * Metodo que reproduce sonido de golpe si somos tocados por un proyectil o
+     * un enemigo, tambien se encarga de modificar los corazones y de devolvernos 
+     * al inicio de la sala si la vida es mayor a 1
+     */
     public void poder()
     {
-        if(super.getvida() > 1){
-            if(isTouching(Enemy.class) || isTouching(Projectile.class))
-            {
-                GreenfootSound sonido = new GreenfootSound("Golpe.mp3");
-                sonido.setVolume(60);
-                sonido.play();
-                TileWorld world = this.getWorldOfType(TileWorld.class);
+        if(isTouching(Enemy.class) || isTouching(Projectile.class)){
+            GreenfootSound sonido = new GreenfootSound("Golpe.mp3");
+            sonido.setVolume(60);
+            sonido.play();
+            TileWorld world = this.getWorldOfType(TileWorld.class);
+            
+            if(super.getvida() > 1){
                 world.reset();
-                super.setvida(super.getvida()-1);
-                Dificultad.vidaHeroe=super.getvida();
-                crea_contenedores=1;
-                setcorazon_seteado();
             }
+            
+            super.setvida(super.getvida()-1);
+            Dificultad.vidaHeroe=super.getvida();
+            crea_contenedores=1;
+            setcorazon_seteado();
         }
-        else{
-            if(isTouching(Enemy.class) || isTouching(Projectile.class))
-            {
-                GreenfootSound sonido = new GreenfootSound("Golpe.mp3");
-                sonido.setVolume(60);
-                sonido.play();
-                super.setvida(super.getvida()-1);
-            }
-        }
-        
     }
 
+    /**
+     * Metodo cambia el parametro cancelaMovimiento, si este este es true el personaje no podra moverse
+     */
     public void setCancelaMovimiento(boolean band){ //Este metodo se encarga de indicar si el jugador puede moverse o no
         this.cancelaMovimiento = band;
     }

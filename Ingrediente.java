@@ -15,6 +15,7 @@ public class Ingrediente extends Actor
      * Constructor para el ingrediente, necesita de el nombre de su imagen y el index, que representa
      * Su posicion en el arreglo estatico de ingredientes
      */
+    
     public Ingrediente(String imagen, int index){ 
         GreenfootImage image = new GreenfootImage(imagen);//Solo para la imagen de prueba;
         image.scale(25,25);
@@ -29,6 +30,7 @@ public class Ingrediente extends Actor
      * se modifica la lista de ingredientes para marcarlo como recogido, emite un sonido
      * y hace al contador cambiar su imagen
      */
+    
     public void Recoger(){
         if(isTouching(Heroe.class)){
             TileWorld world = getWorldOfType(TileWorld.class);
@@ -38,7 +40,6 @@ public class Ingrediente extends Actor
             recogido.play();
             world.removeObject(this); 
             world.getCounter().add(); 
-            
         } 
     }
     
@@ -46,6 +47,7 @@ public class Ingrediente extends Actor
     /**
      * metodo para mover el objeto arriba y abajo de manera que parece que levita
      */
+    
     public void act()
     {
         // Add your action code here.
@@ -56,9 +58,6 @@ public class Ingrediente extends Actor
         }else if(tempo==100){
             setLocation(getX(), getY()-dy);
             tempo=0;
-        }
-        
-        
+        }        
     }
-
 }

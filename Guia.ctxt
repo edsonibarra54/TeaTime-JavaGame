@@ -3,6 +3,7 @@ comment0.target=Guia
 comment0.text=\r\n\ Clase\ que\ muestra\ en\ pantalla\ las\ imagenes\ correspondientes\ a\ la\ guia\r\n
 comment1.params=
 comment1.target=Guia()
+comment1.text=\r\n\ Constructor\ de\ clase\ Guia\ donde\ establece\ como\ imagen\ el\ primer\ \r\n\ png\ que\ se\ encuentra\ en\ Guia_sheets\r\n
 comment2.params=index
 comment2.target=void\ cambiaImagen(int)
 comment2.text=\r\n\ Cambia\ la\ imagen\ de\ la\ guia\ para\ corresponder\ con\ el\ index\r\n

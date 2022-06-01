@@ -1,7 +1,10 @@
 #BlueJ class context
 comment0.target=Casa
+comment0.text=\r\n\ Clase\ que\ muestra\ el\ png\ de\ la\ casa\r\n
 comment1.params=s
 comment1.target=Casa(java.lang.String)
+comment1.text=\r\n\ Constructor\ de\ clase\ Casa\r\n\ @s\ nombre\ de\ la\ imagen\ que\ se\ asigna\r\n
 comment2.params=
 comment2.target=void\ cambiaCasa()
+comment2.text=\r\n\ Cambia\ el\ png\ de\ la\ casa\ a\ al\ de\ casa_2\r\n
 numComments=3

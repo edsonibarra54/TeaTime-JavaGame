@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=TileWorld
-comment0.text=\r\n<<<<<<<\ HEAD\r\n\ Clase\ padre\ de\ todas\ las\ salas\r\n\=\=\=\=\=\=\=\r\n\ La\ clase\ TileWorld\ permite\ la\ construccion\ de\ mundos\ a\ base\ de\ celdas\ utilizando\r\n\ un\ arreglo\ que\ representa\ la\ distribucion\ del\ mismo\r\n\ \r\n>>>>>>>\ 1464f744a512e967aa058be0d095405925d8d657\r\n
+comment0.text=\r\n\ La\ clase\ TileWorld\ permite\ la\ construccion\ de\ mundos\ a\ base\ de\ celdas\ utilizando\r\n\ un\ arreglo\ que\ representa\ la\ distribucion\ del\ mismo\r\n
 comment1.params=
 comment1.target=TileWorld()
 comment10.params=

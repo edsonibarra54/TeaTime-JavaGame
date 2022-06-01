@@ -1,10 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Carta here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Clase que contiene en png de la carta mostrada
+ * al inicio del juego
  */
 public class Carta extends Actor
 {

@@ -1,8 +1,9 @@
 #BlueJ class context
 comment0.target=Nube1
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Nube1\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Clase\ que\ muestra\ el\ png\ de\ la\ nube\r\n
 comment1.params=s
 comment1.target=Nube1(java.lang.String)
+comment1.text=\r\n\ Constructor\ de\ clase\ Fuente\ que\ indica\ el\ gif\ que\ mostrara\r\n\ @s\ nombre\ del\ gif\ que\ se\ le\ asigna\r\n
 comment2.params=
 comment2.target=void\ act()
 numComments=3
