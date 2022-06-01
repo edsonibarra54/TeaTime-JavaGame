@@ -1,20 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Guia_button here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Boton que permite acceder a la guia del juego
  */
 public class Guia_button extends Button
 { 
     int index = 0;
+    /**
+     * Constructor que recibe el nombre de la imagen a asignar
+     * @param s nombre de la imagen que se asigna
+     */
     public Guia_button(String s){
         super(s);
     }
     /**
-     * Act - do whatever the Guia_button wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Se encarga de manejar el click 
      */
     public void act()
     {

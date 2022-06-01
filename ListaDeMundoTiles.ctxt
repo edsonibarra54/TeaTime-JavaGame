@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=ListaDeMundoTiles
-comment0.text=\r\n\ Clase\ Que\ tiene\ guardados\ la\ construccion\ de\ mundos\r\n\ \r\n\ @author\ Alan\r\n\ @version\ 20/05/2022\r\n
+comment0.text=\r\n\ Clase\ Que\ tiene\ guardados\ la\ construccion\ de\ mundos\r\n\ \r\n\ @author\ Alan\r\n\ @version\ 20/05/2022\ \r\n
 comment1.params=
 comment1.target=ListaDeMundoTiles()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ ListaDeMundoTiles\r\n

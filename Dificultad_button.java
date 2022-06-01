@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Dificultad_button here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Boton que permite seleccionar la dificultad del juego
  */
 public class Dificultad_button extends Button
 {
@@ -21,6 +18,10 @@ public class Dificultad_button extends Button
         this.dificultad = dificultad; 
         this.mensaje = mensaje;
     }
+    /**
+     * Maneja las acciones a realizar cuando se da click, además, cambia su transparencia
+     * cuando el boton ha sido seleccionado
+     */
     public void act()
     { 
         if(Dificultad.nivelDificultad == this.dificultad){

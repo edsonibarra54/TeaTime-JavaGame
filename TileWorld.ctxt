@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=TileWorld
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ TileWorld\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ La\ clase\ TileWorld\ permite\ la\ construccion\ de\ mundos\ a\ base\ de\ celdas\ utilizando\r\n\ un\ arreglo\ que\ representa\ la\ distribucion\ del\ mismo\r\n\ \r\n
 comment1.params=
 comment1.target=TileWorld()
 comment10.params=
@@ -16,6 +16,7 @@ comment13.target=void\ prepare()
 comment13.text=\r\n\ Prepara\ el\ mundo,\ haciendo\ que\ la\ musica\ suene\ y\ que\ el\ heroe\ se\ intancie\ y\ a\u00F1ada\ al\ mundo\r\n\ Ademas,\ llama\ al\ metodo\ abstracto\ prepareIndividual\ que\ permite\ modificar\ cuantos\ enemigos\r\n\ hay\ por\ sala\ de\ manera\ individual\r\n
 comment14.params=
 comment14.target=void\ prepareIndividual()
+comment14.text=\r\n\ Permite\ a\ cada\ mundo\ a\u00F1adir\ preparaciones\ individualmente\r\n
 comment2.params=tiles\ sX\ sY\ m\ n
 comment2.target=TileWorld(java.lang.String[][],\ int,\ int,\ int,\ int)
 comment2.text=\r\n\ Constructor\ de\ TileWorld,\ instancia\ un\ mundo\ de\ celdas\ y\ adem\u00E1s\ las\r\n\ pinta\ de\ acuerdo\ a\ la\ matriz\ tiles\r\n\ @param\ tiles\ La\ matriz\ que\ incluye\ la\ informacion\ con\ la\ que\ TileWorld\ va\ a\ ser\ dibujado\r\n\ @param\ sX\ el\ spawn\ en\ x\ del\ heroe\ dentro\ del\ mundo\r\n\ @param\ sY\ el\ spawn\ en\ y\ del\ heroe\ dentro\ del\ mundo\r\n
@@ -36,5 +37,5 @@ comment8.target=void\ addActorAtTileLocation(java.lang.String,\ int,\ int)
 comment8.text=\r\n\ Metodo\ que\ a\u00F1ade\ una\ celda\ dentro\ de\ su\ posicion,\ no\ sin\ antes\ asignarle\ \r\n\ el\ tipo\ de\ celda\ e\ imagen\ correspondiete\r\n\ @param\ c\ la\ cadena\ que\ indica\ que\ tipo\ de\ celda\ va\ a\ crearse\r\n\ @param\ x\ la\ posicion\ en\ x\ de\ la\ celda\r\n\ @param\ y\ la\ posicion\ en\ y\ de\ la\ celda\r\n
 comment9.params=
 comment9.target=Counter\ getCounter()
-comment9.text=\r\n\ Metodo\ que\ regresa\ el\ contador\ del\ mundo\r\n
+comment9.text=\r\n\ Metodo\ que\ regresa\ el\ contador\ del\ mundo\r\n\ @returns\ un\ objeto\ de\ la\ clase\ contador\r\n
 numComments=15

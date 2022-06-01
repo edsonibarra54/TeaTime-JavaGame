@@ -1,11 +1,12 @@
 #BlueJ class context
 comment0.target=Jugar_button
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Jugar_button\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Boton\ que\ permite\ iniciar\ el\ juego\ \ \ \r\n
 comment1.params=s
 comment1.target=Jugar_button(java.lang.String)
+comment1.text=\r\n\ Constructor\ que\ recibe\ el\ nombre\ de\ la\ imagen\ a\ asignar\r\n\ @param\ s\ nombre\ de\ la\ imagen\ que\ se\ asigna\r\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Jugar_button\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.text=\r\n\ Maneja\ la\ accion\ a\ realizar\ con\ el\ click\r\n
 comment3.params=
 comment3.target=void\ clickedAction()
 comment3.text=\r\n\ Cuando\ se\ hace\ click,\ se\ resetean\ diversos\ datos\ estaticos,\ adem\u00E1s\ de\ instanciar\ la\ animacion\ inicial\r\n
