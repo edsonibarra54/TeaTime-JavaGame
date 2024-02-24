@@ -6,4 +6,5 @@ comment1.target=Nube1(java.lang.String)
 comment1.text=\r\n\ Constructor\ de\ clase\ Fuente\ que\ indica\ el\ gif\ que\ mostrara\r\n\ @s\ nombre\ del\ gif\ que\ se\ le\ asigna\r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ Metodo\ que\ ejecuta\ su\ gif\ propio\r\n
 numComments=3
